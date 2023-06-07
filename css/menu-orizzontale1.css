@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+header{
+    background-color: bisque;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 120px;
+    height: 120px;
+}
+
+.logo a {
+    width: 140px;
+    height: 140px;
+}
+
+
+
+.logo {
+    height: 140px;
+    width: 140px;
+    overflow: hidden;
+    border-radius: 200%;
+    width: fit-content;
+    height: fit-content;
+}
+
+#ricerca {
+    background-color: green;
+    height: 36px;
+    width: 100px;
+
+}
+
+.menu {
+    display:flex;
+}
+
+
+.menu,
+.submenu
+{
+    list-style: none;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.menu  li {
+    position: relative;
+  }
+
+
+
+
+.submenu{
+    width: 300px;
+
+}
+
+.menu-item{
+    flex-basis: 20%;
+}
+
+.menu-item,
+.submenu-item,
+.sub-submenu-item,
+.sub-sub-submenu-item {
+  padding: 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #b9b6b1;
+  width: 100%;
+}
+
+.menu  li {
+    position: relative;
+  }
+  
+  .menu li a {
+    padding: 10px;
+    background-color: #ccc;
+    text-decoration: none;
+  }
+  
+  .menu li .submenu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    padding: 10px;
+  }
+  
+  .menu li:hover .submenu {
+    display: block;
+  }
+  
+  .menu li .submenu li a {
+    display: block;
+    padding: 5px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .menu li .submenu li a:hover {
+    border-bottom: 1px solid #a7370b;
+  }
+  
+  .menu li .submenu {
+    width: 250px; /* Ancho mayor para el submenu */
+  }
+
+
