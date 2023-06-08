@@ -1,1 +1,4 @@
-segunda version: tres niveles, dos columnas verticales                                 
+segunda version: tres niveles, dos columnas verticales 
+tercera version: tres niveles, del enu se desprende un panel como en el la version 1 
+
+hacer la version con el menu desde abajo
