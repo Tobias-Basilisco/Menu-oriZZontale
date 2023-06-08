@@ -7,6 +7,7 @@
   
 }
 
+
 a{
     text-decoration: none;
     color: #333;
@@ -36,8 +37,6 @@ nav{
 }
 
 
-
-
 .logo {
     overflow: hidden;
     /* border-radius: 200%; */
@@ -49,7 +48,6 @@ nav{
     background-color: green;
     height: 32px;
     width: 100px;
-
 }
 
 .menu{
@@ -63,24 +61,36 @@ nav{
 .menu, 
 .submenu {
     list-style: none;
+    height: 32px;
+    align-items: center;
+
 
 }
 
 .submenu {
+    background-color: aqua;
 
 }
   
 .menu  li {
-    position: relative;
+    height: 32px;
+    /* display: inline-block; */
 }
   
 .menu li a {
+    background-color: rgb(243, 245, 193);
+    height: 32px;
     padding: 0 16px;
     text-decoration: none;
     align-items: center;
+    position: relative;
+    display: block;
+
     /* border-bottom: 1px solid #b9b6b1; */
 
 }
+
+
 
 nav i {
     width: 2px;
@@ -120,11 +130,27 @@ nav i {
   .sub-submenu-item,
   .sub-sub-submenu-item {
     font-size: ;
-    height: 20px;
+    height: 32px;
     cursor: pointer;
     
   }
   
+  ul {
+    height: 32px;
+    padding: 8px 0;
+    align-items: center;
+  }
 
+  li{
+    height: 32px;  
+    padding: auto 0;
+  }  
+
+  li a {
+    height: 32px;  
+    line-height: 32px;
+
+    /* display: block; */
+  }  
 
   
