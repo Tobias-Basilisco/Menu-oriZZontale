@@ -62,13 +62,14 @@ nav{
 .submenu {
     list-style: none;
     height: 32px;
-    align-items: center;
 
 
 }
 
 .submenu {
+    height: auto;
     background-color: aqua;
+    align-items: center;
 
 }
   
@@ -82,7 +83,6 @@ nav{
     height: 32px;
     padding: 0 16px;
     text-decoration: none;
-    align-items: center;
     position: relative;
     display: block;
 
@@ -118,39 +118,40 @@ nav i {
   
 .menu li .submenu li a:hover {
     border-bottom: 1px solid #a7370b;
-  }
+}
   
-  .menu li .submenu {
+.menu li .submenu {
     width: 250px; /* Ancho mayor para el submenu */
-  }
+}
 
-
-  .menu-item,
-  .submenu-item,
-  .sub-submenu-item,
-  .sub-sub-submenu-item {
+.menu-item,
+.submenu-item,
+.sub-submenu-item,
+.sub-sub-submenu-item {
     font-size: ;
     height: 32px;
     cursor: pointer;
-    
-  }
+}
   
-  ul {
+ul {
     height: 32px;
-    padding: 8px 0;
-    align-items: center;
-  }
+}
 
-  li{
+li{
     height: 32px;  
-    padding: auto 0;
-  }  
+}  
 
-  li a {
+li a {
     height: 32px;  
     line-height: 32px;
 
     /* display: block; */
-  }  
+}  
 
-  
+.submenu-item {
+    margin: 5px 0;
+}
+
+.submenu{
+    margin: 0;
+}
