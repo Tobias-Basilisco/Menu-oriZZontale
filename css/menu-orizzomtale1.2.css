@@ -99,13 +99,13 @@ nav i {
     padding-left: 0 5px;
 }
   
-.menu li .submenu {
+.menu li .submenu-panel {
     display: none;
     position: absolute;
     /* padding: 10px */
 }
   
-.menu li:hover .submenu {
+.menu li:hover .submenu-panel {
     display: block;
 }
   
