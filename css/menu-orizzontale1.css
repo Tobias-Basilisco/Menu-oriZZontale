@@ -1,7 +1,9 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+    
 }
 
 header{
@@ -11,6 +13,10 @@ header{
 .container {
     width: 80%;
     margin: 0 auto;
+    /* font-family: 'PT Sans', sans-serif; */
+    font-size: 36px;
+    
+
 
 }
 
