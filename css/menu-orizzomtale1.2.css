@@ -29,6 +29,10 @@ nav{
     justify-content: space-between;
 }
 
+nav ul {
+    list-style: none;
+}
+
 .logo img {
     height: 60px;
     margin: 40px 0;
@@ -59,10 +63,9 @@ nav{
 
 .menu, 
 .submenu,
-.sub-subenu,
-.submenu-panel {
+.sub-submenu,
+.sub-sub-submenu {
     list-style: none;
-    height: 32px;
 
 
 }
@@ -71,6 +74,10 @@ nav{
     height: auto;
     background-color: aqua;
     align-items: center;
+
+}
+
+.submenu-megamenu-4-livelli {
     position: relative;
 
 }
@@ -85,7 +92,7 @@ nav{
     height: max-content;
     display: flex;
     flex-direction: column;
-    background-color: #00f;
+    background-color: rgb(172, 172, 241);
 }
 
 .sub-submenu-item {
@@ -93,7 +100,7 @@ nav{
 
 }
 
-.sub-submenu a {
+.sub-submenu a, .sub-submenu-tendina a {
     text-align: center;
 }
   
@@ -103,11 +110,12 @@ nav{
 }
   
 .menu li a {
-    background-color: rgb(243, 245, 193);
+    /* background-color: rgb(243, 245, 193); */
+    background-color: transparent;
     height: 32px;
     padding: 0 16px;
     text-decoration: none;
-    position: relative;
+    /* position: relative; */
     display: block;
 
     /* border-bottom: 1px solid #b9b6b1; */
@@ -143,27 +151,25 @@ nav i {
     height: 100%;
     min-height: 41vh;
     min-width: 50vw;
-
-}
-
-
-  
-.menu li:hover .submenu-panel {
-    display: block;
-}
-
-.submenu li .sub-submenu-panel {
     display: none;
     position: absolute;
     left: 105%;
     top: 0;
 }
-  
+
+
+
+.menu li:hover .submenu-panel {
+    display: block;
+}
+
 .submenu li:hover .sub-submenu-panel {
     display: block;
 }
 
-
+.submenu li:hover .sub-submenu-tendina-panel {
+    display: block;
+}
 
 
 
@@ -191,45 +197,62 @@ nav i {
     cursor: pointer;
 }
   
-ul {
+nav ul, nav li, nav li a {
     height: 32px;
 }
 
-li{
-    height: 32px;  
-}  
 
-li a {
-    height: 32px;  
+nav li a {
     line-height: 32px;
-
-    /* display: block; */
 }  
 
 .submenu-item,
-.sub-sub.submenu-item {
-    margin: 5px 0;
+.sub-sub-submenu-item {
+    margin-top: 5px;
 }
 
 .submenu{
     margin: 0;
 }
 
-ul{
-    list-style: none;
-}
+
 
 .sub-sub-submenu-item {
-    margin-top: 5px;
-    background-color: white;
+    /* background-color: rgb(216, 45, 202); */
+    background-color: transparent;
 }
 
 .sub-sub-submenu{
     padding-top: 20px;
 }
 
-#menu-5 .menu-item{
+/* #menu-5 .menu-item{
     position: relative;
+} */
+
+
+
+.sub-submenu-tendina-panel {
+    height: 150px;
+    /* ajustar la altura con js */
+    /* overflow: hidden; */
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    background-color: rgb(0, 255, 42);
+
 }
 
+.sub-submenu-tendina {
+    display: flex;
+    flex-direction: column;
+}
+.sub-submenu-tendina li:first-child {
+    margin-top: 0;
+}
 
+/* .submenu-tendina ul li {
+    position: relative;
+} */
