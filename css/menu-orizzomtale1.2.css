@@ -4,7 +4,13 @@
     box-sizing: border-box;
     font-size: 16px; 
     font-family: 'PT Sans', sans-serif;
+    font-weight: ;
+
   
+}
+
+ul {
+    list-style: none;
 }
 
 
@@ -206,11 +212,11 @@ nav li a {
     line-height: 40px;
 }  
 
-.submenu-item,
+/* .submenu-item,
 .sub-sub-submenu-item {
-    /* margin-top: 5px; */
+    margin-top: 5px;
 }
-
+ */
 .submenu{
     margin: 0;
 }
@@ -226,9 +232,6 @@ nav li a {
     padding-top: 20px;
 }
 
-/* #menu-5 .menu-item{
-    position: relative;
-} */
 
 
 
@@ -261,3 +264,11 @@ nav li a {
 /* #li-tendina {
     position: relative;
 } */
+
+.submenu-megamenu-4-livelli .sub-submenu-item {
+    font-weight: bold;
+}
+
+.submenu-megamenu-4-livelli .sub-sub-submenu-item{
+    font-weight: 400;
+}
