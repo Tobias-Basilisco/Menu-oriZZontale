@@ -233,7 +233,7 @@ nav li a {
 
 
 .sub-submenu-tendina-panel {
-    height: 150px;
+    height: 180px;
     /* ajustar la altura con js */
     /* overflow: hidden; */
     display: none;
@@ -253,6 +253,11 @@ nav li a {
     margin-top: 0;
 }
 
-/* .submenu-tendina ul li {
+.submenu-tendina li {
+    position: relative;
+}
+
+
+/* #li-tendina {
     position: relative;
 } */
