@@ -41,7 +41,7 @@ nav ul {
 
 .logo img {
     height: 60px;
-    margin: 40px 0;
+    margin: 30px 0;
 
 }
 
@@ -55,7 +55,7 @@ nav ul {
 
 #ricerca {
     background-color: green;
-    height: 40px;
+    height: 30px;
     width: 100px;
 }
 
@@ -63,7 +63,7 @@ nav ul {
     display: flex;
     /* margin: 30px 0 ; */
     background-color: #f6b59c;
-    height: 40px;
+    height: 30px;
     align-items: center;
 }
 
@@ -76,10 +76,22 @@ nav ul {
 
 }
 
+.submenu,
+.sub-submenu,
+.sub-sub-submenu{
+    padding: 10px;
+
+}
+
+
+
+
+
 .submenu {
     height: auto;
     background-color: aqua;
     align-items: center;
+
 
 }
 
@@ -111,14 +123,14 @@ nav ul {
 }
   
 .menu  li {
-    height: 40px;
+    height: 30px;
     /* display: inline-block; */
 }
   
 .menu li a {
     /* background-color: rgb(243, 245, 193); */
     background-color: transparent;
-    height: 40px;
+    height: 30px;
     padding: 0 16px;
     text-decoration: none;
     /* position: relative; */
@@ -135,7 +147,12 @@ nav ul {
 }
 
 
+.submenu-panel, 
+.sub-submenu-panel, 
+.sub-sub-submenu-panel{
+    background-color: #ccc;
 
+}
 
 
 
@@ -199,17 +216,17 @@ nav i {
 .sub-submenu-item,
 .sub-sub-submenu-item {
     font-size: ;
-    height: 40px;
+    height: 30px;
     cursor: pointer;
 }
   
 nav ul, nav li, nav li a {
-    height: 40px;
+    height: 30px;
 }
 
 
 nav li a {
-    line-height: 40px;
+    line-height: 30px;
 }  
 
 /* .submenu-item,
@@ -241,10 +258,10 @@ nav li a {
     /* overflow: hidden; */
     display: none;
     position: absolute;
-    top: 0;
-    left: 100%;
+    top: -10px;
+    left: calc(100% + 10px);
     width: 100%;
-    background-color: rgb(0, 255, 42);
+    /* background-color: rgb(0, 255, 42); */
 
 }
 
@@ -252,9 +269,7 @@ nav li a {
     display: flex;
     flex-direction: column;
 }
-.sub-submenu-tendina li:first-child {
-    /* margin-top: 0; */
-}
+
 
 .submenu-tendina li {
     position: relative;
@@ -271,4 +286,10 @@ nav li a {
 
 .submenu-megamenu-4-livelli .sub-sub-submenu-item{
     font-weight: 400;
+}
+
+.sub-submenu-tendina {
+    height: auto;
+    background-color: rgb(26, 255, 0);
+    align-items: center;
 }
