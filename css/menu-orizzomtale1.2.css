@@ -22,6 +22,8 @@ a{
 header{
     background-color: #aea6ee55;
     height: 100%;
+    box-shadow: 0px 0px 8px 4px #989494f5;
+
 }
 
 .container {
@@ -92,6 +94,8 @@ nav ul {
 
     background-color: #cfcaf1;
     border: solid 1px #999;
+    box-shadow: 0px 0px 8px 4px #989494f5;
+
 
     /* background-color: #b7b7b18c; */
 
