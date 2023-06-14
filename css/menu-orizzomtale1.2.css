@@ -160,11 +160,7 @@ nav ul {
 }
 
 
-.submenu-panel, 
-.sub-submenu-panel, 
-.sub-sub-submenu-panel{
 
-}
 
 
 
@@ -180,7 +176,7 @@ nav i {
     position: absolute;
 }
 
-.sub-submenu-panel {
+.submenu-panel-table {
     background-color: #aea6eea7;
     border: solid 1px #999;
 
@@ -197,13 +193,39 @@ nav i {
 
 }
 
+.submenu-panel-table-centered {
+    background-color: #aea6eea7;
+    border: solid 1px #999;
+
+    box-shadow: 0px 0px 8px 4px #989494f5;
+
+    width: 100%;
+    height: 100%;
+    min-height: 41vh;
+    min-width: 50vw;
+    display: none;
+    position: absolute;
+    left: -25vw;
+    top: 100%;
+
+}
+
+.with-table {
+    position: relative;
+}
 
 
 .menu li:hover .submenu-panel {
     display: block;
 }
 
-.submenu li:hover .sub-submenu-panel {
+
+
+.submenu li:hover .submenu-panel-table {
+    display: block;
+}
+
+.with-table:hover .submenu-panel-table-centered {
     display: block;
 }
 
@@ -247,11 +269,14 @@ nav i {
     margin-bottom: 10px;
 }
 
-.submenu-megamenu-4-livelli .sub-sub-submenu-item a {
+.submenu-megamenu-4-livelli .sub-sub-submenu-item a,
+.submenu-panel-table-centered .sub-sub-submenu-item a {
     margin-bottom: 16px;
     font-size: 12px;
     line-height: 16px;
 }
+
+
   
 
 
@@ -308,8 +333,13 @@ nav li a {
     position: relative;
 } */
 
-.submenu-megamenu-4-livelli .sub-submenu-item {
+.submenu-megamenu-4-livelli .sub-submenu-item,
+.submenu-panel-table-centered .sub-submenu-item {
     font-weight: bold;
+}
+
+.submenu-panel-table-centered .sub-sub-submenu-item {
+    font-weight:400;
 }
 
 .submenu-megamenu-4-livelli .sub-sub-submenu-item{
