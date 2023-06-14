@@ -89,6 +89,7 @@ nav ul {
 
 
 
+
 .submenu {
     height: auto;
 
@@ -114,8 +115,8 @@ nav ul {
 .sub-submenu{
     display: flex;
     width: 50vw;
-    align-items: center;
     text-align: center;
+    height: max-content;
 
 
 }
@@ -136,13 +137,13 @@ nav ul {
 }
   
 .menu  li {
-    height: 30px;
+    /* height: 30px; */
     /* display: inline-block; */
 }
   
 .menu li a {
     background-color: transparent;
-    height: 30px;
+    /* height: 30px; */
     padding: 0 16px;
     text-decoration: none;
     /* position: relative; */
@@ -227,18 +228,32 @@ nav i {
     width: fit-content;
 }
 
-.menu-item,
+.menu-item
+ {
+    height: 30px;
+}
+
 .submenu-item,
 .sub-submenu-item,
 .sub-sub-submenu-item {
-    font-size: ;
-    height: 30px;
-    cursor: pointer;
+    height: fit-content;
+    /* padding: -20px 0; */
+    margin bottom: -20 px;
+}
+
+.submenu-item a,
+.sub-submenu-item a,
+.sub-sub-submenu-item a {
+    margin-bottom: 10px;
+}
+
+.submenu-megamenu-4-livelli .sub-sub-submenu-item a {
+    margin-bottom: 16px;
+    font-size: 12px;
+    line-height: 16px;
 }
   
-nav ul, nav li, nav li a {
-    height: 30px;
-}
+
 
 
 nav li a {
@@ -261,7 +276,7 @@ nav li a {
 }
 
 .sub-sub-submenu{
-    padding-top: 20px;
+    padding-top: 12px;
 }
 
 
@@ -309,3 +324,17 @@ nav li a {
 .submenu {
     text-align: left;
 }
+
+.submenu-tendina {
+
+}
+
+/* .sub-submenu-item a {
+    height: fit-content;
+    margin: 7px 0;
+} */
+
+
+
+
+
