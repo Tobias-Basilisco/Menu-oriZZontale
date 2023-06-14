@@ -7,7 +7,7 @@ if (window.innerWidth >= 1000) {
   
   else {
     evento='click';
-  }
+}
 
 //   SPOSTARE SOTTOMENU SOTTO
 
@@ -20,12 +20,36 @@ function moveDivsToEndOfNav(){
 
 // SHOW TABLE CENTERED
 
-document.querySelector('with-table').addEventListener(evento, showSubmenuPanelTableCentered);
+
+/* 
+// Seleccionar todos los elementos con la clase deseada
+var elementsWithHas = document.querySelectorAll('.has-table');
+
+// Iterar sobre los elementos y agregar el event listener
+elementsWithHas.forEach(elemento => {
+  elemento.addEventListener(evento, () => {
+    // Ejecutar la función y pasar el elemento clicado como argumento
+    showSubmenuPanelTableCentered(elemento);
+  });
+}); */
 
 
-function showSubmenuPanelTableCentered(elementWithWith){
-    var submenuPanelTableCentered = document.querySelector('.submenu-panel-table-centered');
+var element8WithHas = document.getElementById('menu-8');
+// alert(element8WithHas.classList);
+element8WithHas.addEventListener(evento, () => {
+    // Ejecutar la función y pasar el elemento clicado como argumento
+    showSubmenuPanelTableCentered("panel-table.centered-8");
+  });
 
+
+
+
+
+function showSubmenuPanelTableCentered(panelTable){
+    // alert("function show");
+    // alert(elementWithHasTable.classList);
+    var submenuPanelTableCentered = document.getElementById(panelTable);
+    submenuPanelTableCentered.classList.add("show");
     
 }
 

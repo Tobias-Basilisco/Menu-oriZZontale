@@ -198,12 +198,12 @@ nav i {
     
     display: none;
     position: absolute;
-    left: -25vw;
-    top: 0;
+    left: 25vw;
+    top: 200px;
 
 }
 
-.with-table {
+.has-table {
     position: relative;
 }
 
@@ -218,7 +218,7 @@ nav i {
     display: block;
 }
 
-.with-table:hover .submenu-panel-table-centered {
+.has-table:hover .submenu-panel-table-centered {
     display: block;
 }
 
