@@ -131,6 +131,17 @@ function showSubSubMegamenu4Livelli(targetElement) {
     submenuPanelTable.classList.add("show-fade");
   }
 
+  else if (submenuPanelTable.classList.contains("show-fade")){
+
+    setTimeout(() => {
+      let submenuPanelTable = targetElement.querySelector(".submenu-panel-table");
+        
+      submenuPanelTable.classList.remove("show-fade");
+    }
+    ,500);
+    submenuPanelTable.classList.add("hide-fade");
+  }
+
 }
 
 
