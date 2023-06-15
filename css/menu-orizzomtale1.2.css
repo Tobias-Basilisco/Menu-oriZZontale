@@ -189,10 +189,10 @@ nav i {
 }
 
 
-.menu li:hover .submenu-panel {
+/* .menu li:hover .submenu-panel {
     display: block;
 }
-
+ */
 
 
 .submenu li:hover .submenu-panel-table {

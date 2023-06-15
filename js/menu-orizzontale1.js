@@ -20,38 +20,19 @@ function moveDivsToEndOfNav(){
     nav.appendChild(submenuPanelTableCentered);
 }
 
-// SHOW TABLE CENTERED
 
 
-/* 
-// Seleccionar todos los elementos con la clase deseada
-var elementsWithHas = document.querySelectorAll('.has-table');
 
-// Iterar sobre los elementos y agregar el event listener
-elementsWithHas.forEach(elemento => {
-  elemento.addEventListener(evento, () => {
-    // Ejecutar la función y pasar el elemento clicado como argumento
-    showSubmenuPanelTableCentered(elemento);
-  });
-}); */
 
+
+
+// SHOW/HIDE TABLE CENTERED
 
 var element8WithHas = document.getElementById('menu-8');
-
 element8WithHas.addEventListener(evento, () => {
   // Ejecutar la función y pasar el elemento clicado como argumento
   showSubmenuPanelTableCentered("panel-table-centered-8-container");
 });
-
-
-/* element8WithHas.addEventListener(evento, prova);
-function prova() {
-    alert("prova");
-} */
-
-
-
-
 
 function showSubmenuPanelTableCentered(panelTable){
 
@@ -84,4 +65,34 @@ function showSubmenuPanelTableCentered(panelTable){
     }
   }    
 }
+
+
+// SHOW / HIDE 
+
+ 
+// Seleccionar todos los elementos con la clase deseada
+var menuItem = document.querySelectorAll('.menu-item');
+
+// Iterar sobre los elementos y agregar el event listener
+menuItem.forEach(elemento => {
+  elemento.addEventListener(evento, () => {
+    // Ejecutar la función y pasar el elemento clicado como argumento
+    showMegamenu4Livelli(elemento);
+  });
+});
+
+
+function showMegamenu4Livelli (targetElement){
+  let submenuPanel = targetElement.querySelector(".submenu-panel");
+
+  if (submenuPanel.classList.contains("hide-fade")){
+
+    submenuPanel.classList.remove("hide-fade");
+    submenuPanel.classList.add("show-fade");
+  }
+  
+}
+
+
+
 
