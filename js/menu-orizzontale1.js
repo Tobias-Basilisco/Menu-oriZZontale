@@ -11,6 +11,9 @@ if (window.innerWidth >= screanWidthBreakpoint) {
     evento='click';
 }
 
+//BORRAR ESTO
+  evento ='click';
+
 //   SPOSTARE SOTTOMENU SOTTO
 
 function moveDivsToEndOfNav(){
@@ -60,17 +63,19 @@ function showSubmenuPanelTableCentered(panelTable){
           
         submenuPanelTableCentered.classList.remove("show-fade");
       }
-      ,1000);
+      ,500);
       submenuPanelTableCentered.classList.add("hide-fade");
     }
   }    
 }
 
 
-// SHOW / HIDE 
+// SHOW / HIDE SOTTOMENU MEGAMENU 4 LIVELLI
 
  
 // Seleccionar todos los elementos con la clase deseada
+
+
 var menuItem = document.querySelectorAll('.menu-item');
 
 // Iterar sobre los elementos y agregar el event listener
@@ -100,11 +105,32 @@ function showMegamenu4Livelli (targetElement){
         
       submenuPanel.classList.remove("show-fade");
     }
-    ,1000);
+    ,500);
     submenuPanel.classList.add("hide-fade");
+  }  
+}
+
+// SHOW / HIDE SOTTO SOTTO MENU MEGAMENU 4 LIVELLI
+
+var submenuItem = document.querySelectorAll('.submenu-item');
+
+// Iterar sobre los elementos y agregar el event listener
+submenuItem.forEach(elemento => {
+  elemento.addEventListener("mouseover", () => {
+    // Ejecutar la función y pasar el elemento clicado como argumento
+    showSubSubMegamenu4Livelli(elemento);
+  });
+});
+
+function showSubSubMegamenu4Livelli(targetElement) {
+  let submenuPanelTable = targetElement.querySelector(".submenu-panel-table");
+
+  if (submenuPanelTable.classList.contains("hide-fade")){
+
+    submenuPanelTable.classList.remove("hide-fade");
+    submenuPanelTable.classList.add("show-fade");
   }
-  
-  
+
 }
 
 

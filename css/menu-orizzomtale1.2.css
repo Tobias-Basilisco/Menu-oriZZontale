@@ -189,21 +189,21 @@ nav i {
 }
 
 
-/* .menu li:hover .submenu-panel {
-    display: block;
-}
- */
-
-
-.submenu li:hover .submenu-panel-table {
+#tendina:hover .submenu-panel {
     display: block;
 }
 
 
 
+#tendina .submenu li:hover .submenu-panel-table {
+    display: block;
+}
 
 
-.submenu li:hover .sub-submenu-tendina-panel {
+
+
+
+#tendina .submenu li:hover .sub-submenu-tendina-panel {
     display: block;
 }
 
