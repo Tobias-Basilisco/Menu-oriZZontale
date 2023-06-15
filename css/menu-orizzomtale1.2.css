@@ -23,6 +23,7 @@ header{
     background-color: #aea6ee55;
     height: 100%;
     box-shadow: 0px 0px 8px 4px #989494f5;
+    position: relative;
 
 }
 
@@ -197,12 +198,17 @@ nav i {
     box-shadow: 0px 0px 8px 4px #989494f5;
 
     
-    display: none;
-    position: absolute;
-    left: 25vw;
-    top: 200px;
+    width: 800px;
+    margin: 0 auto;
+
 
 }
+
+.hide {
+    display: none;
+}
+
+
 
 .has-table {
     position: relative;
@@ -219,9 +225,7 @@ nav i {
     display: block;
 }
 
-.has-table:hover .submenu-panel-table-centered {
-    display: block;
-}
+
 
 .show{
     display: block;
@@ -369,6 +373,12 @@ nav li a {
 } */
 
 
+.submenu-panel-table-centered-container{
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 100%;
 
 
+}
 

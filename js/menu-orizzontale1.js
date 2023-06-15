@@ -13,8 +13,8 @@ if (window.innerWidth >= 1000) {
 
 function moveDivsToEndOfNav(){
 
-    var submenuPanelTableCentered = document.querySelector('.submenu-panel-table-centered');
-    var nav = document.querySelector('nav');
+    var submenuPanelTableCentered = document.querySelector('.submenu-panel-table-centered-container');
+    var nav = document.querySelector('header');
     nav.appendChild(submenuPanelTableCentered);
 }
 
@@ -35,11 +35,18 @@ elementsWithHas.forEach(elemento => {
 
 
 var element8WithHas = document.getElementById('menu-8');
-// alert(element8WithHas.classList);
+
+
 element8WithHas.addEventListener(evento, () => {
-    // Ejecutar la función y pasar el elemento clicado como argumento
-    showSubmenuPanelTableCentered("panel-table.centered-8");
-  });
+  // Ejecutar la función y pasar el elemento clicado como argumento
+  showSubmenuPanelTableCentered("panel-table-centered-8-container");
+});
+
+
+/* element8WithHas.addEventListener(evento, prova);
+function prova() {
+    alert("prova");
+  } */
 
 
 
@@ -48,7 +55,11 @@ element8WithHas.addEventListener(evento, () => {
 function showSubmenuPanelTableCentered(panelTable){
     // alert("function show");
     // alert(elementWithHasTable.classList);
-    var submenuPanelTableCentered = document.getElementById(panelTable);
+    var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
+    // alert(submenuPanelTableCenteredContainer.classList);
+    var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
+    // alert(submenuPanelTableCentered.classList); 
+    submenuPanelTableCentered.classList.remove("hide");
     submenuPanelTableCentered.classList.add("show");
     
 }
