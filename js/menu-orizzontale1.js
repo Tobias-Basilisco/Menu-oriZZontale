@@ -144,7 +144,29 @@ function showSubSubMegamenu4Livelli(targetElement) {
 
 }
 
+// SHOW / HIDE SOTTO MENU TENDINA
 
+
+var menuItemTendina = document.querySelectorAll('.menu-item.tendina');
+
+// Iterar sobre los elementos y agregar el event listener
+menuItemTendina.forEach(elemento => {
+  elemento.addEventListener(evento, () => {
+    // Ejecutar la función y pasar el elemento clicado como argumento
+    showSubmenuTendina(elemento);
+  });
+});
+
+function showSubmenuTendina(targetElement){
+  // alert("function");
+  let submenuPanel = targetElement.querySelector(".submenu-panel");
+
+  if (submenuPanel.classList.contains("hide-fade")){
+
+    submenuPanel.classList.remove("hide-fade");
+    submenuPanel.classList.add("show-fade");
+  }
+}
 
 
 

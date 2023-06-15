@@ -57,7 +57,7 @@ nav ul {
 }
 
 #ricerca {
-    background-color: green;
+    background-color: #a92082;
     height: 30px;
     width: 100px;
 }
@@ -189,9 +189,9 @@ nav i {
 }
 
 
-#tendina:hover .submenu-panel {
+/* #tendina:hover .submenu-panel {
     display: block;
-}
+} */
 
 
 
