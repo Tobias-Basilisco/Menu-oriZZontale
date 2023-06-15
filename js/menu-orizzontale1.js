@@ -1,4 +1,6 @@
-if (window.innerWidth >= 1000) {
+const screanWidthBreakpoint = 1000;
+
+if (window.innerWidth >= screanWidthBreakpoint) {
     moveDivsToEndOfNav();
   
      //MOUSEOVER VS CLICK
@@ -54,13 +56,15 @@ function prova() {
 
 function showSubmenuPanelTableCentered(panelTable){
     // alert("function show");
-    // alert(elementWithHasTable.classList);
     var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
-    // alert(submenuPanelTableCenteredContainer.classList);
     var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
-    // alert(submenuPanelTableCentered.classList); 
-    submenuPanelTableCentered.classList.remove("hide");
-    submenuPanelTableCentered.classList.add("show");
+
+    // if (submenuPanelTableCentered.classList.contains("hide-fade"))
+    submenuPanelTableCentered.classList.remove("hide-fade");
+    submenuPanelTableCentered.classList.add("show-fade");
+
+
+
     
 }
 
