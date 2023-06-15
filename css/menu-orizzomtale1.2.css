@@ -114,7 +114,8 @@ nav ul {
 
 .sub-submenu{
     display: flex;
-    width: 50vw;
+    /* width: 50vw; */
+    width: 800px;
     text-align: center;
     height: max-content;
 
