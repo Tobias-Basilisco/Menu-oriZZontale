@@ -55,31 +55,33 @@ function prova() {
 
 function showSubmenuPanelTableCentered(panelTable){
 
-  
-
-  // alert("function show");
-  var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
-  var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
-
-  if (submenuPanelTableCentered.classList.contains("hide-fade")){
-
-    submenuPanelTableCentered.classList.remove("hide-fade");
-    submenuPanelTableCentered.classList.add("show-fade");
-  }
+  if (window.innerWidth >= screanWidthBreakpoint) {
 
 
-  //esto despues se cambia por click fuera o mouseover otro elemento
+    // alert("function show");
+    var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
+    var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
 
-  else if (submenuPanelTableCentered.classList.contains("show-fade")){
+    if (submenuPanelTableCentered.classList.contains("hide-fade")){
 
-    setTimeout(() => {
-      var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
-      var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
-        
-      submenuPanelTableCentered.classList.remove("show-fade");
+      submenuPanelTableCentered.classList.remove("hide-fade");
+      submenuPanelTableCentered.classList.add("show-fade");
     }
-    ,1000);
-    submenuPanelTableCentered.classList.add("hide-fade");
+
+
+    //esto despues se cambia por click fuera o mouseover otro elemento
+
+    else if (submenuPanelTableCentered.classList.contains("show-fade")){
+
+      setTimeout(() => {
+        var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
+        var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
+          
+        submenuPanelTableCentered.classList.remove("show-fade");
+      }
+      ,1000);
+      submenuPanelTableCentered.classList.add("hide-fade");
+    }
   }    
 }
 
