@@ -90,8 +90,24 @@ function showMegamenu4Livelli (targetElement){
     submenuPanel.classList.remove("hide-fade");
     submenuPanel.classList.add("show-fade");
   }
+
+  //esto despues se cambia por click fuera o mouseover otro elemento
+
+  else if (submenuPanel.classList.contains("show-fade")){
+
+    setTimeout(() => {
+      let submenuPanel = targetElement.querySelector(".submenu-panel");
+        
+      submenuPanel.classList.remove("show-fade");
+    }
+    ,1000);
+    submenuPanel.classList.add("hide-fade");
+  }
+  
   
 }
+
+
 
 
 
