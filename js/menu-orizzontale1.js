@@ -5,10 +5,10 @@ if (window.innerWidth >= screanWidthBreakpoint) {
   
      //MOUSEOVER VS CLICK
       evento='mouseover';
-  }
+}
   
-  else {
-    evento='click';
+else {
+  evento='click';
 }
 
 //BORRAR ESTO
@@ -241,6 +241,8 @@ function hideSubmenus(classQuerySubmenuPanel){
     },500);
   }
 }
+
+//HIDE SUBSUBMENUS
 
 var buttonCloseSubSubmenus = document.getElementById('close-sub-submenus');
 buttonCloseSubSubmenus.addEventListener("click", () => {
