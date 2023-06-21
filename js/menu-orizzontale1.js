@@ -214,6 +214,15 @@ submenuItem.forEach(elemento => {
 
 function showSubSubMegamenu4Livelli(targetElement) {
   let submenuPanelTable = targetElement.querySelector(".submenu-panel-table");
+  let allSubmenuPanelTables = document.querySelectorAll(".submenu-panel-table");
+  let allSubmenuPanelTablesButThis = [];
+
+
+  for (let i = 0; i < allSubmenuPanelTables.length; i++) {
+    if (allSubmenuPanelTables[i] !== submenuPanelTable) {
+      allSubmenuPanelTablesButThis.push(allSubmenuPanelTables[i]);
+    }
+  }
 
   if (submenuPanelTable.classList.contains("hide-fade")){
 
@@ -230,6 +239,26 @@ function showSubSubMegamenu4Livelli(targetElement) {
     }
     ,500);
     submenuPanelTable.classList.add("hide-fade");
+  }
+
+  for (var i = 0; i < allSubmenuPanelTablesButThis.length; i++) {
+
+    allSubmenuPanelTablesButThis[i].classList.add("hide-fade");
+    setTimeout(() => {
+      let allSubmenuPanelTables = document.querySelectorAll(".submenu-panel-table");
+      let allSubmenuPanelTablesButThis = [];
+    
+      for (let i = 0; i < allSubmenuPanelTables.length; i++) {
+        if (allSubmenuPanelTables[i] !== submenuPanelTable) {
+          allSubmenuPanelTablesButThis.push(allSubmenuPanelTables[i]);
+        }
+      }      
+
+      allSubmenuPanelTablesButThis[i].classList.remove("show-fade");
+      }
+    ,500);
+    
+    // vinculateArrows();
   }
 
 }
