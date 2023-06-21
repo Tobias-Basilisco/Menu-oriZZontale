@@ -354,6 +354,15 @@ function showSubSubmenuTendina(targetElement){
   // alert("function");
 
 let subSubmenuTendinaPanel = targetElement.querySelector(".sub-submenu-tendina-panel");
+let allSubSubmenuTendinaPanels = document.querySelectorAll(".sub-submenu-tendina-panel");
+  let allSubSubmenuTendinaPanelsButThis = [];
+
+
+  for (let i = 0; i < allSubSubmenuTendinaPanels.length; i++) {
+    if (allSubSubmenuTendinaPanels[i] !== subSubmenuTendinaPanel) {
+      allSubSubmenuTendinaPanelsButThis.push(allSubSubmenuTendinaPanels[i]);
+    }
+  }
 
   if (subSubmenuTendinaPanel.classList.contains("hide-fade")){
 
@@ -370,6 +379,26 @@ let subSubmenuTendinaPanel = targetElement.querySelector(".sub-submenu-tendina-p
     }
     ,500);
     subSubmenuTendinaPanel.classList.add("hide-fade");
+  }
+
+  for (var i = 0; i < allSubSubmenuTendinaPanelsButThis.length; i++) {
+
+    allSubSubmenuTendinaPanelsButThis[i].classList.add("hide-fade");
+    setTimeout(() => {
+      let allSubSubmenuTendinaPanels = document.querySelectorAll(".sub-submenu-tendina-panel");
+      let allSubSubmenuTendinaPanelsButThis = [];
+    
+      for (let i = 0; i < allSubSubmenuTendinaPanels.length; i++) {
+        if (allSubSubmenuTendinaPanels[i] !== subSubmenuTendinaPanel) {
+          allSubSubmenuTendinaPanelsButThis.push(allSubSubmenuTendinaPanels[i]);
+        }
+      }      
+
+      allSubSubmenuTendinaPanelsButThis[i].classList.remove("show-fade");
+      }
+    ,500);
+    
+    // vinculateArrows();
   }
 }
 
