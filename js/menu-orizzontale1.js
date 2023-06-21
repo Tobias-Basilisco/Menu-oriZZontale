@@ -89,6 +89,17 @@ menuItem.forEach(elemento => {
 
 function showMegamenu4Livelli (targetElement){
   let submenuPanel = targetElement.querySelector(".submenu-panel");
+  let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
+  let allSubmenuPanelsButThis = [];
+
+
+
+  for (let i = 0; i < allSubmenuPanels.length; i++) {
+    if (allSubmenuPanels[i] !== submenuPanel) {
+      allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
+    }
+  }
+
 
   if (submenuPanel.classList.contains("hide-fade")){
 
@@ -107,7 +118,31 @@ function showMegamenu4Livelli (targetElement){
     }
     ,500);
     submenuPanel.classList.add("hide-fade");
-  }  
+  }
+  
+  for (var i = 0; i < allSubmenuPanelsButThis.length; i++) {
+
+    allSubmenuPanelsButThis[i].classList.add("hide-fade");
+    setTimeout(() => {
+      let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
+      let allSubmenuPanelsButThis = [];
+    
+      for (let i = 0; i < allSubmenuPanels.length; i++) {
+        if (allSubmenuPanels[i] !== submenuPanel) {
+          allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
+        }
+      }      
+
+      allSubmenuPanelsButThis[i].classList.remove("show-fade");
+      }
+    ,500);
+    
+    // vinculateArrows();
+  }
+  
+
+
+
 }
 
 // SHOW / HIDE SOTTO SOTTO MENU MEGAMENU 4 LIVELLI
