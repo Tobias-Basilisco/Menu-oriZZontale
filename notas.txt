@@ -1,9 +1,5 @@
-segunda version: tres niveles, dos columnas verticales 
-tercera version: tres niveles, del enu se desprende un panel como en el la version 1 
-
-hace js que saque el div de paanel 8 del flujo y lo meta al final del nav como en menu desplegable para min width=1000px
-hacer js que espeje todo si e menu item se encuentra a mas de la mitad de la pantalla
 
 
+show hide subsubmenu tendina
 
-hacer la version con el menu desde abajo 
+hacer la version con el menu desde abajo y desde la derecha
