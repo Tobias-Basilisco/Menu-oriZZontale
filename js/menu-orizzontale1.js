@@ -242,6 +242,10 @@ function hideSubmenus(classQuerySubmenuPanel){
   }
 }
 
+var buttonCloseSubSubmenus = document.getElementById('close-sub-submenus');
+buttonCloseSubSubmenus.addEventListener("click", () => {
 
+  hideSubmenus(".sub-submenu-tendina-panel");
+});
 
 
