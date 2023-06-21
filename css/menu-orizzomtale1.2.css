@@ -27,7 +27,7 @@ header{
 
 }
 
-.container {
+.header-container {
     width: 80%;
     margin: 0 auto;
 
@@ -383,3 +383,10 @@ nav li a {
 button{
     margin-top: 800px;
 }
+
+.logo-hamb{
+    display: flex;
+    justify-content: space-between;
+}
+
+

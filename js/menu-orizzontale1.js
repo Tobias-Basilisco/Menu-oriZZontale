@@ -252,3 +252,42 @@ buttonCloseSubSubmenus.addEventListener("click", () => {
 });
 
 
+
+
+
+
+// APRI/CHIUDI MENU
+
+closeAll();
+
+function closeAll(){
+
+  let menu = document.getElementById('apriMenu');
+  let ham = document.getElementById('hamburger');
+  var container = document.querySelector(".container");
+  var documento = document.documentElement;
+
+
+  setTimeout(() => {
+    if(!menu.classList.contains("hide-fade")){
+    
+      documento.addEventListener('click', function(event) {
+
+        var esDentroDelDiv = container.contains(event.target);
+        var esDentroHam = ham.contains(event.target);
+
+        if (!esDentroDelDiv && !esDentroHam) {
+          
+          hideSubmenus(".submenu-panel");
+          hideSubmenus(".submenu-panel-table-centered");
+        
+
+          hideSubmenus(".sub-submenu-tendina-panel");
+          hideSubmenus(".submenu-panel-table");
+                  // vinculateArrows();
+        }
+      })
+    };
+  }, 1000);
+}
+
