@@ -224,6 +224,7 @@ var buttonCloseSubmenus = document.getElementById('close-submenus');
 buttonCloseSubmenus.addEventListener("click", () => {
 
   hideSubmenus(".submenu-panel");
+  hideSubmenus(".submenu-panel-table-centered");
 });
 
 function hideSubmenus(classQuerySubmenuPanel){
