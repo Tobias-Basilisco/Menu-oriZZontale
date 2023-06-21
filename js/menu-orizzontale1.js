@@ -95,9 +95,6 @@ function showMegamenu4Livelli (targetElement){
 
   hideSubmenus(".submenu-panel-table-centered");
 
-
-
-
   for (let i = 0; i < allSubmenuPanels.length; i++) {
     if (allSubmenuPanels[i] !== submenuPanel) {
       allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
@@ -199,12 +196,25 @@ menuItemTendina.forEach(elemento => {
 function showSubmenuTendina(targetElement){
   // alert("function");
   let submenuPanel = targetElement.querySelector(".submenu-panel");
+  let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
+  let allSubmenuPanelsButThis = [];
+
+  hideSubmenus(".submenu-panel-table-centered");
+
+  for (let i = 0; i < allSubmenuPanels.length; i++) {
+    if (allSubmenuPanels[i] !== submenuPanel) {
+      allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
+    }
+  }
+
 
   if (submenuPanel.classList.contains("hide-fade")){
 
     submenuPanel.classList.remove("hide-fade");
     submenuPanel.classList.add("show-fade");
   }
+
+  //esto despues se cambia por click fuera o mouseover otro elemento
 
   else if (submenuPanel.classList.contains("show-fade")){
 
@@ -216,6 +226,27 @@ function showSubmenuTendina(targetElement){
     ,500);
     submenuPanel.classList.add("hide-fade");
   }
+  
+  for (var i = 0; i < allSubmenuPanelsButThis.length; i++) {
+
+    allSubmenuPanelsButThis[i].classList.add("hide-fade");
+    setTimeout(() => {
+      let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
+      let allSubmenuPanelsButThis = [];
+    
+      for (let i = 0; i < allSubmenuPanels.length; i++) {
+        if (allSubmenuPanels[i] !== submenuPanel) {
+          allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
+        }
+      }      
+
+      allSubmenuPanelsButThis[i].classList.remove("show-fade");
+      }
+    ,500);
+    
+    // vinculateArrows();
+  }
+  
 
 }
 
