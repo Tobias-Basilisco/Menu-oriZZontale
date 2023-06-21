@@ -18,9 +18,11 @@ else {
 
 function moveDivsToEndOfNav(){
 
-    var submenuPanelTableCentered = document.querySelector('.submenu-panel-table-centered-container');
+    var submenuPanelTableCentered = document.querySelectorAll('.submenu-panel-table-centered-container');
     var nav = document.querySelector('header');
-    nav.appendChild(submenuPanelTableCentered);
+    for (let i = 0; i < submenuPanelTableCentered.length; i++){
+      nav.appendChild(submenuPanelTableCentered[i]);
+    }
 }
 
 
@@ -37,6 +39,12 @@ element8WithHas.addEventListener(evento, () => {
   showSubmenuPanelTableCentered("panel-table-centered-8-container");
 });
 
+var element82WithHas = document.getElementById('menu-8-2');
+element82WithHas.addEventListener(evento, () => {
+  // Ejecutar la función y pasar el elemento clicado como argumento
+  showSubmenuPanelTableCentered("panel-table-centered-8-2-container");
+});
+
 function showSubmenuPanelTableCentered(panelTable){
 
   if (window.innerWidth >= screanWidthBreakpoint) {
@@ -46,6 +54,17 @@ function showSubmenuPanelTableCentered(panelTable){
     // alert("function show");
     var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
     var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
+    let allSubmenuPanelTableCentered = document.querySelectorAll(".submenu-panel-table-centered");
+    let allSubmenuPanelTableCenteredButThis = [];
+  
+  
+    for (let i = 0; i < allSubmenuPanelTableCentered.length; i++) {
+      if (allSubmenuPanelTableCentered[i] !== submenuPanelTableCentered) {
+        allSubmenuPanelTableCenteredButThis.push(allSubmenuPanelTableCentered[i]);
+      }
+    }
+  
+
 
     if (submenuPanelTableCentered.classList.contains("hide-fade")){
 
@@ -67,7 +86,34 @@ function showSubmenuPanelTableCentered(panelTable){
       ,500);
       submenuPanelTableCentered.classList.add("hide-fade");
     }
-  }    
+    
+    for (var i = 0; i < allSubmenuPanelTableCenteredButThis.length; i++) {
+
+      allSubmenuPanelTableCenteredButThis[i].classList.add("hide-fade");
+      setTimeout(() => {
+        var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
+        var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
+        let allSubmenuPanelsButThis = [];
+      
+        for (let i = 0; i < allSubmenuPanelTableCentered.length; i++) {
+          if (allSubmenuPanelTableCentered[i] !== submenuPanelTableCentered) {
+            allSubmenuPanelTableCenteredButThis.push(allSubmenuPanelTableCentered[i]);
+          }
+        }      
+  
+        allSubmenuPanelTableCenteredButThis[i].classList.remove("show-fade");
+        }
+      ,500);
+      
+      // vinculateArrows();
+    }
+
+
+
+
+  }
+  
+  
 }
 
 
