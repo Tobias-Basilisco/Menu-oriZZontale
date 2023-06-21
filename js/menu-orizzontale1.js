@@ -246,6 +246,7 @@ var buttonCloseSubSubmenus = document.getElementById('close-sub-submenus');
 buttonCloseSubSubmenus.addEventListener("click", () => {
 
   hideSubmenus(".sub-submenu-tendina-panel");
+  hideSubmenus(".submenu-panel-table");
 });
 
 
