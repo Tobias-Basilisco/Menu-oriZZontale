@@ -40,8 +40,9 @@ element8WithHas.addEventListener(evento, () => {
 function showSubmenuPanelTableCentered(panelTable){
 
   if (window.innerWidth >= screanWidthBreakpoint) {
+    hideSubmenus(".submenu-panel");
 
-
+    
     // alert("function show");
     var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
     var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
@@ -91,6 +92,9 @@ function showMegamenu4Livelli (targetElement){
   let submenuPanel = targetElement.querySelector(".submenu-panel");
   let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
   let allSubmenuPanelsButThis = [];
+
+  hideSubmenus(".submenu-panel-table-centered");
+
 
 
 
