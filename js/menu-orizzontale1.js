@@ -76,7 +76,7 @@ function showSubmenuPanelTableCentered(panelTable){
 // Seleccionar todos los elementos con la clase deseada
 
 
-var menuItem = document.querySelectorAll('.menu-item');
+var menuItem = document.querySelectorAll('.menu-item.megamenu');
 
 // Iterar sobre los elementos y agregar el event listener
 menuItem.forEach(elemento => {
@@ -147,7 +147,7 @@ function showSubSubMegamenu4Livelli(targetElement) {
 // SHOW / HIDE SOTTO MENU TENDINA
 
 
-var menuItemTendina = document.querySelectorAll('.menu-item .tendina');
+var menuItemTendina = document.querySelectorAll('.menu-item.tendina');
 
 // Iterar sobre los elementos y agregar el event listener
 menuItemTendina.forEach(elemento => {
@@ -215,3 +215,32 @@ let subSubmenuTendinaPanel = targetElement.querySelector(".sub-submenu-tendina-p
     subSubmenuTendinaPanel.classList.add("hide-fade");
   }
 }
+
+
+
+//HIDE SUBMENUS
+
+var buttonCloseSubmenus = document.getElementById('close-submenus');
+buttonCloseSubmenus.addEventListener("click", () => {
+
+  hideSubmenus(".submenu-panel");
+});
+
+function hideSubmenus(classQuerySubmenuPanel){
+
+  let allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel);
+
+  for (var i = 0; i < allSubmenuPanels.length; i++) {
+    allSubmenuPanels[i].classList.add("hide-fade");
+    setTimeout(() => {
+      allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel);
+      for (var i = 0; i < allSubmenuPanels.length; i++) {
+        allSubmenuPanels[i].classList.remove("show-fade");
+      }
+    },500);
+  }
+}
+
+
+
+
