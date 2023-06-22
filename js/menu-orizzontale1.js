@@ -110,75 +110,75 @@ element82WithHas.addEventListener(evento, () => {
 
 function showSubmenuPanelTableCentered(panelTable){
 
-  if (window.innerWidth >= screanWidthBreakpoint) {
-    hideSubmenus(".submenu-panel");
-
-    hideSubmenus(".sub-submenu-tendina-panel");
-    hideSubmenus(".submenu-panel-table");
-
-
-    
-    // alert("function show");
-    var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
-    var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
-    let allSubmenuPanelTableCentered = document.querySelectorAll(".submenu-panel-table-centered");
-    let allSubmenuPanelTableCenteredButThis = [];
   
+  hideSubmenus(".submenu-panel");
+
+  hideSubmenus(".sub-submenu-tendina-panel");
+  hideSubmenus(".submenu-panel-table");
+
+
   
-    for (let i = 0; i < allSubmenuPanelTableCentered.length; i++) {
-      if (allSubmenuPanelTableCentered[i] !== submenuPanelTableCentered) {
-        allSubmenuPanelTableCenteredButThis.push(allSubmenuPanelTableCentered[i]);
-      }
+  // alert("function show");
+  var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
+  var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
+  let allSubmenuPanelTableCentered = document.querySelectorAll(".submenu-panel-table-centered");
+  let allSubmenuPanelTableCenteredButThis = [];
+
+
+  for (let i = 0; i < allSubmenuPanelTableCentered.length; i++) {
+    if (allSubmenuPanelTableCentered[i] !== submenuPanelTableCentered) {
+      allSubmenuPanelTableCenteredButThis.push(allSubmenuPanelTableCentered[i]);
     }
-  
-
-
-    if (submenuPanelTableCentered.classList.contains("hide-fade")){
-
-      submenuPanelTableCentered.classList.remove("hide-fade");
-      submenuPanelTableCentered.classList.add("show-fade");
-    }
-
-
-    //esto despues se cambia por click fuera o mouseover otro elemento
-
-    else if (submenuPanelTableCentered.classList.contains("show-fade")){
-
-      setTimeout(() => {
-        var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
-        var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
-          
-        submenuPanelTableCentered.classList.remove("show-fade");
-      }
-      ,500);
-      submenuPanelTableCentered.classList.add("hide-fade");
-    }
-
-    for (var i = 0; i < allSubmenuPanelTableCenteredButThis.length; i++) {
-
-      allSubmenuPanelTableCenteredButThis[i].classList.add("hide-fade");
-      setTimeout(() => {
-        var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
-        var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
-        let allSubmenuPanelsButThis = [];
-      
-        for (let i = 0; i < allSubmenuPanelTableCentered.length; i++) {
-          if (allSubmenuPanelTableCentered[i] !== submenuPanelTableCentered) {
-            allSubmenuPanelTableCenteredButThis.push(allSubmenuPanelTableCentered[i]);
-          }
-        }      
-  
-        allSubmenuPanelTableCenteredButThis[i].classList.remove("show-fade");
-        }
-      ,500);
-      
-      // vinculateArrows();
-    }
-
-
-
-
   }
+
+
+
+  if (submenuPanelTableCentered.classList.contains("hide-fade")){
+
+    submenuPanelTableCentered.classList.remove("hide-fade");
+    submenuPanelTableCentered.classList.add("show-fade");
+  }
+
+
+  //esto despues se cambia por click fuera o mouseover otro elemento
+
+  else if (submenuPanelTableCentered.classList.contains("show-fade")){
+
+    setTimeout(() => {
+      var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
+      var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
+        
+      submenuPanelTableCentered.classList.remove("show-fade");
+    }
+    ,500);
+    submenuPanelTableCentered.classList.add("hide-fade");
+  }
+
+  for (var i = 0; i < allSubmenuPanelTableCenteredButThis.length; i++) {
+
+    allSubmenuPanelTableCenteredButThis[i].classList.add("hide-fade");
+    setTimeout(() => {
+      var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
+      var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
+      let allSubmenuPanelsButThis = [];
+    
+      for (let i = 0; i < allSubmenuPanelTableCentered.length; i++) {
+        if (allSubmenuPanelTableCentered[i] !== submenuPanelTableCentered) {
+          allSubmenuPanelTableCenteredButThis.push(allSubmenuPanelTableCentered[i]);
+        }
+      }      
+
+      allSubmenuPanelTableCenteredButThis[i].classList.remove("show-fade");
+      }
+    ,500);
+    
+    // vinculateArrows();
+  }
+
+
+
+
+  
   
   
 }
