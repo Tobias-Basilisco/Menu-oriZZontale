@@ -28,6 +28,8 @@ function moveDivsToEndOfNav(){
 
 // APRI/CHIUDI MENU
 
+
+
 document.getElementById('hamburger').addEventListener('click', manage_menu);
 
 function manage_menu(){
@@ -70,17 +72,13 @@ function manage_menu(){
         var esDentroHam = ham.contains(event.target);
 
         if (!esDentroDelDiv && !esDentroHam) {
-          menu.classList.remove("show-fade");
+          menu.classList.remove("show-menu");
           setTimeout(() => {
           menu.classList.add("hide-fade");
           ham.classList.remove("hide-fade");
           },500);
           menu.classList.add("hide-fade");
-          hideSubmenus(".submenu-panel");
-          hideSubmenus(".submenu-panel-table-centered");
-
-          hideSubmenus(".sub-submenu-tendina-panel");
-          hideSubmenus(".submenu-panel-table");
+          closeAll();
 
 
                   // vinculateArrows();
