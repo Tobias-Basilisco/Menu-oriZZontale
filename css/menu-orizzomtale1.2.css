@@ -102,11 +102,7 @@ nav ul {
 }
 
 .submenu {
-    height: auto;
 
-    background-color: #cfcaf1;
-    border: solid 1px #999;
-    box-shadow: 0px 0px 8px 4px #989494f5;
 
 }
 
@@ -202,24 +198,6 @@ nav i {
     position: relative;
 }
 
-
-/* #tendina:hover .submenu-panel {
-    display: block;
-} */
-
-
-
-/* #tendina .submenu li:hover .submenu-panel-table {
-    display: block;
-} */
-
-
-
-
-
-/* #tendina .submenu li:hover .sub-submenu-tendina-panel {
-    display: block;
-} */
 
 
 
@@ -413,6 +391,7 @@ button{
     .menu {
         flex-direction: column;
         height: 100%;
+        border: solid 1px #ccc;
     }
 
     #ricerca {
@@ -434,7 +413,17 @@ button{
 
   .submenu-panel{
     position: static;
+    width: 100%;
   }
+
+  .submenu{
+    width: 100%;
+    background-color:#f4a8de;
+  }
+
+  .menu li .submenu {
+    width: 100%;
+}
 
   .menu-item{
     width: 100%;
@@ -460,5 +449,13 @@ button{
 @media (min-width: 1150px ){
     #menu-orizzontale{
         display: flex
+    }
+
+    .submenu {
+    
+        background-color: #cfcaf1;
+        border: solid 1px #999;
+        box-shadow: 0px 0px 8px 4px #989494f5;
+    
     }
 }
