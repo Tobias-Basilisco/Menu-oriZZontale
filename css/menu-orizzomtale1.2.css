@@ -143,7 +143,6 @@ nav ul {
 
 .menu li a {
     background-color: transparent;
-    /* height: 30px; */
     padding: 0 16px;
     text-decoration: none;
     /* position: relative; */
@@ -350,10 +349,7 @@ nav li a {
 
 
 
-/* .sub-submenu-item a {
-    height: fit-content;
-    margin: 7px 0;
-} */
+
 
 
 .submenu-panel-table-centered-container{
@@ -425,7 +421,41 @@ button{
 
     #menu-orizzontale{
         display: none;
+        padding-bottom: 30px;
     }
+
+    .menu-item,
+  .submenu-item,
+  .sub-submenu-item,
+  .sub-sub-submenu-item {
+    /* margin: 10px; */
+    border-bottom: 1px solid #bbc3d7;
+  }
+
+  .submenu-panel{
+    position: static;
+  }
+
+  .menu-item{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    align-items: baseline;
+    /* background-color: yellow; */
+  }
+
+  .menu-item a{
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(242, 244, 246);
+  }
+
+
+
+  
+}
+
 
 @media (min-width: 1150px ){
     #menu-orizzontale{
