@@ -26,6 +26,71 @@ function moveDivsToEndOfNav(){
 }
 
 
+// APRI/CHIUDI MENU
+
+document.getElementById('hamburger').addEventListener('click', manage_menu);
+
+function manage_menu(){
+
+  let menu = document.getElementById('apriMenu');
+  let ham = document.getElementById('hamburger');
+  var container = document.querySelector(".container");
+  var documento = document.documentElement;
+
+  if (!menu.classList.contains("show-menu")){
+
+    menu.classList.remove("hide-fade");
+    menu.classList.add("show-menu");
+    // vinculateArrows();
+  }
+
+  else {
+    menu.classList.add("hide-fade");
+    menu.classList.remove("show-menu");
+    // vinculateArrows();
+  }
+    
+  if (menu.classList.contains("hide-fade")){
+      
+    ham.classList.remove("hide-fade");
+    ham.classList.add("show-fade");
+  }
+
+  else {
+    ham.classList.remove("show-fade");
+    ham.classList.add("hide-fade");
+  }
+
+  setTimeout(() => {
+    if(!menu.classList.contains("hide-fade")){
+    
+      documento.addEventListener('click', function(event) {
+
+        var esDentroDelDiv = container.contains(event.target);
+        var esDentroHam = ham.contains(event.target);
+
+        if (!esDentroDelDiv && !esDentroHam) {
+          menu.classList.remove("show-fade");
+          setTimeout(() => {
+          menu.classList.add("hide-fade");
+          ham.classList.remove("hide-fade");
+          },500);
+          menu.classList.add("hide-fade");
+          hideSubmenus(".submenu-panel");
+          hideSubmenus(".submenu-panel-table-centered");
+
+          hideSubmenus(".sub-submenu-tendina-panel");
+          hideSubmenus(".submenu-panel-table");
+
+
+                  // vinculateArrows();
+        }
+      })
+    };
+  }, 1000);
+}
+
+
 
 
 

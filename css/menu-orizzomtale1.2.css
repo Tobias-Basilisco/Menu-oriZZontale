@@ -377,6 +377,12 @@ nav li a {
 
 }
 
+.show-menu{
+    display: flex !important;
+    /* animation: fadeIn 0.5s forwards; */
+
+}
+
 @keyframes fadeIn {
     from{
         opacity: 0;
