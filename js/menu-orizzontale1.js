@@ -34,7 +34,7 @@ document.getElementById('hamburger').addEventListener('click', manage_menu);
 
 function manage_menu(){
 
-  let menu = document.getElementById('apriMenu');
+  let menu = document.getElementById('menu-orizzontale');
   let ham = document.getElementById('hamburger');
   var container = document.querySelector(".container");
   var documento = document.documentElement;
@@ -511,7 +511,7 @@ closeAll();
 
 function closeAll(){
 
-  let menu = document.getElementById('apriMenu');
+  let menu = document.getElementById('menu-orizzontale');
   let ham = document.getElementById('hamburger');
   var container = document.querySelector(".container");
   var documento = document.documentElement;

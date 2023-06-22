@@ -67,9 +67,6 @@ nav ul {
     height: fit-content;
 }
 
-#apriMenu{
-    display: none;
-}
 
 #ricerca {
     background-color: #a92082;
@@ -412,10 +409,26 @@ button{
     #hamburger{
         display: block;
     }
-}
+
+    #menu-orizzontale{
+        flex-direction: column-reverse;
+    }
+
+    .menu {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    #ricerca {
+        margin: 30px auto;    
+    }
+
+    #menu-orizzontale{
+        display: none;
+    }
 
 @media (min-width: 1150px ){
-    #apriMenu{
+    #menu-orizzontale{
         display: flex
     }
 }
