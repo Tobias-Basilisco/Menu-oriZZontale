@@ -440,7 +440,7 @@ button{
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    height: 40px;
+    height: fit-content;
     align-items: baseline;
     /* background-color: yellow; */
   }
