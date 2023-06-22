@@ -44,18 +44,19 @@ nav ul {
 
 .logo img {
     height: 60px;
-    margin: 30px 0;
 }
 
 .logo-hamb{
     display: flex;
     justify-content: space-between;
+    padding: 30px 0;
+    align-items: center;
 }
 
 
 #hamburger{
     cursor: pointer;
-    margin: 30px 0;
+    display: none;
 
 }
 
@@ -66,11 +67,17 @@ nav ul {
     height: fit-content;
 }
 
+#apriMenu{
+    display: none;
+}
+
 #ricerca {
     background-color: #a92082;
     height: 30px;
     width: 100px;
 }
+
+
 
 .menu{
     display: flex;
@@ -78,6 +85,7 @@ nav ul {
     background-color: #cfcaf1;
     height: 30px;
     align-items: center;
+    overflow: hidden;
 }
 
 .menu, 
@@ -394,3 +402,14 @@ button{
     margin-top: 800px;
 }
 
+@media (max-width: 1149px){
+    #hamburger{
+        display: block;
+    }
+}
+
+@media (min-width: 1150px ){
+    #apriMenu{
+        display: flex
+    }
+}
