@@ -45,9 +45,19 @@ nav ul {
 .logo img {
     height: 60px;
     margin: 30px 0;
-
 }
 
+.logo-hamb{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#hamburger{
+    cursor: pointer;
+    margin: 30px 0;
+
+}
 
 .logo {
     overflow: hidden;
@@ -383,10 +393,4 @@ nav li a {
 button{
     margin-top: 800px;
 }
-
-.logo-hamb{
-    display: flex;
-    justify-content: space-between;
-}
-
 
