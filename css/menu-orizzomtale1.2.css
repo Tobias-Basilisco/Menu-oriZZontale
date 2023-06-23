@@ -466,6 +466,10 @@ button{
 
 }
 
+.submenu-panel-table-centered-container{
+    position: static;
+}
+
   @keyframes stretchIn {
     from{
         opacity: 0;
