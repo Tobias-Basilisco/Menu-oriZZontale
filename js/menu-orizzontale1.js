@@ -242,7 +242,6 @@ function showMegamenu4Livelli (targetElement){
   
   let submenu = submenuPanel.querySelector(".submenu");
   let alturaPanel = submenu.offsetHeight;
-  // alert(alturaPanel);
   document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
 
 
@@ -391,6 +390,10 @@ function showSubmenuTendina(targetElement){
     ,500);
     submenuPanel.classList.add("hide-fade");
   }
+
+  let submenu = submenuPanel.querySelector(".submenu");
+  let alturaPanel = submenu.offsetHeight;
+  document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
   
   for (var i = 0; i < allSubmenuPanelsButThis.length; i++) {
 
