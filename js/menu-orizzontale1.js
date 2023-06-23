@@ -205,39 +205,47 @@ function showMegamenu4Livelli (targetElement){
   let submenuPanel = targetElement.querySelector(".submenu-panel");
   let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
   let allSubmenuPanelsButThis = [];
-
+  
+  
   hideSubmenus(".submenu-panel-table-centered");
-
+  
   hideSubmenus(".sub-submenu-tendina-panel");
   hideSubmenus(".submenu-panel-table");
-
-
+  
+  
+  
   for (let i = 0; i < allSubmenuPanels.length; i++) {
     if (allSubmenuPanels[i] !== submenuPanel) {
       allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
     }
   }
-
-
+  
+  
   if (submenuPanel.classList.contains("hide-fade")){
-
+    
     submenuPanel.classList.remove("hide-fade");
     submenuPanel.classList.add("show-fade");
   }
-
+  
   //esto despues se cambia por click fuera o mouseover otro elemento
-
+  
   else if (submenuPanel.classList.contains("show-fade")){
-
+    
     setTimeout(() => {
       let submenuPanel = targetElement.querySelector(".submenu-panel");
-        
+      
       submenuPanel.classList.remove("show-fade");
     }
     ,500);
     submenuPanel.classList.add("hide-fade");
   }
   
+  let submenu = submenuPanel.querySelector(".submenu");
+  let alturaPanel = submenu.offsetHeight;
+  // alert(alturaPanel);
+  document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
+
+
   for (var i = 0; i < allSubmenuPanelsButThis.length; i++) {
 
     allSubmenuPanelsButThis[i].classList.add("hide-fade");

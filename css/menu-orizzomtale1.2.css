@@ -4,13 +4,12 @@
     box-sizing: border-box;
     font-size: 16px; 
     font-family: 'PT Sans', sans-serif;
-    font-weight: ;
 
   
 }
 
 :root {
-    --altura-panel-m1: 330px;
+    --altura-panel: 330px;
 }
 
 ul {
@@ -458,7 +457,7 @@ button{
   .show-fade{
     display: block;
     animation: stretchIn 0.5s forwards;
-    height: var(--altura-panel-m1);
+    height: var(--altura-panel);
 }
 
 .hide-fade {
@@ -477,7 +476,7 @@ button{
     to{
         opacity: 1;
         transform: scaleY(100%);
-        height: var(--altura-panel-m1);
+        height: var(--altura-panel);
      }
     }
 
@@ -485,7 +484,7 @@ button{
     from{
         opacity: 1;
         transform: scaleY(100%);
-        height: var(--altura-panel-m1);
+        height: var(--altura-panel);
 
     }
 
