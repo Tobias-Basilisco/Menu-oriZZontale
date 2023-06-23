@@ -41,30 +41,30 @@ function manage_menu(){
 
   if (!menu.classList.contains("show-menu")){
 
-    menu.classList.remove("hide-fade");
+    menu.classList.remove("hide-menu");
     menu.classList.add("show-menu");
     // vinculateArrows();
   }
 
   else {
-    menu.classList.add("hide-fade");
+    menu.classList.add("hide-menu");
     menu.classList.remove("show-menu");
     // vinculateArrows();
   }
     
-  if (menu.classList.contains("hide-fade")){
+  if (menu.classList.contains("hide-menu")){
       
-    ham.classList.remove("hide-fade");
-    ham.classList.add("show-fade");
+    ham.classList.remove("hide-menu");
+    ham.classList.add("show-menu");
   }
 
   else {
-    ham.classList.remove("show-fade");
-    ham.classList.add("hide-fade");
+    ham.classList.remove("show-menu");
+    ham.classList.add("hide-menu");
   }
 
   setTimeout(() => {
-    if(!menu.classList.contains("hide-fade")){
+    if(!menu.classList.contains("hide-menu")){
     
       documento.addEventListener('click', function(event) {
 
@@ -74,10 +74,10 @@ function manage_menu(){
         if (!esDentroDelDiv && !esDentroHam) {
           menu.classList.remove("show-menu");
           setTimeout(() => {
-          menu.classList.add("hide-fade");
-          ham.classList.remove("hide-fade");
+          menu.classList.add("hide-menu");
+          ham.classList.remove("hide-menu");
           },500);
-          menu.classList.add("hide-fade");
+          menu.classList.add("hide-menu");
           closeAll();
 
 

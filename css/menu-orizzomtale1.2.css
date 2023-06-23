@@ -9,6 +9,10 @@
   
 }
 
+:root {
+    --altura-panel-m1: 330px;
+}
+
 ul {
     list-style: none;
 }
@@ -350,9 +354,16 @@ nav li a {
 
 .show-menu{
     display: flex !important;
-    /* animation: fadeIn 0.5s forwards; */
+    animation: fadeIn 0.5s forwards;
 
 }
+
+.hide-menu {
+    animation: fadeOut 0.5s forwards;
+
+}
+
+
 
 @keyframes fadeIn {
     from{
@@ -446,17 +457,17 @@ button{
 
   .show-fade{
     display: block;
-    animation: fadeIn 0.5s forwards;
-    height: 330px;
+    animation: stretchIn 0.5s forwards;
+    height: var(--altura-panel-m1);
 }
 
 .hide-fade {
-    animation: fadeOut 0.5s forwards;
+    animation: stretchOut 0.5s forwards;
     /* height: 0; */
 
 }
 
-  @keyframes fadeIn {
+  @keyframes stretchIn {
     from{
         opacity: 0;
         transform: scaleY(0);
@@ -466,15 +477,15 @@ button{
     to{
         opacity: 1;
         transform: scaleY(100%);
-        height: 330px;
+        height: var(--altura-panel-m1);
      }
     }
 
-    @keyframes fadeOut {
+    @keyframes stretchOut {
     from{
         opacity: 1;
         transform: scaleY(100%);
-        height: 330;
+        height: var(--altura-panel-m1);
 
     }
 
