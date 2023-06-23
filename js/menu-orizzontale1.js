@@ -241,27 +241,34 @@ function showMegamenu4Livelli (targetElement){
   for (var i = 0; i < allSubmenuPanelsButThis.length; i++) {
 
     allSubmenuPanelsButThis[i].classList.add("hide-fade");
+  
+  }
+
     setTimeout(() => {
+      let submenuPanel = targetElement.querySelector(".submenu-panel");
       let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
       let allSubmenuPanelsButThis = [];
-    
+      // alert(targetElement.classList);
+        
       for (let i = 0; i < allSubmenuPanels.length; i++) {
         if (allSubmenuPanels[i] !== submenuPanel) {
           allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
         }
-      }      
+      }
 
+      for (var i = 0; i < allSubmenuPanelsButThis.length; i++){
+      // alert(allSubmenuPanelsButThis[i].classList);
       allSubmenuPanelsButThis[i].classList.remove("show-fade");
       }
+    }
     ,500);
-    
     // vinculateArrows();
-  }
+}
   
 
 
 
-}
+
 
 // SHOW / HIDE SOTTO SOTTO MENU MEGAMENU 4 LIVELLI
 
