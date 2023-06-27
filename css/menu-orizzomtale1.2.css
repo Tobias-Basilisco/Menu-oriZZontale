@@ -104,10 +104,7 @@ nav ul {
 
 }
 
-.submenu {
 
-
-}
 
 .submenu-megamenu-4-livelli {
     position: relative;
@@ -437,7 +434,7 @@ button{
 
   .menu li .submenu {
     width: 100%;
-}
+    }
 
   .menu-item{
     width: 100%;
@@ -458,17 +455,38 @@ button{
     display: block;
     animation: stretchIn 0.5s forwards;
     height: var(--altura-panel);
-}
+    }   
 
-.hide-fade {
+    .hide-fade {
     animation: stretchOut 0.5s forwards;
     /* height: 0; */
 
-}
+    }
 
-.submenu-panel-table-centered-container{
-    position: static;
-}
+    .submenu-panel-table-centered-container{
+        position: static;
+    }
+
+    .submenu-panel-table-centered {
+        background-color:#f4a8de;
+        border: none;
+        box-shadow: none;
+    
+        width: 100%;
+        margin: 0;
+    
+    }
+
+    .sub-submenu{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        height: max-content;
+    
+    
+    }
+    
 
   @keyframes stretchIn {
     from{
