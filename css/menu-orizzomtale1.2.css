@@ -203,9 +203,7 @@ nav i {
     text-decoration: none;
 }
   
-.menu li .submenu li a:hover {
-    border-bottom: 1px solid #a7370b;
-}
+
   
 .menu li .submenu {
     width: fit-content;
@@ -552,7 +550,11 @@ button{
 
     .submenu-panel-table-centered {
         margin: 0 auto;
-    }   
+    } 
+    
+    .submenu-panel-table-centered-container{
+        margin: 0 auto;
+    }
 
     .submenu-megamenu-4-livelli .sub-sub-submenu-item a,
     .submenu-panel-table-centered .sub-sub-submenu-item a {
@@ -569,6 +571,19 @@ button{
     .submenu .menu-item-content .frecce-zone-a, .sub-submenu .menu-item-content .frecce-zone-a {
         display: none;
     }
+
+    .menu li .submenu li a:hover, .submenu li a:hover, .sub-submenu li a:hover {
+        border-bottom: 1px solid #a7370b;
+    }
+
+    .submenu-panel-table-centered .sub-submenu{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+
 
 }
 
