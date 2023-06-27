@@ -327,6 +327,18 @@ nav li a {
 
 }
 
+.menu-item-content {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item-content a {
+    margin-right: auto; /* Alinea a la izquierda empujando el icono a la derecha */
+}
+
+.frecce-zone-a {
+    margin-left: auto; /* Alinea el icono a la derecha */
+}
 
 
 @keyframes fadeIn {
@@ -459,6 +471,7 @@ button{
         flex-direction: column;
     }
     
+    
 
   @keyframes stretchIn {
     from{
@@ -490,6 +503,7 @@ button{
 
     }
     }
+
 
 
   
@@ -546,4 +560,8 @@ button{
     .submenu-panel-table-centered .sub-submenu-item a{
         line-height: 20px;
     }
+}
+
+i {
+    padding-right: 30px;
 }
