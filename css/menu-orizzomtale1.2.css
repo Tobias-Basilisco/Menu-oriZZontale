@@ -340,6 +340,10 @@ nav li a {
     margin-left: auto; /* Alinea el icono a la derecha */
 }
 
+nav i {
+    padding-right: 30px;
+}
+
 
 @keyframes fadeIn {
     from{
@@ -470,6 +474,7 @@ button{
         display: none;
         flex-direction: column;
     }
+
     
     
 
@@ -560,8 +565,10 @@ button{
     .submenu-panel-table-centered .sub-submenu-item a{
         line-height: 20px;
     }
+
+    .submenu .menu-item-content .frecce-zone-a, .sub-submenu .menu-item-content .frecce-zone-a {
+        display: none;
+    }
+
 }
 
-i {
-    padding-right: 30px;
-}
