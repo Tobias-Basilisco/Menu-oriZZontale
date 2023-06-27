@@ -81,7 +81,6 @@ nav ul {
 
 .menu{
     display: flex;
-    /* margin: 30px 0 ; */
     background-color: #cfcaf1;
     height: 30px;
     align-items: center;
@@ -182,7 +181,6 @@ nav i {
     box-shadow: 0px 0px 8px 4px #989494f5;
 
     width: 800px;
-    margin: 0 auto;
 
     display: none;
 }
@@ -222,7 +220,6 @@ nav i {
 .sub-submenu-item,
 .sub-sub-submenu-item {
     height: fit-content;
-    /* padding: -20px 0; */
 }
 
 .submenu-item a,
@@ -231,17 +228,9 @@ nav i {
     margin-bottom: 10px;
 }
 
-.submenu-megamenu-4-livelli .sub-submenu-item a,
-.submenu-panel-table-centered .sub-submenu-item a{
-    line-height: 20px;
-}
 
-.submenu-megamenu-4-livelli .sub-sub-submenu-item a,
-.submenu-panel-table-centered .sub-sub-submenu-item a {
-    margin-bottom: 20px;
-    font-size: 12px;
-    line-height: 16px;
-}
+
+
 
 
   
@@ -263,9 +252,7 @@ nav li a {
     background-color: transparent;
 }
 
-.sub-sub-submenu{
-    padding-top: 12px;
-}
+
 
 
 
@@ -397,7 +384,6 @@ button{
   .submenu-item,
   .sub-submenu-item,
   .sub-sub-submenu-item {
-    /* margin: 10px; */
     border-bottom: 1px solid #bbc3d7;
   }
 
@@ -454,7 +440,6 @@ button{
         box-shadow: none;
     
         width: 100%;
-        margin: 0;
     
     }
 
@@ -542,4 +527,23 @@ button{
         font-weight: 400;
     }
 
+    .sub-sub-submenu{
+    padding-top: 12px;
+    } 
+
+    .submenu-panel-table-centered {
+        margin: 0 auto;
+    }   
+
+    .submenu-megamenu-4-livelli .sub-sub-submenu-item a,
+    .submenu-panel-table-centered .sub-sub-submenu-item a {
+        margin-bottom: 20px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .submenu-megamenu-4-livelli .sub-submenu-item a,
+    .submenu-panel-table-centered .sub-submenu-item a{
+        line-height: 20px;
+    }
 }

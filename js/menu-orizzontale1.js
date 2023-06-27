@@ -154,6 +154,11 @@ function showSubmenuPanelTableCentered(panelTable){
     submenuPanelTableCentered.classList.add("hide-fade");
   }
 
+  let subSubmenu = submenuPanelTableCentered.querySelector(".sub-submenu");
+  let alturaPanel = subSubmenu.offsetHeight;
+  document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
+
+
   for (var i = 0; i < allSubmenuPanelTableCenteredButThis.length; i++) {
 
     allSubmenuPanelTableCenteredButThis[i].classList.add("hide-fade");
