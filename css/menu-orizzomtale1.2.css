@@ -127,10 +127,7 @@ nav ul {
     flex-direction: column;
 }
 
-.sub-submenu-item {
-    flex-basis: 20%;
 
-}
 
 .sub-submenu a, {
     text-align: center;
@@ -255,11 +252,7 @@ nav li a {
     line-height: 30px;
 }  
 
-/* .submenu-item,
-.sub-sub-submenu-item {
-    margin-top: 5px;
-}
- */
+
 .submenu{
     margin: 0;
 }
@@ -303,18 +296,6 @@ nav li a {
     position: relative;
 } */
 
-.submenu-megamenu-4-livelli .sub-submenu-item,
-.submenu-panel-table-centered .sub-submenu-item {
-    font-weight: bold;
-}
-
-.submenu-panel-table-centered .sub-sub-submenu-item {
-    font-weight:400;
-}
-
-.submenu-megamenu-4-livelli .sub-sub-submenu-item{
-    font-weight: 400;
-}
 
 .sub-submenu-tendina {
     height: auto;
@@ -486,6 +467,12 @@ button{
     
     
     }
+
+    .sub-sub-submenu {
+        height: max-content;
+        display: none;
+        flex-direction: column;
+    }
     
 
   @keyframes stretchIn {
@@ -536,4 +523,23 @@ button{
         box-shadow: 0px 0px 8px 4px #989494f5;
     
     }
+
+    .sub-submenu-item {
+        flex-basis: 20%;
+    
+    }
+
+    .submenu-megamenu-4-livelli .sub-submenu-item,
+    .submenu-panel-table-centered .sub-submenu-item {
+        font-weight: bold;
+    }
+
+    .submenu-panel-table-centered .sub-sub-submenu-item {
+        font-weight:400;
+    }
+
+    .submenu-megamenu-4-livelli .sub-sub-submenu-item{
+        font-weight: 400;
+    }
+
 }
