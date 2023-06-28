@@ -464,14 +464,20 @@ button{
     }
     
     .menu-item-content a {
-        margin-right: auto; 
         /* Alinea a la izquierda empujando el icono a la derecha */
     }
     
     .frecce-zone-a {
-        margin-left: auto; 
-        /* Alinea el icono a la derecha */
+        margin-left: auto;
+        height: 30px;
+        width: 80px; 
+        background-color: yellow;
     }
+
+    .frecce-zone-a i {
+        float: right;
+        height: 16px;
+    line-height: 30px;    }
 
     
     
