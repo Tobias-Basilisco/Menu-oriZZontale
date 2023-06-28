@@ -211,13 +211,30 @@ function showMegamenu4Livelli (targetElement){
 
 var submenuItem = document.querySelectorAll('.submenu-megamenu-4-livelli .submenu-item');
 
-// Iterar sobre los elementos y agregar el event listener
-submenuItem.forEach(elemento => {
-  elemento.addEventListener("mouseover", () => {
-    // Ejecutar la función y pasar el elemento clicado como argumento
-    showSubSubMegamenu4Livelli(elemento);
+if (window.innerWidth >= screanWidthBreakpoint) {
+
+  // Iterar sobre los elementos y agregar el event listener
+  submenuItem.forEach(elemento => {
+    elemento.addEventListener("mouseover", () => {
+      // Ejecutar la función y pasar el elemento clicado como argumento
+      showSubSubMegamenu4Livelli(elemento);
+    });
   });
-});
+
+}
+
+/* else if (window.innerWidth < screanWidthBreakpoint) {
+
+  // Iterar sobre los elementos y agregar el event listener
+  submenuItem.forEach(elemento => {
+    elemento.querySelector(".frecce-zone-a").addEventListener("click", () => {
+      // Ejecutar la función y pasar el elemento clicado como argumento
+      showSubSubMegamenu4Livelli(elemento);
+    });
+  });
+
+} */
+
 
 function showSubSubMegamenu4Livelli(targetElement) {
   let submenuPanelTable = targetElement.querySelector(".submenu-panel-table");
@@ -631,62 +648,70 @@ function closeAll(){
 
 
 function vinculateArrows(){
-  // alert("arrow")
-  setTimeout(() => {
 
-    let arrowAll = document.querySelectorAll(".frecce");
-    var liElement = [];
-  // alert(liElement[0].classList);
+  if (window.innerWidth < screanWidthBreakpoint) {
 
+    // alert("arrow")
+    setTimeout(() => {
 
-    for (var i = 0; i < arrowAll.length; i++){
-      liElement[i] = arrowAll[i].closest('li');
-    
-    }
+      let arrowAll = document.querySelectorAll(".frecce");
+      var liElement = [];
     // alert(liElement[0].classList);
 
 
-    for (var i = 0; i < arrowAll.length; i++){
-
-      if (arrowAll[i].classList.contains("frecce-opened")){
-        arrowAll[i].classList.remove("frecce-opened");
-        arrowAll[i].classList.add("frecce-closed");
+      for (var i = 0; i < arrowAll.length; i++){
+        liElement[i] = arrowAll[i].closest('li');
+      
       }
+      // alert(liElement[0].classList);
 
-      if (liElement[i].getElementsByTagName("div")[2].classList.contains("show-fade")){
-        
-        arrowAll[i].classList.remove("frecce-closed");
-        arrowAll[i].classList.add("frecce-opened");
+
+      for (var i = 0; i < arrowAll.length; i++){
+
+        if (arrowAll[i].classList.contains("frecce-opened")){
+          arrowAll[i].classList.remove("frecce-opened");
+          arrowAll[i].classList.add("frecce-closed");
+        }
+
+        if (liElement[i].getElementsByTagName("div")[2].classList.contains("show-fade")){
+          
+          arrowAll[i].classList.remove("frecce-closed");
+          arrowAll[i].classList.add("frecce-opened");
+        }
       }
     }
+    ,501);
   }
-,501);
 }
 
 function vinculateArrowsTableCentered(panelTable, elementWithHas){
-  // alert("arrow")
-  setTimeout(() => {
 
-    let arrowAll = document.querySelectorAll(".frecce");
-    var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
-    var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
-    // alert(submenuPanelTableCentered.classList);
-   
+  if (window.innerWidth < screanWidthBreakpoint) {
+
+    // alert("arrow")
+    setTimeout(() => {
+
+      let arrowAll = document.querySelectorAll(".frecce");
+      var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
+      var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
+      // alert(submenuPanelTableCentered.classList);
+    
 
 
-    for (var i = 0; i < arrowAll.length; i++){
+      for (var i = 0; i < arrowAll.length; i++){
 
-      if (arrowAll[i].classList.contains("frecce-opened")){
-        arrowAll[i].classList.remove("frecce-opened");
-        arrowAll[i].classList.add("frecce-closed");
-      }
+        if (arrowAll[i].classList.contains("frecce-opened")){
+          arrowAll[i].classList.remove("frecce-opened");
+          arrowAll[i].classList.add("frecce-closed");
+        }
 
-      if (submenuPanelTableCentered.classList.contains("show-fade")){
-        
-        elementWithHas.querySelector(".frecce").classList.remove("frecce-closed");
-        elementWithHas.querySelector(".frecce").classList.add("frecce-opened");
+        if (submenuPanelTableCentered.classList.contains("show-fade")){
+          
+          elementWithHas.querySelector(".frecce").classList.remove("frecce-closed");
+          elementWithHas.querySelector(".frecce").classList.add("frecce-opened");
+        }
       }
     }
+    ,501);
   }
-,501);
 }
