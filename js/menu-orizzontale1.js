@@ -462,20 +462,20 @@ else if (window.innerWidth < screanWidthBreakpoint) {
 
   element8WithHas.querySelector(".frecce-zone-a").addEventListener(evento, () => {
     // Ejecutar la función y pasar el elemento clicado como argumento
-    showSubmenuPanelTableCentered("panel-table-centered-8-container");
+    showSubmenuPanelTableCentered("panel-table-centered-8-container", element8WithHas);
   });
 
   var element82WithHas = document.getElementById('menu-8-2');
   element82WithHas.querySelector(".frecce-zone-a").addEventListener(evento, () => {
     // Ejecutar la función y pasar el elemento clicado como argumento
-    showSubmenuPanelTableCentered("panel-table-centered-8-2-container");
+    showSubmenuPanelTableCentered("panel-table-centered-8-2-container", element82WithHas);
   });
   vinculateArrows();
 
 
 }
 
-function showSubmenuPanelTableCentered(panelTable){
+function showSubmenuPanelTableCentered(panelTable, elementWithHas){
 
   
   hideSubmenus(".submenu-panel");
@@ -544,7 +544,7 @@ function showSubmenuPanelTableCentered(panelTable){
       }
     ,500);
     
-    vinculateArrows();
+    vinculateArrowsTableCentered(panelTable, elementWithHas);
   }
 
 
@@ -552,7 +552,7 @@ function showSubmenuPanelTableCentered(panelTable){
 
   
   
-  vinculateArrows();
+  vinculateArrowsTableCentered(panelTable, elementWithHas);
   
 }
 
@@ -657,6 +657,34 @@ function vinculateArrows(){
         
         arrowAll[i].classList.remove("frecce-closed");
         arrowAll[i].classList.add("frecce-opened");
+      }
+    }
+  }
+,501);
+}
+
+function vinculateArrowsTableCentered(panelTable, elementWithHas){
+  // alert("arrow")
+  setTimeout(() => {
+
+    let arrowAll = document.querySelectorAll(".frecce");
+    var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
+    var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
+    // alert(submenuPanelTableCentered.classList);
+   
+
+
+    for (var i = 0; i < arrowAll.length; i++){
+
+      if (arrowAll[i].classList.contains("frecce-opened")){
+        arrowAll[i].classList.remove("frecce-opened");
+        arrowAll[i].classList.add("frecce-closed");
+      }
+
+      if (submenuPanelTableCentered.classList.contains("show-fade")){
+        
+        elementWithHas.querySelector(".frecce").classList.remove("frecce-closed");
+        elementWithHas.querySelector(".frecce").classList.add("frecce-opened");
       }
     }
   }
