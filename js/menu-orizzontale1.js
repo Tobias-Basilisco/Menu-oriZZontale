@@ -107,14 +107,13 @@ var menuItem = document.querySelectorAll('.menu-item.megamenu');
 
 if (window.innerWidth >= screanWidthBreakpoint) {
 
-
-// Iterar sobre los elementos y agregar el event listener
-menuItem.forEach(elemento => {
-  elemento.addEventListener(evento, () => {
-    // Ejecutar la función y pasar el elemento clicado como argumento
-    showMegamenu4Livelli(elemento);
+  // Iterar sobre los elementos y agregar el event listener
+  menuItem.forEach(elemento => {
+    elemento.addEventListener(evento, () => {
+      // Ejecutar la función y pasar el elemento clicado como argumento
+      showMegamenu4Livelli(elemento);
+    });
   });
-});
 
 }
 
@@ -126,11 +125,12 @@ else if (window.innerWidth < screanWidthBreakpoint){
     // Ejecutar la función y pasar el elemento clicado como argumento
     showMegamenu4Livelli(elemento);
   });
-});
+  });
 
 }
 
 function showMegamenu4Livelli (targetElement){
+
   let submenuPanel = targetElement.querySelector(".submenu-panel");
   let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
   let allSubmenuPanelsButThis = [];
@@ -274,13 +274,27 @@ function showSubSubMegamenu4Livelli(targetElement) {
 
 var menuItemTendina = document.querySelectorAll('.menu-item.tendina');
 
-// Iterar sobre los elementos y agregar el event listener
-menuItemTendina.forEach(elemento => {
-  elemento.addEventListener(evento, () => {
-    // Ejecutar la función y pasar el elemento clicado como argumento
-    showSubmenuTendina(elemento);
+if (window.innerWidth >= screanWidthBreakpoint) {
+
+  // Iterar sobre los elementos y agregar el event listener
+  menuItemTendina.forEach(elemento => {
+    elemento.addEventListener(evento, () => {
+      // Ejecutar la función y pasar el elemento clicado como argumento
+      showSubmenuTendina(elemento);
+    });
   });
-});
+}
+
+else if (window.innerWidth < screanWidthBreakpoint) {
+
+  // Iterar sobre los elementos y agregar el event listener
+  menuItemTendina.forEach(elemento => {
+    elemento.querySelector(".frecce-zone-a").addEventListener(evento, () => {
+      // Ejecutar la función y pasar el elemento clicado como argumento
+      showSubmenuTendina(elemento);
+    });
+  });
+}
 
 function showSubmenuTendina(targetElement){
   // alert("function");
