@@ -137,10 +137,8 @@ nav ul {
     background-color: transparent;
     padding: 0 16px;
     text-decoration: none;
-    /* position: relative; */
     display: block;
 
-    /* border-bottom: 1px solid #b9b6b1; */
 
 }
 
@@ -277,9 +275,7 @@ nav li a {
 }
 
 
-/* #li-tendina {
-    position: relative;
-} */
+
 
 
 .sub-submenu-tendina {
@@ -325,18 +321,7 @@ nav li a {
 
 }
 
-.menu-item-content {
-    display: flex;
-    align-items: center;
-}
 
-.menu-item-content a {
-    margin-right: auto; /* Alinea a la izquierda empujando el icono a la derecha */
-}
-
-.frecce-zone-a {
-    margin-left: auto; /* Alinea el icono a la derecha */
-}
 
 nav i {
     padding-right: 30px;
@@ -471,6 +456,19 @@ button{
         height: max-content;
         display: none;
         flex-direction: column;
+    }
+
+    .menu-item-content {
+        display: flex;
+        align-items: center;
+    }
+    
+    .menu-item-content a {
+        margin-right: auto; /* Alinea a la izquierda empujando el icono a la derecha */
+    }
+    
+    .frecce-zone-a {
+        margin-left: auto; /* Alinea el icono a la derecha */
     }
 
     
