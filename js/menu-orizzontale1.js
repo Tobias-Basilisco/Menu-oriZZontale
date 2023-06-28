@@ -126,6 +126,7 @@ else if (window.innerWidth < screanWidthBreakpoint){
     showMegamenu4Livelli(elemento);
   });
   });
+  vinculateArrows();
 
 }
 
@@ -294,6 +295,7 @@ else if (window.innerWidth < screanWidthBreakpoint) {
       showSubmenuTendina(elemento);
     });
   });
+  vinculateArrows();
 }
 
 function showSubmenuTendina(targetElement){
@@ -341,22 +343,31 @@ function showSubmenuTendina(targetElement){
   for (var i = 0; i < allSubmenuPanelsButThis.length; i++) {
 
     allSubmenuPanelsButThis[i].classList.add("hide-fade");
-    setTimeout(() => {
-      let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
-      let allSubmenuPanelsButThis = [];
+  } 
+
+  setTimeout(() => {
+    let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
+    let allSubmenuPanelsButThis = [];
+    let submenuPanel = targetElement.querySelector(".submenu-panel");
+    // alert(submenuPanel.classList);
+
+  
+    for (let i = 0; i < allSubmenuPanels.length; i++) {
+      if (allSubmenuPanels[i] !== submenuPanel) {
+        allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
+      }
+    }
     
-      for (let i = 0; i < allSubmenuPanels.length; i++) {
-        if (allSubmenuPanels[i] !== submenuPanel) {
-          allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
-        }
-      }      
+    for (var i = 0; i < allSubmenuPanelsButThis.length; i++) {
 
       allSubmenuPanelsButThis[i].classList.remove("show-fade");
-      }
-    ,500);
-    
-    vinculateArrows();
+    }
   }
+  ,500);
+    
+  
+  vinculateArrows();
+
   
 
 }
@@ -424,6 +435,8 @@ let allSubSubmenuTendinaPanels = document.querySelectorAll(".sub-submenu-tendina
     
     vinculateArrows();
   }
+  vinculateArrows();
+
 }
 
 // SHOW/HIDE TABLE CENTERED
@@ -457,6 +470,8 @@ else if (window.innerWidth < screanWidthBreakpoint) {
     // Ejecutar la función y pasar el elemento clicado como argumento
     showSubmenuPanelTableCentered("panel-table-centered-8-2-container");
   });
+  vinculateArrows();
+
 
 }
 
@@ -537,6 +552,7 @@ function showSubmenuPanelTableCentered(panelTable){
 
   
   
+  vinculateArrows();
   
 }
 
