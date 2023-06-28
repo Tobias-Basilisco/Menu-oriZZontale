@@ -43,13 +43,13 @@ function manage_menu(){
 
     menu.classList.remove("hide-menu");
     menu.classList.add("show-menu");
-    // vinculateArrows();
+    vinculateArrows();
   }
 
   else {
     menu.classList.add("hide-menu");
     menu.classList.remove("show-menu");
-    // vinculateArrows();
+    vinculateArrows();
   }
     
   if (menu.classList.contains("hide-menu")){
@@ -81,7 +81,7 @@ function manage_menu(){
           closeAll();
 
 
-                  // vinculateArrows();
+                  vinculateArrows();
         }
       })
     };
@@ -198,7 +198,7 @@ function showMegamenu4Livelli (targetElement){
       }
     }
     ,500);
-    // vinculateArrows();
+    vinculateArrows();
 }
   
 
@@ -264,7 +264,7 @@ function showSubSubMegamenu4Livelli(targetElement) {
       }
     ,500);
     
-    // vinculateArrows();
+    vinculateArrows();
   }
 
 }
@@ -355,7 +355,7 @@ function showSubmenuTendina(targetElement){
       }
     ,500);
     
-    // vinculateArrows();
+    vinculateArrows();
   }
   
 
@@ -422,23 +422,43 @@ let allSubSubmenuTendinaPanels = document.querySelectorAll(".sub-submenu-tendina
       }
     ,500);
     
-    // vinculateArrows();
+    vinculateArrows();
   }
 }
 
 // SHOW/HIDE TABLE CENTERED
 
 var element8WithHas = document.getElementById('menu-8');
-element8WithHas.addEventListener(evento, () => {
-  // Ejecutar la función y pasar el elemento clicado como argumento
-  showSubmenuPanelTableCentered("panel-table-centered-8-container");
-});
 
-var element82WithHas = document.getElementById('menu-8-2');
-element82WithHas.addEventListener(evento, () => {
-  // Ejecutar la función y pasar el elemento clicado como argumento
-  showSubmenuPanelTableCentered("panel-table-centered-8-2-container");
-});
+if (window.innerWidth >= screanWidthBreakpoint) {
+
+  element8WithHas.addEventListener(evento, () => {
+    // Ejecutar la función y pasar el elemento clicado como argumento
+    showSubmenuPanelTableCentered("panel-table-centered-8-container");
+  });
+
+  var element82WithHas = document.getElementById('menu-8-2');
+  element82WithHas.addEventListener(evento, () => {
+    // Ejecutar la función y pasar el elemento clicado como argumento
+    showSubmenuPanelTableCentered("panel-table-centered-8-2-container");
+  });
+
+}
+
+else if (window.innerWidth < screanWidthBreakpoint) {
+
+  element8WithHas.querySelector(".frecce-zone-a").addEventListener(evento, () => {
+    // Ejecutar la función y pasar el elemento clicado como argumento
+    showSubmenuPanelTableCentered("panel-table-centered-8-container");
+  });
+
+  var element82WithHas = document.getElementById('menu-8-2');
+  element82WithHas.querySelector(".frecce-zone-a").addEventListener(evento, () => {
+    // Ejecutar la función y pasar el elemento clicado como argumento
+    showSubmenuPanelTableCentered("panel-table-centered-8-2-container");
+  });
+
+}
 
 function showSubmenuPanelTableCentered(panelTable){
 
@@ -509,7 +529,7 @@ function showSubmenuPanelTableCentered(panelTable){
       }
     ,500);
     
-    // vinculateArrows();
+    vinculateArrows();
   }
 
 
@@ -586,10 +606,43 @@ function closeAll(){
 
           hideSubmenus(".sub-submenu-tendina-panel");
           hideSubmenus(".submenu-panel-table");
-                  // vinculateArrows();
+                  vinculateArrows();
         }
       })
     };
   }, 1000);
 }
 
+
+function vinculateArrows(){
+  // alert("arrow")
+  setTimeout(() => {
+
+    let arrowAll = document.querySelectorAll(".frecce");
+    var liElement = [];
+  // alert(liElement[0].classList);
+
+
+    for (var i = 0; i < arrowAll.length; i++){
+      liElement[i] = arrowAll[i].closest('li');
+    
+    }
+    // alert(liElement[0].classList);
+
+
+    for (var i = 0; i < arrowAll.length; i++){
+
+      if (arrowAll[i].classList.contains("frecce-opened")){
+        arrowAll[i].classList.remove("frecce-opened");
+        arrowAll[i].classList.add("frecce-closed");
+      }
+
+      if (liElement[i].getElementsByTagName("div")[2].classList.contains("show-fade")){
+        
+        arrowAll[i].classList.remove("frecce-closed");
+        arrowAll[i].classList.add("frecce-opened");
+      }
+    }
+  }
+,501);
+}

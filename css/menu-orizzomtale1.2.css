@@ -480,7 +480,43 @@ button{
         line-height: 30px;    
     }
 
+    .frecce-closed{
+        animation: rotateClosed 0.5s forwards;
+        -webkit-animation: rotateClosed 0.5s forwards;
+        -o-animation: rotateClosed 0.5s forwards;
+    }
     
+    .frecce-opened{
+        animation: rotateOpened 0.5s forwards;
+        -webkit-animation: rotateOpened 0.5s forwards;
+        -o-animation: rotateOpened 0.5s forwards;
+    }
+    
+
+    @keyframes rotateClosed {
+        from {
+          rotate: 90deg;
+          transform: translatex(20px);
+
+        }
+        to {
+          rotate: 0;
+          transform: translateY(0);
+
+        }
+    }
+      
+    @keyframes rotateOpened {
+        from {
+          rotate: 0;
+          transform: translateY(0);
+        }
+        to {
+          rotate: 90deg;
+          transform: translatex(20px);
+
+        }
+    }
     
 
   @keyframes stretchIn {
