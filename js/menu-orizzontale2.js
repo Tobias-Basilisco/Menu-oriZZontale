@@ -227,17 +227,22 @@ if (window.innerWidth >= screanWidthBreakpoint) {
 
 }
 
-/* else if (window.innerWidth < screanWidthBreakpoint) {
+else if (window.innerWidth < screanWidthBreakpoint) {
 
   // Iterar sobre los elementos y agregar el event listener
   submenuItem.forEach(elemento => {
-    elemento.querySelector(".frecce-zone-a").addEventListener("click", () => {
-      // Ejecutar la función y pasar el elemento clicado como argumento
-      showSubSubMegamenu4Livelli(elemento);
-    });
+    if (elemento.querySelector(".frecce-zone-a")){
+    
+      // alert(elemento.querySelector(".frecce-zone-a").classList);
+      elemento.querySelector(".frecce-zone-a").addEventListener("click", () => {
+        // Ejecutar la función y pasar el elemento clicado como argumento
+        showSubSubMegamenu4Livelli(elemento);
+      });
+    }
+
   });
 
-} */
+}
 
 
 function showSubSubMegamenu4Livelli(targetElement) {
