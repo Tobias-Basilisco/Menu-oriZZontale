@@ -541,6 +541,8 @@ function showSubSubmenuTendina(targetElement, panel){
 // SHOW/HIDE TABLE CENTERED
 
 var element8WithHas = document.getElementById('menu-8');
+var element82WithHas = document.getElementById('menu-8-2');
+
 
 if (window.innerWidth >= screanWidthBreakpoint) {
 
@@ -549,7 +551,6 @@ if (window.innerWidth >= screanWidthBreakpoint) {
     showSubmenuPanelTableCentered("panel-table-centered-8-container");
   });
 
-  var element82WithHas = document.getElementById('menu-8-2');
   element82WithHas.addEventListener(evento, () => {
     // Ejecutar la función y pasar el elemento clicado como argumento
     showSubmenuPanelTableCentered("panel-table-centered-8-2-container");
@@ -606,7 +607,6 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
   }
 
 
-  //esto despues se cambia por click fuera o mouseover otro elemento
 
   else if (submenuPanelTableCentered.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
 
@@ -654,6 +654,108 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
   vinculateArrowsTableCentered(panelTable, elementWithHas);
   
 }
+
+// SHOW/HIDE SUBMENU INSIDE TABLE CENTERED
+
+var itemClicked = document.querySelectorAll('.submenu-panel-table-centered-container .sub-submenu-item')
+
+if (window.innerWidth >= screanWidthBreakpoint) {
+
+  
+
+}
+
+else if (window.innerWidth < screanWidthBreakpoint) {
+  // Iterar sobre los elementos y agregar el event listener
+  itemClicked.forEach(elemento => {
+    if (elemento.querySelector(".frecce-zone-a")){
+    
+
+      elemento.querySelector(".frecce-zone-a").addEventListener(evento, () => {
+        // Ejecutar la función y pasar el elemento clicado como argumento
+        showSubSubmenuCentered(elemento, elemento.closest(".submenu-panel-table-centered"));
+      });
+    }
+
+  });
+}
+  
+
+function showSubSubmenuCentered(targetElement, panel){
+  alert("function");
+
+  let subSubSubmenuPanel = targetElement.querySelector(".sub-sub-submenu-panel");
+  let allSubSubSubmenuPanels = document.querySelectorAll("sub-sub-submenu-panel");
+  let allSubSubSubmenuPanelsButThis = [];
+
+
+  for (let i = 0; i < allSubSubSubmenuPanels.length; i++) {
+    if (allSubSubSubmenuPanels[i] !== subSubSubmenuPanel) {
+      allSubSubSubmenuPanelsButThis.push(allSubSubSubmenuPanels[i]);
+    }
+  }
+
+  if (subSubSubmenuPanel.classList.contains("hide-fade")){
+
+    subSubSubmenuPanel.classList.remove("hide-fade");
+    subSubSubmenuPanel.classList.add("show-fade");
+  }
+
+  else if (subSubSubmenuPanel.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
+
+    setTimeout(() => {
+      let subSubSubmenuPanel = targetElement.querySelector(".sub-sub-submenu-panel");
+        
+      subSubSubmenuPanel.classList.remove("show-fade");
+      panel.classList.remove("full-height");
+
+      let subSubmenu = subSubSubmenuPanel.closest(".sub-submenu");
+      let alturaPanel = subSubmenu.offsetHeight;
+      document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
+
+    }
+    ,500);
+    subSubSubmenuPanel.classList.add("hide-fade");
+  }
+
+  let subSubSubmenu = subSubSubmenuPanel.querySelector(".sub-sub-submenu");
+  // alert(subSubmenu.classList);
+  let alturaPanel = subSubSubmenu.offsetHeight;
+  document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
+
+
+  for (var i = 0; i < allSubSubSubmenuPanelsButThis.length; i++) {
+
+    allSubSubSubmenuPanelsButThis[i].classList.add("hide-fade");
+  }
+
+  setTimeout(() => {
+    let subSubSubmenuPanel = targetElement.querySelector(".sub-sub-submenu-panel");
+    let allSubSubSubmenuPanels = document.querySelectorAll("sub-sub-submenu-panel");
+    let allSubSubSubmenuPanelsButThis = [];
+    
+    for (let i = 0; i < allSubSubSubmenuPanels.length; i++) {
+      if (allSubSubSubmenuPanels[i] !== subSubSubmenuPanel) {
+        allSubSubSubmenuPanelsButThis.push(allSubSubSubmenuPanels[i]);
+      }
+    }
+
+    for (var i = 0; i < allSubSubSubmenuPanelsButThis.length; i++) {
+
+      allSubSubSubmenuPanelsButThis[i].classList.remove("show-fade");
+    }
+  }
+  ,500);
+  
+  if (window.innerWidth < screanWidthBreakpoint && !panel.classList.contains("full-height")) {
+
+    panel.classList.add("full-height");
+  }
+
+  vinculateArrows();
+
+}
+
 
 //HIDE SUBMENUS
 
