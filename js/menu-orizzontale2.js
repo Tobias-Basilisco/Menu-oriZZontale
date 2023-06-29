@@ -138,7 +138,10 @@ function showMegamenu4Livelli (targetElement){
   hideSubmenus(".submenu-panel-table-centered");
   
   hideSubmenus(".sub-submenu-tendina-panel");
-  hideSubmenus(".submenu-panel-table");
+  if (window.innerWidth < screanWidthBreakpoint) {
+
+    hideSubmenus(".submenu-panel-table");
+  }
   
   
   
@@ -155,7 +158,6 @@ function showMegamenu4Livelli (targetElement){
     submenuPanel.classList.add("show-fade");
   }
   
-  //esto despues se cambia por click fuera o mouseover otro elemento
   
 
   else if (submenuPanel.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
@@ -217,7 +219,7 @@ if (window.innerWidth >= screanWidthBreakpoint) {
 
   // Iterar sobre los elementos y agregar el event listener
   submenuItem.forEach(elemento => {
-    elemento.addEventListener("mouseover", () => {
+    elemento.addEventListener(evento, () => {
       // Ejecutar la función y pasar el elemento clicado como argumento
       showSubSubMegamenu4Livelli(elemento);
     });
@@ -256,7 +258,7 @@ function showSubSubMegamenu4Livelli(targetElement) {
     submenuPanelTable.classList.add("show-fade");
   }
 
-  else if (submenuPanelTable.classList.contains("show-fade")){
+  else if (submenuPanelTable.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
 
     setTimeout(() => {
       let submenuPanelTable = targetElement.querySelector(".submenu-panel-table");
@@ -270,22 +272,28 @@ function showSubSubMegamenu4Livelli(targetElement) {
   for (var i = 0; i < allSubmenuPanelTablesButThis.length; i++) {
 
     allSubmenuPanelTablesButThis[i].classList.add("hide-fade");
-    setTimeout(() => {
-      let allSubmenuPanelTables = document.querySelectorAll(".submenu-panel-table");
-      let allSubmenuPanelTablesButThis = [];
-    
-      for (let i = 0; i < allSubmenuPanelTables.length; i++) {
-        if (allSubmenuPanelTables[i] !== submenuPanelTable) {
-          allSubmenuPanelTablesButThis.push(allSubmenuPanelTables[i]);
-        }
-      }      
+  }
+
+  setTimeout(() => {
+    let submenuPanelTable = targetElement.querySelector(".submenu-panel-table");
+    let allSubmenuPanelTables = document.querySelectorAll(".submenu-panel-table");
+    let allSubmenuPanelTablesButThis = [];
+  
+    for (let i = 0; i < allSubmenuPanelTables.length; i++) {
+      if (allSubmenuPanelTables[i] !== submenuPanelTable) {
+        allSubmenuPanelTablesButThis.push(allSubmenuPanelTables[i]);
+      }
+    }  
+
+    for (var i = 0; i < allSubmenuPanelTablesButThis.length; i++) {
 
       allSubmenuPanelTablesButThis[i].classList.remove("show-fade");
-      }
-    ,500);
-    
-    vinculateArrows();
+    }
   }
+  ,500);
+  
+  vinculateArrows();
+  
 
 }
 
