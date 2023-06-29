@@ -1,0 +1,636 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px; 
+    font-family: 'PT Sans', sans-serif;
+  
+}
+
+:root {
+    --altura-panel: 330px;
+}
+
+ul {
+    list-style: none;
+}
+
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+header{
+    background-color: #aea6ee55;
+    height: 100%;
+    box-shadow: 0px 0px 8px 4px #989494f5;
+    position: relative;
+
+}
+
+.header-container {
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.logo-hamb{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    align-items: center;
+}
+
+
+#hamburger{
+    cursor: pointer;
+    display: none;
+
+}
+
+.logo {
+    overflow: hidden;
+    /* border-radius: 200%; */
+    width: fit-content;
+    height: fit-content;
+}
+
+
+#ricerca {
+    background-color: #a92082;
+    height: 30px;
+    width: 100px;
+}
+
+
+
+.menu{
+    display: flex;
+    background-color: #cfcaf1;
+    height: 30px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.menu, 
+.submenu,
+.sub-submenu,
+.sub-sub-submenu {
+    list-style: none;
+
+
+}
+
+.submenu,
+.sub-submenu,
+.sub-sub-submenu{
+    padding: 10px;
+
+}
+
+
+
+.submenu-megamenu-4-livelli {
+    position: relative;
+
+}
+
+.sub-submenu{
+    display: flex;
+    /* width: 50vw; */
+    width: 800px;
+    text-align: center;
+    height: max-content;
+
+
+}
+
+.sub-sub-submenu {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.sub-submenu a, {
+    text-align: center;
+}
+  
+
+.menu li a {
+    background-color: transparent;
+    padding: 0 16px;
+    text-decoration: none;
+    display: block;
+
+
+}
+
+
+.sub-sub-submenu li a{
+    display: block;
+
+}
+
+nav i {
+    width: 2px;
+    height: 5px;
+    color: #a70b7b;
+    padding-left: 0 5px;
+}
+  
+.submenu-panel {
+    display: none;
+    position: absolute;
+}
+
+.submenu-panel-table {
+    background-color: #aea6eea7;
+    border: solid 1px #999;
+
+    box-shadow: 0px 0px 8px 4px #989494f5;
+
+    display: none;
+    position: absolute;
+    left: calc(100% + 15px);
+    top: 12px;
+
+}
+
+.submenu-panel-table-centered {
+    background-color: #aea6eea7;
+    border: solid 1px #999;
+    box-shadow: 0px 0px 8px 4px #989494f5;
+
+    width: 800px;
+
+    display: none;
+}
+
+
+
+
+
+.has-table {
+    position: relative;
+}
+
+
+
+
+  
+.menu li .submenu li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+  
+
+  
+.menu li .submenu {
+    width: fit-content;
+}
+
+.menu-item
+ {
+    height: 30px;
+}
+
+.submenu-item,
+.sub-submenu-item,
+.sub-sub-submenu-item {
+    height: fit-content;
+}
+
+.submenu-item a,
+.sub-submenu-item a,
+.sub-sub-submenu-item a {
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+  
+
+
+
+nav li a {
+    line-height: 30px;
+}  
+
+
+.submenu{
+    margin: 0;
+}
+
+
+
+.sub-sub-submenu-item {
+    background-color: transparent;
+}
+
+
+
+
+
+
+.sub-submenu-tendina-panel {
+    /* ajustar la altura con js */
+    /* overflow: hidden; */
+    display: none;
+    position: absolute;
+    top: -11px;
+    left: calc(100% + 10px);
+    width: 100%;
+
+}
+
+.sub-submenu-tendina {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.submenu-tendina li {
+    position: relative;
+}
+
+
+
+
+
+.sub-submenu-tendina {
+    height: auto;
+    background-color: #cfcaf1;
+}
+
+.submenu {
+    text-align: left;
+}
+
+
+
+
+
+
+.submenu-panel-table-centered-container{
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 100%;
+
+}
+
+.show-fade{
+    display: block;
+    animation: fadeIn 0.5s forwards;
+}
+
+.hide-fade {
+    animation: fadeOut 0.5s forwards;
+
+}
+
+.show-menu{
+    display: flex !important;
+    animation: fadeIn 0.5s forwards;
+
+}
+
+.hide-menu {
+    animation: fadeOut 0.5s forwards;
+
+}
+
+
+
+nav i {
+    padding-right: 30px;
+}
+
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from{
+        opacity: 1;
+
+    }
+
+    to{
+        opacity: 0;
+
+    }
+}
+
+
+button{
+    margin-top: 800px;
+}
+
+@media (max-width: 1149px){
+    #hamburger{
+        display: block;
+    }
+
+    #menu-orizzontale{
+        flex-direction: column-reverse;
+    }
+
+    .menu {
+        flex-direction: column;
+        height: 100%;
+        border: solid 1px #ccc;
+    }
+
+    #ricerca {
+        margin: 30px auto;    
+    }
+
+    #menu-orizzontale{
+        display: none;
+        padding-bottom: 30px;
+    }
+
+    .menu-item,
+  .submenu-item,
+  .sub-submenu-item,
+  .sub-sub-submenu-item {
+    border-bottom: 1px solid #bbc3d7;
+  }
+
+  .submenu-panel{
+    position: static;
+    width: 100%;
+    transition: height 0.5s;
+
+  }
+
+  .submenu{
+    width: 100%;
+    background-color:#f4a8de;
+  }
+
+  .menu li .submenu {
+    width: 100%;
+    }
+
+  .menu-item{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+    align-items: baseline;
+    /* background-color: yellow; */
+  }
+
+  .menu-item a{
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(242, 244, 246);
+  }
+
+  .show-fade{
+    display: block;
+    animation: stretchIn 0.5s forwards;
+    height: var(--altura-panel);
+    }   
+
+    .hide-fade {
+    animation: stretchOut 0.5s forwards;
+    /* height: 0; */
+
+    }
+
+    .submenu-panel-table-centered-container{
+        position: static;
+    }
+
+    .submenu-panel-table-centered {
+        background-color:#f4a8de;
+        border: none;
+        box-shadow: none;
+    
+        width: 100%;
+    
+    }
+
+    .sub-submenu{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        height: max-content;
+    
+    
+    }
+
+    .sub-sub-submenu {
+        height: max-content;
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu-item-content {
+        display: flex;
+        align-items: center;
+    }
+    
+    .menu-item-content a {
+        /* Alinea a la izquierda empujando el icono a la derecha */
+    }
+    
+    .frecce-zone-a {
+        margin-left: auto;
+        height: 30px;
+        width: 80px; 
+        background-color: yellow;
+    }
+
+    .frecce-zone-a i {
+        float: right;
+        height: 16px;
+        line-height: 30px;    
+    }
+
+    .frecce-closed{
+        animation: rotateClosed 0.5s forwards;
+        -webkit-animation: rotateClosed 0.5s forwards;
+        -o-animation: rotateClosed 0.5s forwards;
+    }
+    
+    .frecce-opened{
+        animation: rotateOpened 0.5s forwards;
+        -webkit-animation: rotateOpened 0.5s forwards;
+        -o-animation: rotateOpened 0.5s forwards;
+    }
+    
+
+    @keyframes rotateClosed {
+        from {
+          rotate: 90deg;
+          transform: translatex(20px);
+
+        }
+        to {
+          rotate: 0;
+          transform: translateY(0);
+
+        }
+    }
+      
+    @keyframes rotateOpened {
+        from {
+          rotate: 0;
+          transform: translateY(0);
+        }
+        to {
+          rotate: 90deg;
+          transform: translatex(20px);
+
+        }
+    }
+    
+
+  @keyframes stretchIn {
+    from{
+        opacity: 0;
+        transform: scaleY(0);
+        height: 0;
+    }   
+
+    to{
+        opacity: 1;
+        transform: scaleY(100%);
+        height: var(--altura-panel);
+     }
+    }
+
+    @keyframes stretchOut {
+    from{
+        opacity: 1;
+        transform: scaleY(100%);
+        height: var(--altura-panel);
+
+    }
+
+    to{
+        opacity: 0;
+        transform: scaleY(0);
+        height: 0;
+
+
+    }
+    }
+
+
+
+  
+}
+
+
+@media (min-width: 1150px ){
+    #menu-orizzontale{
+        display: flex
+    }
+
+    .submenu {
+    
+        background-color: #cfcaf1;
+        border: solid 1px #999;
+        box-shadow: 0px 0px 8px 4px #989494f5;
+    
+    }
+
+    .sub-submenu-item {
+        flex-basis: 20%;
+    
+    }
+
+    .submenu-megamenu-4-livelli .sub-submenu-item,
+    .submenu-panel-table-centered .sub-submenu-item {
+        font-weight: bold;
+    }
+
+    .submenu-panel-table-centered .sub-sub-submenu-item {
+        font-weight:400;
+    }
+
+    .submenu-megamenu-4-livelli .sub-sub-submenu-item{
+        font-weight: 400;
+    }
+
+    .sub-sub-submenu{
+    padding-top: 12px;
+    } 
+
+    .submenu-panel-table-centered {
+        margin: 0 auto;
+    } 
+    
+    .submenu-panel-table-centered-container{
+        margin: 0 auto;
+    }
+
+    .submenu-megamenu-4-livelli .sub-sub-submenu-item a,
+    .submenu-panel-table-centered .sub-sub-submenu-item a {
+        margin-bottom: 20px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .submenu-megamenu-4-livelli .sub-submenu-item a,
+    .submenu-panel-table-centered .sub-submenu-item a{
+        line-height: 20px;
+    }
+
+    .submenu .menu-item-content .frecce-zone-a, .sub-submenu .menu-item-content .frecce-zone-a {
+        display: none;
+    }
+
+    .menu li .submenu li a:hover, .submenu li a:hover, .sub-submenu li a:hover {
+        border-bottom: 1px solid #a7370b;
+    }
+
+    .submenu-panel-table-centered .sub-submenu{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .submenu-panel{
+        margin-top:-18px
+        ;
+    }
+
+
+
+}
+
