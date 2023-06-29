@@ -332,9 +332,10 @@ function showSubmenuTendina(targetElement){
   let allSubmenuPanelsButThis = [];
 
   hideSubmenus(".submenu-panel-table-centered");
-
-  hideSubmenus(".sub-submenu-tendina-panel");
   hideSubmenus(".submenu-panel-table");
+  if (window.innerWidth < screanWidthBreakpoint){
+    hideSubmenus(".sub-submenu-tendina-panel");
+  }
 
 
   for (let i = 0; i < allSubmenuPanels.length; i++) {
@@ -350,7 +351,6 @@ function showSubmenuTendina(targetElement){
     submenuPanel.classList.add("show-fade");
   }
 
-  //esto despues se cambia por click fuera o mouseover otro elemento
 
   else if (submenuPanel.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
 
@@ -406,7 +406,7 @@ var submenuItemTendina = document.querySelectorAll('.menu-item.tendina .submenu-
 
 // Iterar sobre los elementos y agregar el event listener
 submenuItemTendina.forEach(elemento => {
-  elemento.addEventListener("mouseover", () => {
+  elemento.addEventListener(evento, () => {
     // Ejecutar la función y pasar el elemento clicado como argumento
     showSubSubmenuTendina(elemento);
   });
@@ -432,7 +432,7 @@ let allSubSubmenuTendinaPanels = document.querySelectorAll(".sub-submenu-tendina
     subSubmenuTendinaPanel.classList.add("show-fade");
   }
 
-  else if (subSubmenuTendinaPanel.classList.contains("show-fade")){
+  else if (subSubmenuTendinaPanel.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
 
     setTimeout(() => {
       let subSubmenuTendinaPanel = targetElement.querySelector(".sub-submenu-tendina-panel");
