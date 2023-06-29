@@ -393,14 +393,19 @@ button{
   }
 
   .submenu{
-    width: 100%;
     background-color:#f4a8de;
   }
 
-  .menu li .submenu {
+  .menu li .submenu, .sub-sub-submenu-panel, .submenu li .sub-submenu {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     }
 
+/*     .sub-submenu {
+        width: 95%;
+    }
+ */
   .menu-item{
     width: 100%;
     margin-left: auto;
@@ -491,6 +496,18 @@ button{
         -o-animation: rotateOpened 0.5s forwards;
     }
     
+    .submenu-panel-table{
+        position: static;
+    }
+
+    .submenu-panel-table-centered, .submenu-panel-table {
+        box-shadow: none;
+    }
+
+    .submenu, .sub-submenu, .sub-sub-submenu {
+        padding: 10px 0;
+    }
+
 
     @keyframes rotateClosed {
         from {
@@ -634,3 +651,6 @@ button{
 
 }
 
+.full-height {
+    height: 100% !important;
+}

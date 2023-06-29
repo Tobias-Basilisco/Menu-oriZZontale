@@ -234,9 +234,11 @@ else if (window.innerWidth < screanWidthBreakpoint) {
     if (elemento.querySelector(".frecce-zone-a")){
     
       // alert(elemento.querySelector(".frecce-zone-a").classList);
+      
+
       elemento.querySelector(".frecce-zone-a").addEventListener("click", () => {
         // Ejecutar la función y pasar el elemento clicado como argumento
-        showSubSubMegamenu4Livelli(elemento);
+        showSubSubMegamenu4Livelli(elemento, elemento.closest(".submenu-panel"));
       });
     }
 
@@ -245,7 +247,7 @@ else if (window.innerWidth < screanWidthBreakpoint) {
 }
 
 
-function showSubSubMegamenu4Livelli(targetElement) {
+function showSubSubMegamenu4Livelli(targetElement, panel) {
   let submenuPanelTable = targetElement.querySelector(".submenu-panel-table");
   let allSubmenuPanelTables = document.querySelectorAll(".submenu-panel-table");
   let allSubmenuPanelTablesButThis = [];
@@ -269,10 +271,20 @@ function showSubSubMegamenu4Livelli(targetElement) {
       let submenuPanelTable = targetElement.querySelector(".submenu-panel-table");
         
       submenuPanelTable.classList.remove("show-fade");
+      panel.classList.remove("full-height");
+
+      let submenu = submenuPanelTable.closest(".submenu");
+      let alturaPanel = submenu.offsetHeight;
+      document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
+    
     }
     ,500);
     submenuPanelTable.classList.add("hide-fade");
   }
+
+  let subSubmenu = submenuPanelTable.querySelector(".sub-submenu");
+  let alturaPanel = subSubmenu.offsetHeight;
+  document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
 
   for (var i = 0; i < allSubmenuPanelTablesButThis.length; i++) {
 
@@ -297,7 +309,18 @@ function showSubSubMegamenu4Livelli(targetElement) {
   }
   ,500);
   
-  vinculateArrows();
+  if (window.innerWidth < screanWidthBreakpoint && !panel.classList.contains("full-height")) {
+
+/*     setTimeout(() => {
+ */
+      panel.classList.add("full-height");
+      // alert(panel.style.height);
+
+/*     }
+    ,500);
+ */  }
+
+vinculateArrows();
   
 
 }
@@ -605,6 +628,7 @@ buttonCloseSubmenus.addEventListener("click", () => {
 function hideSubmenus(classQuerySubmenuPanel){
 
   let allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel);
+  let allFullheight = document.querySelectorAll(".full-height");
 
   for (var i = 0; i < allSubmenuPanels.length; i++) {
     allSubmenuPanels[i].classList.add("hide-fade");
@@ -615,6 +639,12 @@ function hideSubmenus(classQuerySubmenuPanel){
       }
     },500);
   }
+
+  allFullheight.forEach(elemento => {
+    elemento.classList.remove("full-height")
+  });
+
+
 }
 
 //HIDE SUBSUBMENUS
