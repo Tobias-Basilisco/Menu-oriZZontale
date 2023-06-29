@@ -415,8 +415,8 @@ submenuItemTendina.forEach(elemento => {
 function showSubSubmenuTendina(targetElement){
   // alert("function");
 
-let subSubmenuTendinaPanel = targetElement.querySelector(".sub-submenu-tendina-panel");
-let allSubSubmenuTendinaPanels = document.querySelectorAll(".sub-submenu-tendina-panel");
+  let subSubmenuTendinaPanel = targetElement.querySelector(".sub-submenu-tendina-panel");
+  let allSubSubmenuTendinaPanels = document.querySelectorAll(".sub-submenu-tendina-panel");
   let allSubSubmenuTendinaPanelsButThis = [];
 
 
@@ -446,22 +446,27 @@ let allSubSubmenuTendinaPanels = document.querySelectorAll(".sub-submenu-tendina
   for (var i = 0; i < allSubSubmenuTendinaPanelsButThis.length; i++) {
 
     allSubSubmenuTendinaPanelsButThis[i].classList.add("hide-fade");
-    setTimeout(() => {
-      let allSubSubmenuTendinaPanels = document.querySelectorAll(".sub-submenu-tendina-panel");
-      let allSubSubmenuTendinaPanelsButThis = [];
-    
-      for (let i = 0; i < allSubSubmenuTendinaPanels.length; i++) {
-        if (allSubSubmenuTendinaPanels[i] !== subSubmenuTendinaPanel) {
-          allSubSubmenuTendinaPanelsButThis.push(allSubSubmenuTendinaPanels[i]);
-        }
-      }      
+  }
+
+  setTimeout(() => {
+    let subSubmenuTendinaPanel = targetElement.querySelector(".sub-submenu-tendina-panel");
+    let allSubSubmenuTendinaPanels = document.querySelectorAll(".sub-submenu-tendina-panel");
+    let allSubSubmenuTendinaPanelsButThis = [];
+  
+    for (let i = 0; i < allSubSubmenuTendinaPanels.length; i++) {
+      if (allSubSubmenuTendinaPanels[i] !== subSubmenuTendinaPanel) {
+        allSubSubmenuTendinaPanelsButThis.push(allSubSubmenuTendinaPanels[i]);
+      }
+    }
+
+    for (var i = 0; i < allSubSubmenuTendinaPanelsButThis.length; i++) {
 
       allSubSubmenuTendinaPanelsButThis[i].classList.remove("show-fade");
-      }
-    ,500);
-    
-    vinculateArrows();
+    }
   }
+  ,500);
+    
+  
   vinculateArrows();
 
 }
