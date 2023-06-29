@@ -508,6 +508,13 @@ button{
         padding: 10px 0;
     }
 
+    .sub-submenu-tendina-panel{
+        position: static;
+    }
+
+    .sub-submenu, .sub-submenu-tendina{
+        background-color: rgb(237, 163, 237);
+    }
 
     @keyframes rotateClosed {
         from {

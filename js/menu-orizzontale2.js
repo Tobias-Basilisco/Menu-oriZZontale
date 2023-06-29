@@ -236,7 +236,7 @@ else if (window.innerWidth < screanWidthBreakpoint) {
       // alert(elemento.querySelector(".frecce-zone-a").classList);
       
 
-      elemento.querySelector(".frecce-zone-a").addEventListener("click", () => {
+      elemento.querySelector(".frecce-zone-a").addEventListener(evento, () => {
         // Ejecutar la función y pasar el elemento clicado como argumento
         showSubSubMegamenu4Livelli(elemento, elemento.closest(".submenu-panel"));
       });
@@ -386,6 +386,7 @@ function showSubmenuTendina(targetElement){
       let submenuPanel = targetElement.querySelector(".submenu-panel");
         
       submenuPanel.classList.remove("show-fade");
+      
     }
     ,500);
     submenuPanel.classList.add("hide-fade");
@@ -432,15 +433,37 @@ function showSubmenuTendina(targetElement){
 var submenuItemTendina = document.querySelectorAll('.menu-item.tendina .submenu-item');
 // alert(submenuItemTendina[0]);
 
-// Iterar sobre los elementos y agregar el event listener
-submenuItemTendina.forEach(elemento => {
-  elemento.addEventListener(evento, () => {
-    // Ejecutar la función y pasar el elemento clicado como argumento
-    showSubSubmenuTendina(elemento);
-  });
-});
+if (window.innerWidth >= screanWidthBreakpoint) {
 
-function showSubSubmenuTendina(targetElement){
+  // Iterar sobre los elementos y agregar el event listener
+  submenuItemTendina.forEach(elemento => {
+    elemento.addEventListener(evento, () => {
+      // Ejecutar la función y pasar el elemento clicado como argumento
+      showSubSubmenuTendina(elemento);
+    });
+  });
+
+}
+
+else if (window.innerWidth < screanWidthBreakpoint) {
+
+  // Iterar sobre los elementos y agregar el event listener
+  submenuItemTendina.forEach(elemento => {
+    if (elemento.querySelector(".frecce-zone-a")){
+    
+      // alert(elemento.querySelector(".frecce-zone-a").classList);
+      
+
+      elemento.querySelector(".frecce-zone-a").addEventListener(evento, () => {
+        // Ejecutar la función y pasar el elemento clicado como argumento
+        showSubSubmenuTendina(elemento, elemento.closest(".submenu-panel"));
+      });
+    }
+
+  });
+}
+
+function showSubSubmenuTendina(targetElement, panel){
   // alert("function");
 
   let subSubmenuTendinaPanel = targetElement.querySelector(".sub-submenu-tendina-panel");
@@ -466,6 +489,12 @@ function showSubSubmenuTendina(targetElement){
       let subSubmenuTendinaPanel = targetElement.querySelector(".sub-submenu-tendina-panel");
         
       subSubmenuTendinaPanel.classList.remove("show-fade");
+      panel.classList.remove("full-height");
+
+      let submenu = subSubmenuTendinaPanel.closest(".submenu");
+      let alturaPanel = submenu.offsetHeight;
+      document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
+
     }
     ,500);
     subSubmenuTendinaPanel.classList.add("hide-fade");
@@ -493,8 +522,12 @@ function showSubSubmenuTendina(targetElement){
     }
   }
   ,500);
-    
   
+  if (window.innerWidth < screanWidthBreakpoint && !panel.classList.contains("full-height")) {
+
+    panel.classList.add("full-height");
+  }
+
   vinculateArrows();
 
 }
