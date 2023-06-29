@@ -498,6 +498,7 @@ button{
     
     .submenu-panel-table{
         position: static;
+        border: none;
     }
 
     .submenu-panel-table-centered, .submenu-panel-table {

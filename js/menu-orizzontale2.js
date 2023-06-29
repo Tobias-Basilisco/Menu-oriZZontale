@@ -452,7 +452,7 @@ else if (window.innerWidth < screanWidthBreakpoint) {
     if (elemento.querySelector(".frecce-zone-a")){
     
       // alert(elemento.querySelector(".frecce-zone-a").classList);
-      
+      // alert(elemento.closest(".submenu-panel").classList);
 
       elemento.querySelector(".frecce-zone-a").addEventListener(evento, () => {
         // Ejecutar la función y pasar el elemento clicado como argumento
@@ -499,6 +499,12 @@ function showSubSubmenuTendina(targetElement, panel){
     ,500);
     subSubmenuTendinaPanel.classList.add("hide-fade");
   }
+
+  let subSubmenu = subSubmenuTendinaPanel.querySelector(".sub-submenu-tendina");
+  // alert(subSubmenu.classList);
+  let alturaPanel = subSubmenu.offsetHeight;
+  document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
+
 
   for (var i = 0; i < allSubSubmenuTendinaPanelsButThis.length; i++) {
 
