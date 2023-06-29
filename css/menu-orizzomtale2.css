@@ -460,6 +460,7 @@ button{
         height: max-content;
         display: none;
         flex-direction: column;
+        background-color: #ecc4e1;
     }
 
     .menu-item-content {
@@ -516,6 +517,11 @@ button{
     .sub-submenu, .sub-submenu-tendina{
         background-color: rgb(237, 163, 237);
     }
+
+    .submenu-panel-table-centered .sub-submenu {
+        width: 80%;
+    }
+
 
     @keyframes rotateClosed {
         from {
