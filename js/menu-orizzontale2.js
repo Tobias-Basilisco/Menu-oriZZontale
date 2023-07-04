@@ -705,15 +705,15 @@ function showSubSubmenuCentered(targetElement, panel){
   if (subSubSubmenuPanel.classList.contains("hide-fade")){
 
     subSubSubmenuPanel.classList.remove("hide-fade");
-    subSubSubmenuPanel.classList.add("show-fade");
+    subSubSubmenuPanel.classList.add("show-flex");
   }
 
-  else if (subSubSubmenuPanel.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
+  else if (subSubSubmenuPanel.classList.contains("show-flex") && window.innerWidth < screanWidthBreakpoint){
 
     setTimeout(() => {
       let subSubSubmenuPanel = targetElement.querySelector(".sub-sub-submenu-panel");
         
-      subSubSubmenuPanel.classList.remove("show-fade");
+      subSubSubmenuPanel.classList.remove("show-flex");
       panel.classList.remove("full-height");
 
       let subSubmenu = subSubSubmenuPanel.closest(".sub-submenu");
@@ -749,7 +749,7 @@ function showSubSubmenuCentered(targetElement, panel){
 
     for (var i = 0; i < allSubSubSubmenuPanelsButThis.length; i++) {
 
-      allSubSubSubmenuPanelsButThis[i].classList.remove("show-fade");
+      allSubSubSubmenuPanelsButThis[i].classList.remove("show-flex");
     }
   }
   ,500);

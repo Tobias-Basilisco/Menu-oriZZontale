@@ -433,6 +433,13 @@ button{
 
     }
 
+    .show-flex{
+        display: flex !important;
+        flex-direction: column;
+        animation: stretchIn 0.5s forwards;
+        height: var(--altura-panel);
+    }
+
     .submenu-panel-table-centered-container{
         position: static;
     }
@@ -586,7 +593,8 @@ button{
 
     
     .sub-sub-submenu{
-        display: none;
+        display: flex;
+        flex-direction: column;
     }
 
     .sub-submenu {
@@ -598,7 +606,9 @@ button{
     } */
 
     .sub-sub-submenu-panel{
-        display: none;
+        display: flex;
+        flex-direction: column;
+        display:none;
     }
   
 }
