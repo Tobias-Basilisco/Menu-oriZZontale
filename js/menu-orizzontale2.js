@@ -692,7 +692,7 @@ function showSubSubmenuCentered(targetElement, panel){
   // alert("function");
 
   let subSubSubmenuPanel = targetElement.querySelector(".sub-sub-submenu-panel");
-  let allSubSubSubmenuPanels = document.querySelectorAll("sub-sub-submenu-panel");
+  let allSubSubSubmenuPanels = document.querySelectorAll(".sub-sub-submenu-panel");
   let allSubSubSubmenuPanelsButThis = [];
 
 
@@ -738,7 +738,7 @@ function showSubSubmenuCentered(targetElement, panel){
 
   setTimeout(() => {
     let subSubSubmenuPanel = targetElement.querySelector(".sub-sub-submenu-panel");
-    let allSubSubSubmenuPanels = document.querySelectorAll("sub-sub-submenu-panel");
+    let allSubSubSubmenuPanels = document.querySelectorAll(".sub-sub-submenu-panel");
     let allSubSubSubmenuPanelsButThis = [];
     
     for (let i = 0; i < allSubSubSubmenuPanels.length; i++) {
