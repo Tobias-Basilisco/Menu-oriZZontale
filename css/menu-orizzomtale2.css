@@ -422,7 +422,7 @@ button{
   }
 
   .show-fade{
-    display: block;
+    display: block !important;
     animation: stretchIn 0.5s forwards;
     height: var(--altura-panel);
     }   
@@ -433,12 +433,7 @@ button{
 
     }
 
-    .show-flex{
-        display: flex !important;
-        flex-direction: column;
-        animation: stretchIn 0.5s forwards;
-        height: var(--altura-panel);
-    }
+    
 
     .submenu-panel-table-centered-container{
         position: static;
@@ -655,6 +650,7 @@ button{
     
     .submenu-panel-table-centered-container{
         margin: 0 auto;
+        
     }
 
     .submenu-megamenu-4-livelli .sub-sub-submenu-item a,
