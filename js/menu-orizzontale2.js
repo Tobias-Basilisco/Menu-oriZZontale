@@ -145,6 +145,7 @@ function showMegamenu4Livelli (targetElement){
   
   hideSubmenus(".sub-submenu-tendina-panel");
   if (window.innerWidth < screanWidthBreakpoint) {
+    hideSubmenus(".sub-submenu-panel");
 
     hideSubmenus(".submenu-panel-table");
   }
@@ -369,6 +370,8 @@ function showSubmenuTendina(targetElement){
   hideSubmenus(".submenu-panel-table");
   if (window.innerWidth < screanWidthBreakpoint){
     hideSubmenus(".sub-submenu-tendina-panel");
+    hideSubmenus(".sub-submenu-panel");
+
   }
 
 
@@ -588,6 +591,10 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
 
   hideSubmenus(".sub-submenu-tendina-panel");
   hideSubmenus(".submenu-panel-table");
+  if (window.innerWidth < screanWidthBreakpoint) {
+    hideSubmenus(".sub-submenu-panel");
+  }
+
 
 
   
@@ -802,6 +809,8 @@ buttonCloseSubSubmenus.addEventListener("click", () => {
 
   hideSubmenus(".sub-submenu-tendina-panel");
   hideSubmenus(".submenu-panel-table");
+  hideSubmenus(".sub-submenu-panel");
+
 });
 
 
@@ -837,6 +846,8 @@ function closeAll(){
 
           hideSubmenus(".sub-submenu-tendina-panel");
           hideSubmenus(".submenu-panel-table");
+          hideSubmenus(".sub-submenu-panel");
+          
                   vinculateArrows();
         }
       })
@@ -871,11 +882,18 @@ function vinculateArrows(){
           arrowAll[i].classList.add("frecce-closed");
         }
 
-        if (liElement[i].getElementsByTagName("div")[2].classList.contains("show-fade")){
-          
-          arrowAll[i].classList.remove("frecce-closed");
-          arrowAll[i].classList.add("frecce-opened");
+        for (var c = 0; c < 4; c++){
+          if (liElement[i].getElementsByTagName("div")[c]){
+
+            if (liElement[i].getElementsByTagName("div")[c].classList.contains("show-fade")){
+            
+              arrowAll[i].classList.remove("frecce-closed");
+              arrowAll[i].classList.add("frecce-opened");
+            }
+          }
+
         }
+
       }
     }
     ,501);
