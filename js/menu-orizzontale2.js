@@ -9,6 +9,12 @@ if (window.innerWidth >= screanWidthBreakpoint) {
   
 else {
   evento='click';
+  let subSubSubmenuPanel = document.querySelectorAll(".sub-sub-submenu-panel");
+
+  subSubSubmenuPanel.forEach(elemento => {
+    elemento.classList.add("hide-fade");
+});
+
 }
 
 
@@ -622,6 +628,7 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
 
   let subSubmenu = submenuPanelTableCentered.querySelector(".sub-submenu");
   let alturaPanel = subSubmenu.offsetHeight;
+  // alert(alturaPanel);
   document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
 
 
@@ -682,7 +689,7 @@ else if (window.innerWidth < screanWidthBreakpoint) {
   
 
 function showSubSubmenuCentered(targetElement, panel){
-  alert("function");
+  // alert("function");
 
   let subSubSubmenuPanel = targetElement.querySelector(".sub-sub-submenu-panel");
   let allSubSubSubmenuPanels = document.querySelectorAll("sub-sub-submenu-panel");

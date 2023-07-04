@@ -580,8 +580,26 @@ button{
     }
     }
 
+    .sub-submenu, .sub-sub-submenu, .submenu-panel-table-centered, .submenu-panel-table-centered-container, .sub-submenu-item, .sub-sub-submenu-panel, .sub-sub-submenu-item{
+        height: fit-content;
+    }
 
+    
+    .sub-sub-submenu{
+        display: none;
+    }
 
+    .sub-submenu {
+        height: fit-content;
+    }
+
+    /* .sub-submenu-item{
+        height: 50px;
+    } */
+
+    .sub-sub-submenu-panel{
+        display: none;
+    }
   
 }
 
