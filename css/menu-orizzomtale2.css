@@ -64,7 +64,6 @@ nav ul {
 
 .logo {
     overflow: hidden;
-    /* border-radius: 200%; */
     width: fit-content;
     height: fit-content;
 }
@@ -392,9 +391,6 @@ button{
 
   }
 
-  .submenu{
-    background-color:#f4a8de;
-  }
 
   .menu li .submenu, .sub-sub-submenu-panel, .submenu li .sub-submenu {
     width: 100%;
@@ -412,13 +408,11 @@ button{
     margin-right: auto;
     height: fit-content;
     align-items: baseline;
-    /* background-color: yellow; */
   }
 
   .menu-item a{
     height: 40px;
     line-height: 40px;
-    background-color: rgb(242, 244, 246);
   }
 
   .show-fade{
@@ -440,7 +434,6 @@ button{
     }
 
     .submenu-panel-table-centered {
-        background-color:#f4a8de;
         border: none;
         box-shadow: none;
     
@@ -462,7 +455,6 @@ button{
         height: max-content;
         display: none;
         flex-direction: column;
-        background-color: #ecc4e1;
     }
 
     .menu-item-content {
@@ -478,7 +470,6 @@ button{
         margin-left: auto;
         height: 30px;
         width: 80px; 
-        background-color: yellow;
     }
 
     .frecce-zone-a i {
@@ -516,9 +507,6 @@ button{
         position: static;
     }
 
-    .sub-submenu, .sub-submenu-tendina{
-        background-color: rgb(237, 163, 237);
-    }
 
     .submenu-panel-table-centered .sub-submenu {
         width: 80%;
@@ -605,6 +593,20 @@ button{
         flex-direction: column;
         display:none;
     }
+
+    .submenu-color{
+        background-color:#ddb8f3;  
+    }
+
+    .sub-submenu-color{
+        background-color:#f1b4e0;  
+    }
+
+    .sub-sub-submenu-color{
+        background-color: #ecc4e1;
+
+    }
+
   
 }
 
