@@ -2,21 +2,24 @@ const screanWidthBreakpoint = 1150;
 let timeOut = 10;
 
 if (window.innerWidth >= screanWidthBreakpoint) {
-    moveDivsToEndOfNav();
+    
+  moveDivsToEndOfNav();
   
-     //MOUSEOVER VS CLICK
-      evento='mouseover';
+  //MOUSEOVER VS CLICK
+  evento='mouseover';
 }
   
 else {
   let subSubSubmenuPanel = document.querySelectorAll(".sub-sub-submenu-panel");
 
+  //MOUSEOVER VS CLICK
   evento='click';
+
   timeOut = 500;
 
   subSubSubmenuPanel.forEach(elemento => {
     elemento.classList.add("hide-fade");
-});
+  });
 
 }
 
@@ -34,7 +37,6 @@ function moveDivsToEndOfNav(){
 
 
 // APRI/CHIUDI MENU
-
 
 
 document.getElementById('hamburger').addEventListener('click', manage_menu);
@@ -86,9 +88,7 @@ function manage_menu(){
           },timeOut);
           menu.classList.add("hide-menu");
           closeAll();
-
-
-                  vinculateArrows();
+          vinculateArrows();
         }
       })
     };
@@ -96,17 +96,8 @@ function manage_menu(){
 }
 
 
-
-
-
-
-
-
-
-
 // SHOW / HIDE SOTTOMENU MEGAMENU 4 LIVELLI
 
- 
 
 var menuItem = document.querySelectorAll('.menu-item.megamenu');
 
@@ -152,8 +143,6 @@ function showMegamenu4Livelli (targetElement){
     hideSubmenus(".submenu-panel-table");
   }
   
-  
-  
   for (let i = 0; i < allSubmenuPanels.length; i++) {
     if (allSubmenuPanels[i] !== submenuPanel) {
       allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
@@ -166,11 +155,8 @@ function showMegamenu4Livelli (targetElement){
     submenuPanel.classList.remove("hide-fade");
     submenuPanel.classList.add("show-fade");
   }
-  
-  
 
   else if (submenuPanel.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
-
     
     setTimeout(() => {
       let submenuPanel = targetElement.querySelector(".submenu-panel");
@@ -181,7 +167,6 @@ function showMegamenu4Livelli (targetElement){
     submenuPanel.classList.add("hide-fade");
   }
 
-  
   
   let submenu = submenuPanel.querySelector(".submenu");
   let alturaPanel = submenu.offsetHeight;
@@ -213,10 +198,6 @@ function showMegamenu4Livelli (targetElement){
     vinculateArrows();
 }
   
-
-
-
-
 
 // SHOW / HIDE SOTTO SOTTO MENU MEGAMENU 4 LIVELLI
 
@@ -263,8 +244,6 @@ function showSubSubMegamenu4Livelli(targetElement, panel) {
     hideSubmenus(".sub-sub-submenu-panel");
 
   }
-
-
 
   for (let i = 0; i < allSubmenuPanelTables.length; i++) {
     if (allSubmenuPanelTables[i] !== submenuPanelTable) {
@@ -328,9 +307,8 @@ function showSubSubMegamenu4Livelli(targetElement, panel) {
 
   }
 
-vinculateArrows();
+  vinculateArrows();
   
-
 }
 
 
@@ -338,16 +316,11 @@ vinculateArrows();
 
 var subSubmenuItem = document.querySelectorAll('.submenu-megamenu-4-livelli .sub-submenu-item');
 
-if (window.innerWidth >= screanWidthBreakpoint) {
-
-  
-
-}
-
-else if (window.innerWidth < screanWidthBreakpoint) {
+if (window.innerWidth < screanWidthBreakpoint) {
 
   // Iterar sobre los elementos y agregar el event listener
   subSubmenuItem.forEach(elemento => {
+
     if (elemento.querySelector(".frecce-zone-a")){
           
       elemento.querySelector(".frecce-zone-a").addEventListener(evento, () => {
@@ -355,13 +328,13 @@ else if (window.innerWidth < screanWidthBreakpoint) {
         showSubSubSubMegamenu4Livelli(elemento, elemento.closest(".submenu-panel-table"));
       });
     }
-
   });
 
 }
 
 
 function showSubSubSubMegamenu4Livelli(targetElement, panel) {
+
   let subSubSubmenuPanel = targetElement.querySelector(".sub-sub-submenu-panel");
   let allSubSubSubmenuPanels = document.querySelectorAll(".sub-sub-submenu-panel");
   let allSubSubSubmenuPanelsButThis = [];
@@ -464,6 +437,7 @@ else if (window.innerWidth < screanWidthBreakpoint) {
 }
 
 function showSubmenuTendina(targetElement){
+  
   let submenuPanel = targetElement.querySelector(".submenu-panel");
   let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
   let allSubmenuPanelsButThis = [];
@@ -532,10 +506,7 @@ function showSubmenuTendina(targetElement){
   }
   ,timeOut);
     
-  
   vinculateArrows();
-
-  
 
 }
 
@@ -692,9 +663,6 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
     hideSubmenus(".sub-submenu-panel");
     hideSubmenus(".sub-sub-submenu-panel");
   }
-
-
-
   
   var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
   var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
@@ -755,11 +723,6 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
     
     vinculateArrowsTableCentered(panelTable, elementWithHas);
   }
-
-
-
-
-  
   
   vinculateArrowsTableCentered(panelTable, elementWithHas);
   
@@ -769,13 +732,7 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
 
 var itemClicked = document.querySelectorAll('.submenu-panel-table-centered-container .sub-submenu-item')
 
-if (window.innerWidth >= screanWidthBreakpoint) {
-
-  
-
-}
-
-else if (window.innerWidth < screanWidthBreakpoint) {
+if (window.innerWidth < screanWidthBreakpoint) {
   // Iterar sobre los elementos y agregar el event listener
   itemClicked.forEach(elemento => {
     if (elemento.querySelector(".frecce-zone-a")){
@@ -867,12 +824,6 @@ function showSubSubmenuCentered(targetElement, panel){
 
 //HIDE SUBMENUS
 
-var buttonCloseSubmenus = document.getElementById('close-submenus');
-buttonCloseSubmenus.addEventListener("click", () => {
-
-  hideSubmenus(".submenu-panel");
-  hideSubmenus(".submenu-panel-table-centered");
-});
 
 function hideSubmenus(classQuerySubmenuPanel){
 
@@ -895,21 +846,6 @@ function hideSubmenus(classQuerySubmenuPanel){
 
 
 }
-
-//HIDE SUBSUBMENUS
-
-var buttonCloseSubSubmenus = document.getElementById('close-sub-submenus');
-buttonCloseSubSubmenus.addEventListener("click", () => {
-
-  hideSubmenus(".sub-submenu-tendina-panel");
-  hideSubmenus(".submenu-panel-table");
-  hideSubmenus(".sub-submenu-panel");
-
-});
-
-
-
-
 
 
 // APRI/CHIUDI MENU
