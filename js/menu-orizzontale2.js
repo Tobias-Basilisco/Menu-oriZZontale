@@ -958,3 +958,70 @@ function vinculateArrowsTableCentered(panelTable, elementWithHas){
     ,timeOut);
   }
 }
+
+//ESCLUDERE ROTATE E TRANSLATE SU SAFARI (MAC) VERSIONE < 16
+
+function BrowserAdaptation() {
+
+  // Verificar si el navegador es Safari en macOS y su versión es menor a 16
+  if (navigator.userAgent.includes('Macintosh') && navigator.userAgent.includes('Safari') && parseInt(/Version\/(\d+)/.exec(navigator.userAgent)[1]) < 16) {
+    modifyKeyframes();
+    alert("safari<16");
+    
+  }
+}
+
+function modifyKeyframes() {
+  // Obtén el estilo de las hojas de estilo
+  const stylesheets = document.styleSheets;
+
+  // Busca la hoja de estilo que contiene las reglas @keyframes
+  for (let i = 0; i < stylesheets.length; i++) {
+    const rules = stylesheets[i].cssRules || stylesheets[i].rules;
+
+    // Busca las reglas @keyframes que deseas modificar
+    for (let j = 0; j < rules.length; j++) {
+      const rule = rules[j];
+
+      if (rule.type === CSSRule.KEYFRAMES_RULE && (rule.name === 'rotateOpened' || rule.name === 'rotateClosed')) {
+        // Actualiza los valores en las reglas @keyframes
+        const keyframes = rule.cssRules;
+
+        // Busca las reglas 'from' y 'to' y actualiza los valores específicos dentro de ellas
+        for (let k = 0; k < keyframes.length; k++) {
+          const keyframe = keyframes[k];
+
+          if (keyframe.type === CSSRule.KEYFRAME_RULE) {
+            if (rule.name === 'rotateOpened') {
+              if (keyframe.keyText === 'from') {
+                // Actualiza los valores en la regla 'from' del @keyframe de rotateOpened
+                keyframe.style.transform = 'rotate(0)';
+                keyframe.style.transform = 'translateX(0)';
+                keyframe.style.transform = 'translateY(0)';
+              } else if (keyframe.keyText === 'to') {
+                // Actualiza los valores en la regla 'to' del @keyframe de rotateOpened
+                keyframe.style.transform = 'rotate(90deg)';
+                keyframe.style.transform = 'translateX(0)';
+                keyframe.style.transform = 'translateY(0)';
+              }
+            } else if (rule.name === 'rotateClosed') {
+              if (keyframe.keyText === 'from') {
+                // Actualiza los valores en la regla 'from' del @keyframe de rotateClosed
+                keyframe.style.transform = 'rotate(90deg)';
+                keyframe.style.transform = 'translateX(0)';
+                keyframe.style.transform = 'translateY(0)';
+              } else if (keyframe.keyText === 'to') {
+                // Actualiza los valores en la regla 'to' del @keyframe de rotateClosed
+                keyframe.style.transform = 'rotate(0deg)';
+                keyframe.style.transform = 'translateX(0)';
+                keyframe.style.transform = 'translateY(0)';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

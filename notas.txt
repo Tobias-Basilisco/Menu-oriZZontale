@@ -1,7 +1,7 @@
 version mobile
 
-css sub sub panel centered
+
+wip safari no rotaate no detecta que es safari v<16 su mac
 hamburger animacion cruz como en trattoriapizzeriamania.it
-cancellar buttons
 
 hacer la version con el menu desde abajo y desde la derecha

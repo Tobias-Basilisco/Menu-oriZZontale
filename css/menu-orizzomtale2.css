@@ -276,6 +276,28 @@ nav i{
     }
 }
 
+@keyframes rotateClosed{
+    from {
+      rotate: 90deg;
+      transform: translateX(20px);
+    }
+    to {
+      rotate: 0;
+      transform: translateY(0);
+    }
+}
+  
+@keyframes rotateOpened{
+    from {
+      rotate: 0;
+      transform: translateY(0);
+    }
+    to {
+      rotate: 90deg;
+      transform: translateX(20px);
+    }
+}
+
 @media (max-width: 1149px){
 
     #hamburger{
@@ -419,29 +441,7 @@ nav i{
         --time-out-close: 0.5s;
     }
 
-    @keyframes rotateClosed{
-        from {
-          rotate: 90deg;
-          transform: translatex(20px);
-        }
-        to {
-          rotate: 0;
-          transform: translateY(0);
-        }
-    }
-      
-    @keyframes rotateOpened{
-        from {
-          rotate: 0;
-          transform: translateY(0);
-        }
-        to {
-          rotate: 90deg;
-          transform: translatex(20px);
-        }
-    }
     
-
     @keyframes stretchIn{
         from{
             opacity: 0;
