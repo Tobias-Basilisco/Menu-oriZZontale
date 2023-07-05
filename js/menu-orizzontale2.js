@@ -260,6 +260,15 @@ function showSubSubMegamenu4Livelli(targetElement, panel) {
   let allSubmenuPanelTables = document.querySelectorAll(".submenu-panel-table");
   let allSubmenuPanelTablesButThis = [];
 
+  hideSubmenus(".submenu-panel-table-centered");
+  if (window.innerWidth < screanWidthBreakpoint){
+    hideSubmenus(".sub-submenu-tendina-panel");
+    hideSubmenus(".sub-submenu-panel");
+    hideSubmenus(".sub-sub-submenu-panel");
+
+  }
+
+
 
   for (let i = 0; i < allSubmenuPanelTables.length; i++) {
     if (allSubmenuPanelTables[i] !== submenuPanelTable) {
