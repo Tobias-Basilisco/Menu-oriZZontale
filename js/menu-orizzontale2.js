@@ -333,6 +333,118 @@ vinculateArrows();
 
 }
 
+
+// SHOW / HIDE SOTTO SOTTO SOTTO MENU MEGAMENU 4 LIVELLI
+
+var subSubmenuItem = document.querySelectorAll('.submenu-megamenu-4-livelli .sub-submenu-item');
+
+if (window.innerWidth >= screanWidthBreakpoint) {
+
+  
+
+}
+
+else if (window.innerWidth < screanWidthBreakpoint) {
+
+  // Iterar sobre los elementos y agregar el event listener
+  subSubmenuItem.forEach(elemento => {
+    if (elemento.querySelector(".frecce-zone-a")){
+    
+      // alert(elemento.querySelector(".frecce-zone-a").classList);
+      
+
+      elemento.querySelector(".frecce-zone-a").addEventListener(evento, () => {
+        // Ejecutar la función y pasar el elemento clicado como argumento
+        showSubSubSubMegamenu4Livelli(elemento, elemento.closest(".submenu-panel-table"));
+      });
+    }
+
+  });
+
+}
+
+
+function showSubSubSubMegamenu4Livelli(targetElement, panel) {
+  let subSubSubmenuPanel = targetElement.querySelector(".sub-sub-submenu-panel");
+  let allSubSubSubmenuPanels = document.querySelectorAll(".sub-sub-submenu-panel");
+  let allSubSubSubmenuPanelsButThis = [];
+
+
+  for (let i = 0; i < allSubSubSubmenuPanels.length; i++) {
+    if (allSubSubSubmenuPanels[i] !== subSubSubmenuPanel) {
+      allSubSubSubmenuPanelsButThis.push(allSubSubSubmenuPanels[i]);
+    }
+  }
+
+  if (subSubSubmenuPanel.classList.contains("hide-fade")){
+
+    subSubSubmenuPanel.classList.remove("hide-fade");
+    subSubSubmenuPanel.classList.add("show-fade");
+  }
+
+  else if (subSubSubmenuPanel.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
+
+    setTimeout(() => {
+      let subSubSubmenuPanel = targetElement.querySelector(".sub-sub-submenu-panel");
+        
+      subSubSubmenuPanel.classList.remove("show-fade");
+      panel.classList.remove("full-height");
+
+      let subSubmenu = subSubSubmenuPanel.closest(".sub-submenu");
+      let alturaPanel = subSubmenu.offsetHeight;
+      document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
+    
+    }
+    ,500);
+    subSubSubmenuPanel.classList.add("hide-fade");
+  }
+
+  let subSubSubmenu = subSubSubmenuPanel.querySelector(".sub-sub-submenu");
+  let alturaPanel = subSubSubmenu.offsetHeight;
+  document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
+
+  for (var i = 0; i < allSubSubSubmenuPanelsButThis.length; i++) {
+
+    allSubSubSubmenuPanelsButThis[i].classList.add("hide-fade");
+  }
+
+  setTimeout(() => {
+    let subSubSubmenuPanel = targetElement.querySelector(".sub-sub-submenu-panel");
+    let allSubSubSubmenuPanels = document.querySelectorAll(".sub-sub-submenu-panel");
+    let allSubSubSubmenuPanelsButThis = [];
+  
+  
+    for (let i = 0; i < allSubSubSubmenuPanels.length; i++) {
+      if (allSubSubSubmenuPanels[i] !== subSubSubmenuPanel) {
+        allSubSubSubmenuPanelsButThis.push(allSubSubSubmenuPanels[i]);
+      }
+    }
+   
+
+    for (var i = 0; i < allSubSubSubmenuPanelsButThis.length; i++) {
+
+      allSubSubSubmenuPanelsButThis[i].classList.remove("show-fade");
+    }
+  }
+  ,500);
+  
+  if (window.innerWidth < screanWidthBreakpoint && !panel.classList.contains("full-height")) {
+
+/*     setTimeout(() => {
+ */
+      panel.classList.add("full-height");
+      // alert(panel.style.height);
+
+/*     }
+    ,500);
+ */  }
+
+vinculateArrows();
+  
+
+}
+
+
 // SHOW / HIDE SOTTO MENU TENDINA
 
 
