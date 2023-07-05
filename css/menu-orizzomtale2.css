@@ -9,6 +9,8 @@
 
 :root {
     --altura-panel: 330px;
+    --time-out: 0.5s;
+    --time-out-close: 0.1s;
 }
 
 ul {
@@ -300,22 +302,22 @@ nav li a {
 
 .show-fade{
     display: block;
-    animation: fadeIn 0.5s forwards;
+    animation: fadeIn var(--time-out) forwards;
 }
 
 .hide-fade {
-    animation: fadeOut 0.5s forwards;
+    animation: fadeOut var(--time-out-close) forwards;
 
 }
 
 .show-menu{
     display: flex !important;
-    animation: fadeIn 0.5s forwards;
+    animation: fadeIn var(--time-out) forwards;
 
 }
 
 .hide-menu {
-    animation: fadeOut 0.5s forwards;
+    animation: fadeOut var(--time-out-close) forwards;
 
 }
 
@@ -387,7 +389,7 @@ button{
   .submenu-panel{
     position: static;
     width: 100%;
-    transition: height 0.5s;
+    transition: height var(--time-out);
 
   }
 
@@ -417,12 +419,12 @@ button{
 
   .show-fade{
     display: block !important;
-    animation: stretchIn 0.5s forwards;
+    animation: stretchIn var(--time-out) forwards;
     height: var(--altura-panel);
     }   
 
     .hide-fade {
-    animation: stretchOut 0.5s forwards;
+    animation: stretchOut var(--time-out) forwards;
     /* height: 0; */
 
     }
@@ -479,15 +481,15 @@ button{
     }
 
     .frecce-closed{
-        animation: rotateClosed 0.5s forwards;
-        -webkit-animation: rotateClosed 0.5s forwards;
-        -o-animation: rotateClosed 0.5s forwards;
+        animation: rotateClosed var(--time-out) forwards;
+        -webkit-animation: rotateClosed var(--time-out) forwards;
+        -o-animation: rotateClosed var(--time-out) forwards;
     }
     
     .frecce-opened{
-        animation: rotateOpened 0.5s forwards;
-        -webkit-animation: rotateOpened 0.5s forwards;
-        -o-animation: rotateOpened 0.5s forwards;
+        animation: rotateOpened var(--time-out) forwards;
+        -webkit-animation: rotateOpened var(--time-out) forwards;
+        -o-animation: rotateOpened var(--time-out) forwards;
     }
     
     .submenu-panel-table{
@@ -511,6 +513,12 @@ button{
     .submenu-panel-table-centered .sub-submenu {
         width: 80%;
     }
+
+    :root {
+        --time-out: 0.5s;
+        --time-out-close: 0.5s;
+    }
+        
 
 
     @keyframes rotateClosed {
@@ -685,6 +693,11 @@ button{
     .submenu-panel{
         margin-top:-18px
         ;
+    }
+
+    .menu-item{
+        margin-right: 5px;
+
     }
 
 

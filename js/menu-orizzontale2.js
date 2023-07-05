@@ -1,4 +1,5 @@
 const screanWidthBreakpoint = 1150;
+let timeOut = 10;
 
 if (window.innerWidth >= screanWidthBreakpoint) {
     moveDivsToEndOfNav();
@@ -8,8 +9,10 @@ if (window.innerWidth >= screanWidthBreakpoint) {
 }
   
 else {
-  evento='click';
   let subSubSubmenuPanel = document.querySelectorAll(".sub-sub-submenu-panel");
+
+  evento='click';
+  timeOut = 500;
 
   subSubSubmenuPanel.forEach(elemento => {
     elemento.classList.add("hide-fade");
@@ -80,7 +83,7 @@ function manage_menu(){
           setTimeout(() => {
           menu.classList.add("hide-menu");
           ham.classList.remove("hide-menu");
-          },500);
+          },timeOut);
           menu.classList.add("hide-menu");
           closeAll();
 
@@ -89,7 +92,7 @@ function manage_menu(){
         }
       })
     };
-  }, 1000);
+  }, timeOut);
 }
 
 
@@ -176,7 +179,7 @@ function showMegamenu4Livelli (targetElement){
       
       submenuPanel.classList.remove("show-fade");
     }
-    ,500);
+    ,timeOut);
     submenuPanel.classList.add("hide-fade");
   }
 
@@ -210,7 +213,7 @@ function showMegamenu4Livelli (targetElement){
       allSubmenuPanelsButThis[i].classList.remove("show-fade");
       }
     }
-    ,500);
+    ,timeOut);
     vinculateArrows();
 }
   
@@ -295,7 +298,7 @@ function showSubSubMegamenu4Livelli(targetElement, panel) {
       document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
     
     }
-    ,500);
+    ,timeOut);
     submenuPanelTable.classList.add("hide-fade");
   }
 
@@ -324,7 +327,7 @@ function showSubSubMegamenu4Livelli(targetElement, panel) {
       allSubmenuPanelTablesButThis[i].classList.remove("show-fade");
     }
   }
-  ,500);
+  ,timeOut);
   
   if (window.innerWidth < screanWidthBreakpoint && !panel.classList.contains("full-height")) {
 
@@ -334,7 +337,7 @@ function showSubSubMegamenu4Livelli(targetElement, panel) {
       // alert(panel.style.height);
 
 /*     }
-    ,500);
+    ,timeOut);
  */  }
 
 vinculateArrows();
@@ -404,7 +407,7 @@ function showSubSubSubMegamenu4Livelli(targetElement, panel) {
       document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
     
     }
-    ,500);
+    ,timeOut);
     subSubSubmenuPanel.classList.add("hide-fade");
   }
 
@@ -435,7 +438,7 @@ function showSubSubSubMegamenu4Livelli(targetElement, panel) {
       allSubSubSubmenuPanelsButThis[i].classList.remove("show-fade");
     }
   }
-  ,500);
+  ,timeOut);
   
   if (window.innerWidth < screanWidthBreakpoint && !panel.classList.contains("full-height")) {
 
@@ -445,7 +448,7 @@ function showSubSubSubMegamenu4Livelli(targetElement, panel) {
       // alert(panel.style.height);
 
 /*     }
-    ,500);
+    ,timeOut);
  */  }
 
 vinculateArrows();
@@ -520,7 +523,7 @@ function showSubmenuTendina(targetElement){
       submenuPanel.classList.remove("show-fade");
       
     }
-    ,500);
+    ,timeOut);
     submenuPanel.classList.add("hide-fade");
   }
 
@@ -551,7 +554,7 @@ function showSubmenuTendina(targetElement){
       allSubmenuPanelsButThis[i].classList.remove("show-fade");
     }
   }
-  ,500);
+  ,timeOut);
     
   
   vinculateArrows();
@@ -628,7 +631,7 @@ function showSubSubmenuTendina(targetElement, panel){
       document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
 
     }
-    ,500);
+    ,timeOut);
     subSubmenuTendinaPanel.classList.add("hide-fade");
   }
 
@@ -659,7 +662,7 @@ function showSubSubmenuTendina(targetElement, panel){
       allSubSubmenuTendinaPanelsButThis[i].classList.remove("show-fade");
     }
   }
-  ,500);
+  ,timeOut);
   
   if (window.innerWidth < screanWidthBreakpoint && !panel.classList.contains("full-height")) {
 
@@ -753,7 +756,7 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
         
       submenuPanelTableCentered.classList.remove("show-fade");
     }
-    ,500);
+    ,timeOut);
     submenuPanelTableCentered.classList.add("hide-fade");
   }
 
@@ -779,7 +782,7 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
 
       allSubmenuPanelTableCenteredButThis[i].classList.remove("show-fade");
       }
-    ,500);
+    ,timeOut);
     
     vinculateArrowsTableCentered(panelTable, elementWithHas);
   }
@@ -852,7 +855,7 @@ function showSubSubmenuCentered(targetElement, panel){
       document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
 
     }
-    ,500);
+    ,timeOut);
     subSubSubmenuPanel.classList.add("hide-fade");
   }
 
@@ -883,7 +886,7 @@ function showSubSubmenuCentered(targetElement, panel){
       allSubSubSubmenuPanelsButThis[i].classList.remove("show-fade");
     }
   }
-  ,500);
+  ,timeOut);
   
   if (window.innerWidth < screanWidthBreakpoint && !panel.classList.contains("full-height")) {
 
@@ -916,7 +919,7 @@ function hideSubmenus(classQuerySubmenuPanel){
       for (var i = 0; i < allSubmenuPanels.length; i++) {
         allSubmenuPanels[i].classList.remove("show-fade");
       }
-    },500);
+    },timeOut);
   }
 
   allFullheight.forEach(elemento => {
@@ -980,7 +983,7 @@ function closeAll(){
         }
       })
     };
-  }, 1000);
+  }, timeOut);
 }
 
 
@@ -1024,7 +1027,7 @@ function vinculateArrows(){
 
       }
     }
-    ,501);
+    ,timeOut);
   }
 }
 
@@ -1056,6 +1059,6 @@ function vinculateArrowsTableCentered(panelTable, elementWithHas){
         }
       }
     }
-    ,501);
+    ,timeOut);
   }
 }
