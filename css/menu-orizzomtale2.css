@@ -365,7 +365,7 @@ button{
     .menu {
         flex-direction: column;
         height: 100%;
-        border: solid 1px #ccc;
+        /* border: solid 1px #ccc; */
     }
 
     #ricerca {
@@ -381,7 +381,7 @@ button{
   .submenu-item,
   .sub-submenu-item,
   .sub-sub-submenu-item {
-    border-bottom: 1px solid #bbc3d7;
+    /* border-bottom: 1px solid #bbc3d7; */
   }
 
   .submenu-panel{

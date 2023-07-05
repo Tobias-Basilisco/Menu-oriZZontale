@@ -1,5 +1,7 @@
 version mobile
 
 css sub sub panel centered
+hamburger animacion cruz como en trattoriapizzeriamania.it
+cancellar buttons
 
 hacer la version con el menu desde abajo y desde la derecha
