@@ -1,6 +1,5 @@
 version mobile
 
-reset de panel del sub sub en table centrato al abrir otro submenu
-
+css sub sub panel centered
 
 hacer la version con el menu desde abajo y desde la derecha
