@@ -146,6 +146,7 @@ function showMegamenu4Livelli (targetElement){
   hideSubmenus(".sub-submenu-tendina-panel");
   if (window.innerWidth < screanWidthBreakpoint) {
     hideSubmenus(".sub-submenu-panel");
+    hideSubmenus(".sub-sub-submenu-panel");
 
     hideSubmenus(".submenu-panel-table");
   }
@@ -371,6 +372,7 @@ function showSubmenuTendina(targetElement){
   if (window.innerWidth < screanWidthBreakpoint){
     hideSubmenus(".sub-submenu-tendina-panel");
     hideSubmenus(".sub-submenu-panel");
+    hideSubmenus(".sub-sub-submenu-panel");
 
   }
 
@@ -593,6 +595,7 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
   hideSubmenus(".submenu-panel-table");
   if (window.innerWidth < screanWidthBreakpoint) {
     hideSubmenus(".sub-submenu-panel");
+    hideSubmenus(".sub-sub-submenu-panel");
   }
 
 
@@ -847,8 +850,12 @@ function closeAll(){
           hideSubmenus(".sub-submenu-tendina-panel");
           hideSubmenus(".submenu-panel-table");
           hideSubmenus(".sub-submenu-panel");
+          if (window.innerWidth < screanWidthBreakpoint){
+            
+            hideSubmenus(".sub-sub-submenu-panel");
+          }
           
-                  vinculateArrows();
+          vinculateArrows();
         }
       })
     };
