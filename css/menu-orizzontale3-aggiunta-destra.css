@@ -8,16 +8,6 @@
         flex-direction: row-reverse;
     }
 
-
-    .submenu-panel{
-        /* display: none;
-        position: absolute;
-        right: 0;
-        transform: translateX(-100%); */
-
-
-    }
-
     .submenu-panel-table{
         position: static;
         position: absolute;
