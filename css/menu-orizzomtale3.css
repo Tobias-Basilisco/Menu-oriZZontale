@@ -192,7 +192,7 @@ nav li a{
     background-color: transparent;
 }
 
-.sub-submenu-tendina-panel{
+.sub-submenu-MMT-panel{
     display: none;
     position: absolute;
     top: -11px;
@@ -201,17 +201,17 @@ nav li a{
 
 }
 
-.sub-submenu-tendina{
+.sub-submenu-MMT{
     display: flex;
     flex-direction: column;
 }
 
 
-.submenu-tendina li{
+.submenu-MMT li{
     position: relative;
 }
 
-.sub-submenu-tendina{
+.sub-submenu-MMT{
     height: auto;
     background-color: #cfcaf1;
 }
@@ -427,7 +427,7 @@ nav i{
         padding: 10px 0;
     }
 
-    .sub-submenu-tendina-panel{
+    .sub-submenu-MMT-panel{
         position: static;
     }
 

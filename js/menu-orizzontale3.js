@@ -96,7 +96,7 @@ function manage_menu(){
 }
 
 
-// SHOW / HIDE SOTTOMENU MEE (MEGAMENU 4 LIVELLI)
+// SHOW / HIDE SOTTOMENU MEE
 
 
 var menuItem = document.querySelectorAll('.menu-item.MME');
@@ -135,7 +135,7 @@ function showMME (targetElement){
   
   hideSubmenus(".submenu-panel-table-centered");
   
-  hideSubmenus(".sub-submenu-tendina-panel");
+  hideSubmenus(".sub-submenu-MMT-panel");
   if (window.innerWidth < screanWidthBreakpoint) {
     hideSubmenus(".sub-submenu-panel");
     hideSubmenus(".sub-sub-submenu-panel");
@@ -239,7 +239,7 @@ function showSubSubMME(targetElement, panel) {
 
   hideSubmenus(".submenu-panel-table-centered");
   if (window.innerWidth < screanWidthBreakpoint){
-    hideSubmenus(".sub-submenu-tendina-panel");
+    hideSubmenus(".sub-submenu-MMT-panel");
     hideSubmenus(".sub-submenu-panel");
     hideSubmenus(".sub-sub-submenu-panel");
 
@@ -408,18 +408,18 @@ function showSubSubSubMME(targetElement, panel) {
 }
 
 
-// SHOW / HIDE SOTTO MENU TENDINA MMT
+// SHOW / HIDE SOTTO MENU MMT MMT
 
 
-var menuItemTendina = document.querySelectorAll('.menu-item.tendina');
+var menuItemMMT = document.querySelectorAll('.menu-item.MMT');
 
 if (window.innerWidth >= screanWidthBreakpoint) {
 
   // Iterar sobre los elementos y agregar el event listener
-  menuItemTendina.forEach(elemento => {
+  menuItemMMT.forEach(elemento => {
     elemento.addEventListener(evento, () => {
       // Ejecutar la función y pasar el elemento clicado como argumento
-      showSubmenuTendina(elemento);
+      showSubmenuMMT(elemento);
     });
   });
 }
@@ -427,16 +427,16 @@ if (window.innerWidth >= screanWidthBreakpoint) {
 else if (window.innerWidth < screanWidthBreakpoint) {
 
   // Iterar sobre los elementos y agregar el event listener
-  menuItemTendina.forEach(elemento => {
+  menuItemMMT.forEach(elemento => {
     elemento.querySelector(".frecce-zone-a").addEventListener(evento, () => {
       // Ejecutar la función y pasar el elemento clicado como argumento
-      showSubmenuTendina(elemento);
+      showSubmenuMMT(elemento);
     });
   });
   vinculateArrows();
 }
 
-function showSubmenuTendina(targetElement){
+function showSubmenuMMT(targetElement){
   
   let submenuPanel = targetElement.querySelector(".submenu-panel");
   let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
@@ -445,7 +445,7 @@ function showSubmenuTendina(targetElement){
   hideSubmenus(".submenu-panel-table-centered");
   hideSubmenus(".submenu-panel-table");
   if (window.innerWidth < screanWidthBreakpoint){
-    hideSubmenus(".sub-submenu-tendina-panel");
+    hideSubmenus(".sub-submenu-MMT-panel");
     hideSubmenus(".sub-submenu-panel");
     hideSubmenus(".sub-sub-submenu-panel");
 
@@ -510,17 +510,17 @@ function showSubmenuTendina(targetElement){
 
 }
 
-// SHOW / HIDE SOTTO SOTTO MENU TENDINA
+// SHOW / HIDE SOTTO SOTTO MENU MMT
 
-var submenuItemTendina = document.querySelectorAll('.menu-item.tendina .submenu-item');
+var submenuItemMMT = document.querySelectorAll('.menu-item.MMT .submenu-item');
 
 if (window.innerWidth >= screanWidthBreakpoint) {
 
   // Iterar sobre los elementos y agregar el event listener
-  submenuItemTendina.forEach(elemento => {
+  submenuItemMMT.forEach(elemento => {
     elemento.addEventListener(evento, () => {
       // Ejecutar la función y pasar el elemento clicado como argumento
-      showSubSubmenuTendina(elemento);
+      showSubSubmenuMMT(elemento);
     });
   });
 
@@ -529,79 +529,79 @@ if (window.innerWidth >= screanWidthBreakpoint) {
 else if (window.innerWidth < screanWidthBreakpoint) {
 
   // Iterar sobre los elementos y agregar el event listener
-  submenuItemTendina.forEach(elemento => {
+  submenuItemMMT.forEach(elemento => {
     if (elemento.querySelector(".frecce-zone-a")){
     
 
       elemento.querySelector(".frecce-zone-a").addEventListener(evento, () => {
         // Ejecutar la función y pasar el elemento clicado como argumento
-        showSubSubmenuTendina(elemento, elemento.closest(".submenu-panel"));
+        showSubSubmenuMMT(elemento, elemento.closest(".submenu-panel"));
       });
     }
 
   });
 }
 
-function showSubSubmenuTendina(targetElement, panel){
+function showSubSubmenuMMT(targetElement, panel){
 
-  let subSubmenuTendinaPanel = targetElement.querySelector(".sub-submenu-tendina-panel");
-  let allSubSubmenuTendinaPanels = document.querySelectorAll(".sub-submenu-tendina-panel");
-  let allSubSubmenuTendinaPanelsButThis = [];
+  let subSubmenuMMTPanel = targetElement.querySelector(".sub-submenu-MMT-panel");
+  let allSubSubmenuMMTPanels = document.querySelectorAll(".sub-submenu-MMT-panel");
+  let allSubSubmenuMMTPanelsButThis = [];
 
 
-  for (let i = 0; i < allSubSubmenuTendinaPanels.length; i++) {
-    if (allSubSubmenuTendinaPanels[i] !== subSubmenuTendinaPanel) {
-      allSubSubmenuTendinaPanelsButThis.push(allSubSubmenuTendinaPanels[i]);
+  for (let i = 0; i < allSubSubmenuMMTPanels.length; i++) {
+    if (allSubSubmenuMMTPanels[i] !== subSubmenuMMTPanel) {
+      allSubSubmenuMMTPanelsButThis.push(allSubSubmenuMMTPanels[i]);
     }
   }
 
-  if (subSubmenuTendinaPanel.classList.contains("hide-fade")){
+  if (subSubmenuMMTPanel.classList.contains("hide-fade")){
 
-    subSubmenuTendinaPanel.classList.remove("hide-fade");
-    subSubmenuTendinaPanel.classList.add("show-fade");
+    subSubmenuMMTPanel.classList.remove("hide-fade");
+    subSubmenuMMTPanel.classList.add("show-fade");
   }
 
-  else if (subSubmenuTendinaPanel.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
+  else if (subSubmenuMMTPanel.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
 
     setTimeout(() => {
-      let subSubmenuTendinaPanel = targetElement.querySelector(".sub-submenu-tendina-panel");
+      let subSubmenuMMTPanel = targetElement.querySelector(".sub-submenu-MMT-panel");
         
-      subSubmenuTendinaPanel.classList.remove("show-fade");
+      subSubmenuMMTPanel.classList.remove("show-fade");
       panel.classList.remove("full-height");
 
-      let submenu = subSubmenuTendinaPanel.closest(".submenu");
+      let submenu = subSubmenuMMTPanel.closest(".submenu");
       let alturaPanel = submenu.offsetHeight;
       document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
 
     }
     ,timeOut);
-    subSubmenuTendinaPanel.classList.add("hide-fade");
+    subSubmenuMMTPanel.classList.add("hide-fade");
   }
 
-  let subSubmenu = subSubmenuTendinaPanel.querySelector(".sub-submenu-tendina");
+  let subSubmenu = subSubmenuMMTPanel.querySelector(".sub-submenu-MMT");
   let alturaPanel = subSubmenu.offsetHeight;
   document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
 
 
-  for (var i = 0; i < allSubSubmenuTendinaPanelsButThis.length; i++) {
+  for (var i = 0; i < allSubSubmenuMMTPanelsButThis.length; i++) {
 
-    allSubSubmenuTendinaPanelsButThis[i].classList.add("hide-fade");
+    allSubSubmenuMMTPanelsButThis[i].classList.add("hide-fade");
   }
 
   setTimeout(() => {
-    let subSubmenuTendinaPanel = targetElement.querySelector(".sub-submenu-tendina-panel");
-    let allSubSubmenuTendinaPanels = document.querySelectorAll(".sub-submenu-tendina-panel");
-    let allSubSubmenuTendinaPanelsButThis = [];
+    let subSubmenuMMTPanel = targetElement.querySelector(".sub-submenu-MMT-panel");
+    let allSubSubmenuMMTPanels = document.querySelectorAll(".sub-submenu-MMT-panel");
+    let allSubSubmenuMMTPanelsButThis = [];
   
-    for (let i = 0; i < allSubSubmenuTendinaPanels.length; i++) {
-      if (allSubSubmenuTendinaPanels[i] !== subSubmenuTendinaPanel) {
-        allSubSubmenuTendinaPanelsButThis.push(allSubSubmenuTendinaPanels[i]);
+    for (let i = 0; i < allSubSubmenuMMTPanels.length; i++) {
+      if (allSubSubmenuMMTPanels[i] !== subSubmenuMMTPanel) {
+        allSubSubmenuMMTPanelsButThis.push(allSubSubmenuMMTPanels[i]);
       }
     }
 
-    for (var i = 0; i < allSubSubmenuTendinaPanelsButThis.length; i++) {
+    for (var i = 0; i < allSubSubmenuMMTPanelsButThis.length; i++) {
 
-      allSubSubmenuTendinaPanelsButThis[i].classList.remove("show-fade");
+      allSubSubmenuMMTPanelsButThis[i].classList.remove("show-fade");
     }
   }
   ,timeOut);
@@ -659,7 +659,7 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
   
   hideSubmenus(".submenu-panel");
 
-  hideSubmenus(".sub-submenu-tendina-panel");
+  hideSubmenus(".sub-submenu-MMT-panel");
   hideSubmenus(".submenu-panel-table");
   if (window.innerWidth < screanWidthBreakpoint) {
     hideSubmenus(".sub-submenu-panel");
@@ -876,7 +876,7 @@ function closeAll(){
           hideSubmenus(".submenu-panel-table-centered");
         
 
-          hideSubmenus(".sub-submenu-tendina-panel");
+          hideSubmenus(".sub-submenu-MMT-panel");
           hideSubmenus(".submenu-panel-table");
           hideSubmenus(".sub-submenu-panel");
           if (window.innerWidth < screanWidthBreakpoint){
@@ -1026,4 +1026,6 @@ function modifyKeyframes() {
   }
 }
 
-
+//MME = Megamenu 4 livelli
+//MMC = Megamenu Table Centered
+//MMT = Megamenu Tendina
