@@ -1,5 +1,4 @@
-version mobile
-
+l'id sul li menu-item è solo utile per MMC 
 
 wip safari no rotaate no detecta que es safari v<16 su mac
 hamburger animacion cruz como en trattoriapizzeriamania.it

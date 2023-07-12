@@ -28,10 +28,10 @@ else {
 
 function moveDivsToEndOfNav(){
 
-    var submenuPanelTableCentered = document.querySelectorAll('.submenu-panel-table-centered-container');
+    var submenuMMC = document.querySelectorAll('.submenu-panel-table-centered-container');
     var header = document.querySelector('header');
-    for (let i = 0; i < submenuPanelTableCentered.length; i++){
-      header.appendChild(submenuPanelTableCentered[i]);
+    for (let i = 0; i < submenuMMC.length; i++){
+      header.appendChild(submenuMMC[i]);
     }
 }
 
@@ -312,7 +312,7 @@ function showSubSubMME(targetElement, panel) {
 }
 
 
-// SHOW / HIDE SOTTO SOTTO SOTTO MENU MEGAMENU 4 LIVELLI
+// SHOW / HIDE SOTTO SOTTO SOTTO MENU MME
 
 var subSubmenuItem = document.querySelectorAll('.submenu-MME .sub-submenu-item');
 
@@ -408,7 +408,7 @@ function showSubSubSubMME(targetElement, panel) {
 }
 
 
-// SHOW / HIDE SOTTO MENU MMT MMT
+// SHOW / HIDE SOTTO MENU MMT
 
 
 var menuItemMMT = document.querySelectorAll('.menu-item.MMT');
@@ -627,7 +627,7 @@ for (let i = 0; i < allMMC.length; i++) {
 
   
 
-  // SHOW/HIDE TABLE CENTERED
+  // SHOW/HIDE TABLE CENTERED MMC
 
 
 
@@ -635,7 +635,7 @@ for (let i = 0; i < allMMC.length; i++) {
 
     liWithTable.addEventListener(evento, () => {
       // Ejecutar la función y pasar el elemento clicado como argumento
-      showSubmenuPanelTableCentered("panel-table-centered-" + lastLetter + "-container");
+      showSubmenuMMC("panel-table-centered-" + lastLetter + "-container");
     });
 
 
@@ -645,7 +645,7 @@ for (let i = 0; i < allMMC.length; i++) {
 
     liWithTable.querySelector(".frecce-zone-a").addEventListener(evento, () => {
       // Ejecutar la función y pasar el elemento clicado como argumento
-      showSubmenuPanelTableCentered("panel-table-centered-" + lastLetter + "-container", liWithTable);
+      showSubmenuMMC("panel-table-centered-" + lastLetter + "-container", liWithTable);
     });
 
     vinculateArrows();
@@ -654,7 +654,7 @@ for (let i = 0; i < allMMC.length; i++) {
   }
 }
 
-function showSubmenuPanelTableCentered(panelTable, elementWithHas){
+function showSubmenuMMC(panelTable, elementWithHas){
 
   
   hideSubmenus(".submenu-panel");
@@ -666,60 +666,60 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
     hideSubmenus(".sub-sub-submenu-panel");
   }
   
-  var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
-  var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
-  let allSubmenuPanelTableCentered = document.querySelectorAll(".submenu-panel-table-centered");
-  let allSubmenuPanelTableCenteredButThis = [];
+  var submenuMMCContainer = document.getElementById(panelTable);
+  var submenuMMC = submenuMMCContainer.querySelector(".submenu-panel-table-centered");
+  let allSubmenuMMC = document.querySelectorAll(".submenu-panel-table-centered");
+  let allSubmenuMMCButThis = [];
 
 
-  for (let i = 0; i < allSubmenuPanelTableCentered.length; i++) {
-    if (allSubmenuPanelTableCentered[i] !== submenuPanelTableCentered) {
-      allSubmenuPanelTableCenteredButThis.push(allSubmenuPanelTableCentered[i]);
+  for (let i = 0; i < allSubmenuMMC.length; i++) {
+    if (allSubmenuMMC[i] !== submenuMMC) {
+      allSubmenuMMCButThis.push(allSubmenuMMC[i]);
     }
   }
 
 
 
-  if (submenuPanelTableCentered.classList.contains("hide-fade")){
+  if (submenuMMC.classList.contains("hide-fade")){
 
-    submenuPanelTableCentered.classList.remove("hide-fade");
-    submenuPanelTableCentered.classList.add("show-fade");
+    submenuMMC.classList.remove("hide-fade");
+    submenuMMC.classList.add("show-fade");
   }
 
 
 
-  else if (submenuPanelTableCentered.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
+  else if (submenuMMC.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
 
     setTimeout(() => {
-      var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
-      var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
+      var submenuMMCContainer = document.getElementById(panelTable);
+      var submenuMMC = submenuMMCContainer.querySelector(".submenu-panel-table-centered");
         
-      submenuPanelTableCentered.classList.remove("show-fade");
+      submenuMMC.classList.remove("show-fade");
     }
     ,timeOut);
-    submenuPanelTableCentered.classList.add("hide-fade");
+    submenuMMC.classList.add("hide-fade");
   }
 
-  let subSubmenu = submenuPanelTableCentered.querySelector(".sub-submenu");
+  let subSubmenu = submenuMMC.querySelector(".sub-submenu");
   let alturaPanel = subSubmenu.offsetHeight;
   document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
 
 
-  for (var i = 0; i < allSubmenuPanelTableCenteredButThis.length; i++) {
+  for (var i = 0; i < allSubmenuMMCButThis.length; i++) {
 
-    allSubmenuPanelTableCenteredButThis[i].classList.add("hide-fade");
+    allSubmenuMMCButThis[i].classList.add("hide-fade");
     setTimeout(() => {
-      var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
-      var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");
-      let allSubmenuPanelsButThis = [];
+      var submenuMMCContainer = document.getElementById(panelTable);
+      var submenuMMC = submenuMMCContainer.querySelector(".submenu-panel-table-centered");
+      let allSubmenuMMCButThis = [];
     
-      for (let i = 0; i < allSubmenuPanelTableCentered.length; i++) {
-        if (allSubmenuPanelTableCentered[i] !== submenuPanelTableCentered) {
-          allSubmenuPanelTableCenteredButThis.push(allSubmenuPanelTableCentered[i]);
+      for (let i = 0; i < allSubmenuMMC.length; i++) {
+        if (allSubmenuMMC[i] !== submenuMMC) {
+          allSubmenuMMCButThis.push(allSubmenuMMC[i]);
         }
       }      
 
-      allSubmenuPanelTableCenteredButThis[i].classList.remove("show-fade");
+      allSubmenuMMCButThis[i].classList.remove("show-fade");
       }
     ,timeOut);
     
@@ -730,7 +730,7 @@ function showSubmenuPanelTableCentered(panelTable, elementWithHas){
   
 }
 
-// SHOW/HIDE SUBMENU INSIDE TABLE CENTERED
+// SHOW/HIDE SUBMENU INSIDE TABLE CENTERED MMC
 
 var itemClicked = document.querySelectorAll('.submenu-panel-table-centered-container .sub-submenu-item')
 
@@ -939,8 +939,8 @@ function vinculateArrowsTableCentered(panelTable, elementWithHas){
     setTimeout(() => {
 
       let arrowAll = document.querySelectorAll(".frecce");
-      var submenuPanelTableCenteredContainer = document.getElementById(panelTable);
-      var submenuPanelTableCentered = submenuPanelTableCenteredContainer.querySelector(".submenu-panel-table-centered");    
+      var submenuMMCContainer = document.getElementById(panelTable);
+      var submenuMMC = submenuMMCContainer.querySelector(".submenu-panel-table-centered");    
 
 
       for (var i = 0; i < arrowAll.length; i++){
@@ -950,7 +950,7 @@ function vinculateArrowsTableCentered(panelTable, elementWithHas){
           arrowAll[i].classList.add("frecce-closed");
         }
 
-        if (submenuPanelTableCentered.classList.contains("show-fade")){
+        if (submenuMMC.classList.contains("show-fade")){
           
           elementWithHas.querySelector(".frecce").classList.remove("frecce-closed");
           elementWithHas.querySelector(".frecce").classList.add("frecce-opened");
