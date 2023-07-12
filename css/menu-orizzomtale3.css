@@ -92,7 +92,7 @@ nav ul{
     padding: 10px;
 }
 
-.submenu-megamenu-4-livelli{
+.submenu-MME{
     position: relative;
 }
 
@@ -520,7 +520,7 @@ nav i{
         flex-basis: 20%;
     }
 
-    .submenu-megamenu-4-livelli .sub-submenu-item,
+    .submenu-MME .sub-submenu-item,
     .submenu-panel-table-centered .sub-submenu-item{
         font-weight: bold;
     }
@@ -529,7 +529,7 @@ nav i{
         font-weight:400;
     }
 
-    .submenu-megamenu-4-livelli .sub-sub-submenu-item{
+    .submenu-MME .sub-sub-submenu-item{
         font-weight: 400;
     }
 
@@ -545,14 +545,14 @@ nav i{
         margin: 0 auto;
     }
 
-    .submenu-megamenu-4-livelli .sub-sub-submenu-item a,
+    .submenu-MME .sub-sub-submenu-item a,
     .submenu-panel-table-centered .sub-sub-submenu-item a{
         margin-bottom: 20px;
         font-size: 12px;
         line-height: 16px;
     }
 
-    .submenu-megamenu-4-livelli .sub-submenu-item a,
+    .submenu-MME .sub-submenu-item a,
     .submenu-panel-table-centered .sub-submenu-item a{
         line-height: 20px;
     }

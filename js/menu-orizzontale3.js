@@ -96,10 +96,10 @@ function manage_menu(){
 }
 
 
-// SHOW / HIDE SOTTOMENU MEGAMENU 4 LIVELLI
+// SHOW / HIDE SOTTOMENU MEE (MEGAMENU 4 LIVELLI)
 
 
-var menuItem = document.querySelectorAll('.menu-item.megamenu');
+var menuItem = document.querySelectorAll('.menu-item.MME');
 
 if (window.innerWidth >= screanWidthBreakpoint) {
 
@@ -107,7 +107,7 @@ if (window.innerWidth >= screanWidthBreakpoint) {
   menuItem.forEach(elemento => {
     elemento.addEventListener(evento, () => {
       // Ejecutar la función y pasar el elemento clicado como argumento
-      showMegamenu4Livelli(elemento);
+      showMME(elemento);
     });
   });
 
@@ -119,14 +119,14 @@ else if (window.innerWidth < screanWidthBreakpoint){
   menuItem.forEach(elemento => {
   elemento.querySelector(".frecce-zone-a").addEventListener(evento, () => {
     // Ejecutar la función y pasar el elemento clicado como argumento
-    showMegamenu4Livelli(elemento);
+    showMME(elemento);
   });
   });
   vinculateArrows();
 
 }
 
-function showMegamenu4Livelli (targetElement){
+function showMME (targetElement){
 
   let submenuPanel = targetElement.querySelector(".submenu-panel");
   let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
@@ -199,9 +199,9 @@ function showMegamenu4Livelli (targetElement){
 }
   
 
-// SHOW / HIDE SOTTO SOTTO MENU MEGAMENU 4 LIVELLI
+// SHOW / HIDE SOTTO SOTTO MENU MME
 
-var submenuItem = document.querySelectorAll('.submenu-megamenu-4-livelli .submenu-item');
+var submenuItem = document.querySelectorAll('.submenu-MME .submenu-item');
 
 if (window.innerWidth >= screanWidthBreakpoint) {
 
@@ -209,7 +209,7 @@ if (window.innerWidth >= screanWidthBreakpoint) {
   submenuItem.forEach(elemento => {
     elemento.addEventListener(evento, () => {
       // Ejecutar la función y pasar el elemento clicado como argumento
-      showSubSubMegamenu4Livelli(elemento);
+      showSubSubMME(elemento);
     });
   });
 
@@ -223,7 +223,7 @@ else if (window.innerWidth < screanWidthBreakpoint) {
 
       elemento.querySelector(".frecce-zone-a").addEventListener(evento, () => {
         // Ejecutar la función y pasar el elemento clicado como argumento
-        showSubSubMegamenu4Livelli(elemento, elemento.closest(".submenu-panel"));
+        showSubSubMME(elemento, elemento.closest(".submenu-panel"));
       });
     }
 
@@ -232,7 +232,7 @@ else if (window.innerWidth < screanWidthBreakpoint) {
 }
 
 
-function showSubSubMegamenu4Livelli(targetElement, panel) {
+function showSubSubMME(targetElement, panel) {
   let submenuPanelTable = targetElement.querySelector(".submenu-panel-table");
   let allSubmenuPanelTables = document.querySelectorAll(".submenu-panel-table");
   let allSubmenuPanelTablesButThis = [];
@@ -314,7 +314,7 @@ function showSubSubMegamenu4Livelli(targetElement, panel) {
 
 // SHOW / HIDE SOTTO SOTTO SOTTO MENU MEGAMENU 4 LIVELLI
 
-var subSubmenuItem = document.querySelectorAll('.submenu-megamenu-4-livelli .sub-submenu-item');
+var subSubmenuItem = document.querySelectorAll('.submenu-MME .sub-submenu-item');
 
 if (window.innerWidth < screanWidthBreakpoint) {
 
@@ -325,7 +325,7 @@ if (window.innerWidth < screanWidthBreakpoint) {
           
       elemento.querySelector(".frecce-zone-a").addEventListener(evento, () => {
         // Ejecutar la función y pasar el elemento clicado como argumento
-        showSubSubSubMegamenu4Livelli(elemento, elemento.closest(".submenu-panel-table"));
+        showSubSubSubMME(elemento, elemento.closest(".submenu-panel-table"));
       });
     }
   });
@@ -333,7 +333,7 @@ if (window.innerWidth < screanWidthBreakpoint) {
 }
 
 
-function showSubSubSubMegamenu4Livelli(targetElement, panel) {
+function showSubSubSubMME(targetElement, panel) {
 
   let subSubSubmenuPanel = targetElement.querySelector(".sub-sub-submenu-panel");
   let allSubSubSubmenuPanels = document.querySelectorAll(".sub-sub-submenu-panel");
@@ -408,7 +408,7 @@ function showSubSubSubMegamenu4Livelli(targetElement, panel) {
 }
 
 
-// SHOW / HIDE SOTTO MENU TENDINA
+// SHOW / HIDE SOTTO MENU TENDINA MMT
 
 
 var menuItemTendina = document.querySelectorAll('.menu-item.tendina');
@@ -615,9 +615,9 @@ function showSubSubmenuTendina(targetElement, panel){
 
 }
 
-//CREARE ARRAY CON TUTTI LI CON CLASS MMC
+//TUTTI MENU-ITEM CON CLASS MMC
 
-const allMMC = document.querySelectorAll('.MMC');
+const allMMC = document.querySelectorAll('.menu-item.MMC');
 
 for (let i = 0; i < allMMC.length; i++) {
   let elemento = allMMC[i];
