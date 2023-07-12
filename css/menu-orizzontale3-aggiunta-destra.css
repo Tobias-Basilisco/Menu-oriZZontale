@@ -5,6 +5,7 @@
     }
 
     .menu {
+        /* descomentar parahacer ver el modelo estatico */ 
         flex-direction: row-reverse;
     }
 
