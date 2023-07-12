@@ -615,41 +615,43 @@ function showSubSubmenuTendina(targetElement, panel){
 
 }
 
-// SHOW/HIDE TABLE CENTERED
+//CREARE ARRAY CON TUTTI LI CON CLASS MMC
 
-var element8WithHas = document.getElementById('menu-MMC-1');
-var element82WithHas = document.getElementById('menu-MMC-2');
+const allMMC = document.querySelectorAll('.MMC');
 
+for (let i = 0; i < allMMC.length; i++) {
+  let elemento = allMMC[i];
+  let id = elemento.id;
+  let lastLetter = id.charAt(id.length - 1);
+  let liWithTable = document.getElementById(id);
 
-if (window.innerWidth >= screanWidthBreakpoint) {
+  
 
-  element8WithHas.addEventListener(evento, () => {
-    // Ejecutar la función y pasar el elemento clicado como argumento
-    showSubmenuPanelTableCentered("panel-table-centered-1-container");
-  });
-
-  element82WithHas.addEventListener(evento, () => {
-    // Ejecutar la función y pasar el elemento clicado como argumento
-    showSubmenuPanelTableCentered("panel-table-centered-2-container");
-  });
-
-}
-
-else if (window.innerWidth < screanWidthBreakpoint) {
-
-  element8WithHas.querySelector(".frecce-zone-a").addEventListener(evento, () => {
-    // Ejecutar la función y pasar el elemento clicado como argumento
-    showSubmenuPanelTableCentered("panel-table-centered-8-container", element8WithHas);
-  });
-
-  var element82WithHas = document.getElementById('menu-8-2');
-  element82WithHas.querySelector(".frecce-zone-a").addEventListener(evento, () => {
-    // Ejecutar la función y pasar el elemento clicado como argumento
-    showSubmenuPanelTableCentered("panel-table-centered-8-2-container", element82WithHas);
-  });
-  vinculateArrows();
+  // SHOW/HIDE TABLE CENTERED
 
 
+
+  if (window.innerWidth >= screanWidthBreakpoint) {
+
+    liWithTable.addEventListener(evento, () => {
+      // Ejecutar la función y pasar el elemento clicado como argumento
+      showSubmenuPanelTableCentered("panel-table-centered-" + lastLetter + "-container");
+    });
+
+
+  }
+
+  else if (window.innerWidth < screanWidthBreakpoint) {
+
+    liWithTable.querySelector(".frecce-zone-a").addEventListener(evento, () => {
+      // Ejecutar la función y pasar el elemento clicado como argumento
+      showSubmenuPanelTableCentered("panel-table-centered-" + lastLetter + "-container", liWithTable);
+    });
+
+    vinculateArrows();
+
+
+  }
 }
 
 function showSubmenuPanelTableCentered(panelTable, elementWithHas){
