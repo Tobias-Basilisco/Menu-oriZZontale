@@ -1,6 +1,7 @@
 const screanWidthBreakpoint = 1150;
 let timeOut = 10;
 
+
 if (window.innerWidth >= screanWidthBreakpoint) {
     
   moveDivsToEndOfNav();
@@ -73,27 +74,27 @@ function manage_menu(){
     ham.classList.add("hide-menu");
   }
 
-  setTimeout(() => {
-    if(!menu.classList.contains("hide-menu")){
+  // setTimeout(() => {
+  //   if(!menu.classList.contains("hide-menu")){
     
-      documento.addEventListener('click', function(event) {
+  //     documento.addEventListener('click', function(event) {
 
-        var esDentroDelDiv = container.contains(event.target);
-        var esDentroHam = ham.contains(event.target);
+  //       var esDentroDelDiv = container.contains(event.target);
+  //       var esDentroHam = ham.contains(event.target);
 
-        if (!esDentroDelDiv && !esDentroHam) {
-          menu.classList.remove("show-menu");
-          setTimeout(() => {
-          menu.classList.add("hide-menu");
-          ham.classList.remove("hide-menu");
-          },timeOut);
-          menu.classList.add("hide-menu");
-          closeAll();
-          vinculateArrows();
-        }
-      })
-    };
-  }, timeOut);
+  //       if (!esDentroDelDiv && !esDentroHam) {
+  //         menu.classList.remove("show-menu");
+  //         setTimeout(() => {
+  //         menu.classList.add("hide-menu");
+  //         ham.classList.remove("hide-menu");
+  //         },timeOut);
+  //         menu.classList.add("hide-menu");
+  //         closeAll();
+  //         vinculateArrows();
+  //       }
+  //     })
+  //   };
+  // }, timeOut);
 }
 
 
