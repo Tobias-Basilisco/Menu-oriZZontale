@@ -1,6 +1,8 @@
+reescribir php sin coumnas
+
 l'id sul li menu-item è solo utile per MMC 
+
 
 wip safari no rotaate no detecta que es safari v<16 su mac
 hamburger animacion cruz como en trattoriapizzeriamania.it
 
-hacer la version con el menu desde abajo y desde la derecha
