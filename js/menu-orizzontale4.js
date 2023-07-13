@@ -708,33 +708,6 @@ function showSubmenuMMC(panelTable, elementWithHas){
     }
   }
 
-
-
-  if (submenuMMC.classList.contains("hide-fade")){
-
-    submenuMMC.classList.remove("hide-fade");
-    submenuMMC.classList.add("show-fade");
-  }
-
-
-
-  else if (submenuMMC.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
-
-    setTimeout(() => {
-      var submenuMMCContainer = document.getElementById(panelTable);
-      var submenuMMC = submenuMMCContainer.querySelector(".submenu-panel-table-centered");
-        
-      submenuMMC.classList.remove("show-fade");
-    }
-    ,timeOut);
-    submenuMMC.classList.add("hide-fade");
-  }
-
-  let subSubmenu = submenuMMC.querySelector(".sub-submenu");
-  let alturaPanel = subSubmenu.offsetHeight;
-  document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
-
-
   for (var i = 0; i < allSubmenuMMCButThis.length; i++) {
 
     allSubmenuMMCButThis[i].classList.add("hide-fade");
@@ -758,6 +731,40 @@ function showSubmenuMMC(panelTable, elementWithHas){
     }
   }
   ,timeOut);
+
+
+  if (submenuMMC.classList.contains("hide-fade")){
+    setTimeout(() => {
+      var submenuMMCContainer = document.getElementById(panelTable);
+      var submenuMMC = submenuMMCContainer.querySelector(".submenu-panel-table-centered");
+  
+    submenuMMC.classList.remove("hide-fade");
+    submenuMMC.classList.add("show-fade");
+
+    }
+    ,timeOut);
+
+  }
+
+
+
+  else if (submenuMMC.classList.contains("show-fade") && window.innerWidth < screanWidthBreakpoint){
+
+    setTimeout(() => {
+      var submenuMMCContainer = document.getElementById(panelTable);
+      var submenuMMC = submenuMMCContainer.querySelector(".submenu-panel-table-centered");
+        
+      submenuMMC.classList.remove("show-fade");
+    }
+    ,timeOut);
+    submenuMMC.classList.add("hide-fade");
+  }
+
+  let subSubmenu = submenuMMC.querySelector(".sub-submenu");
+  let alturaPanel = subSubmenu.offsetHeight;
+  document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
+
+
     
   vinculateArrowsTableCentered(panelTable, elementWithHas);
   
@@ -877,9 +884,12 @@ function hideSubmenus(classQuerySubmenuPanel){
     },timeOut);
   }
 
-  allFullheight.forEach(elemento => {
-    elemento.classList.remove("full-height")
-  });
+  if (window.innerWidth < screanWidthBreakpoint) {
+
+    allFullheight.forEach(elemento => {
+      elemento.classList.remove("full-height")
+    });
+  }
 
 
 }
