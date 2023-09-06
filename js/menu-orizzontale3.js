@@ -1,5 +1,7 @@
 const screanWidthBreakpoint = 1150;
 let timeOut = 10;
+let srcHam='img/hamburger.png';
+let srcClose='img/close.png';
 
 if (window.innerWidth >= screanWidthBreakpoint) {
     
@@ -45,6 +47,7 @@ function manage_menu(){
 
   let menu = document.getElementById('menu-orizzontale');
   let ham = document.getElementById('hamburger');
+  let hamImg = ham.querySelector("img");
   var container = document.querySelector(".container");
   var documento = document.documentElement;
 
@@ -63,13 +66,11 @@ function manage_menu(){
     
   if (menu.classList.contains("hide-menu")){
       
-    ham.classList.remove("hide-menu");
-    ham.classList.add("show-menu");
+    hamImg.src=srcHam;
   }
 
   else {
-    ham.classList.remove("show-menu");
-    ham.classList.add("hide-menu");
+    hamImg.src=srcClose;
   }
 
   setTimeout(() => {
@@ -84,9 +85,8 @@ function manage_menu(){
           menu.classList.remove("show-menu");
           setTimeout(() => {
           menu.classList.add("hide-menu");
-          ham.classList.remove("hide-menu");
-          ham.classList.add("show-menu");
-          },timeOut);
+          hamImg.src=srcHam;
+        },timeOut);
           closeAll();
           vinculateArrows();
         }
