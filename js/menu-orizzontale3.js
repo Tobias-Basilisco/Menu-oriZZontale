@@ -1026,6 +1026,25 @@ function modifyKeyframes() {
   }
 }
 
+function resizeRefresh(){
+  if (window.innerWidth < screanWidthBreakpoint){
+    window.addEventListener("resize", function() {
+      if (window.innerWidth > screanWidthBreakpoint) {
+        window.location.reload();
+      }
+    });
+  }else{
+    window.addEventListener("resize", function() {
+      if (window.innerWidth < screanWidthBreakpoint) {
+        window.location.reload();
+      }
+    });
+
+  }
+}
+
+resizeRefresh();
+
 //MME = Megamenu 4 livelli
 //MMC = Megamenu Table Centered
 //MMT = Megamenu Tendina
