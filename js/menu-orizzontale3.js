@@ -85,8 +85,8 @@ function manage_menu(){
           setTimeout(() => {
           menu.classList.add("hide-menu");
           ham.classList.remove("hide-menu");
+          ham.classList.add("show-menu");
           },timeOut);
-          menu.classList.add("hide-menu");
           closeAll();
           vinculateArrows();
         }
@@ -870,7 +870,7 @@ function closeAll(){
         var esDentroDelDiv = container.contains(event.target);
         var esDentroHam = ham.contains(event.target);
 
-        if (!esDentroDelDiv && !esDentroHam) {
+        if (!esDentroDelDiv) {
           
           hideSubmenus(".submenu-panel");
           hideSubmenus(".submenu-panel-table-centered");
