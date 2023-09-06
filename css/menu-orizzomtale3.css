@@ -98,7 +98,6 @@ nav ul{
 
 .sub-submenu{
     display: flex;
-    width: 800px;
     text-align: center;
     height: max-content;
 }
@@ -432,8 +431,8 @@ nav i{
     }
 
 
-    .submenu-panel-table-centered .sub-submenu{
-        width: 80%;
+    .submenu-panel-table-centered-container{
+        width: 100%;
     }
 
     :root {
@@ -514,6 +513,11 @@ nav i{
         background-color: #cfcaf1;
         border: solid 1px #999;
         box-shadow: 0px 0px 8px 4px #989494f5;
+    }
+
+    .sub-submenu{
+        width: 800px;
+
     }
 
     .sub-submenu-item{
