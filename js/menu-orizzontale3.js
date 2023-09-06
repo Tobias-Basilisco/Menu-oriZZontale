@@ -850,14 +850,13 @@ function hideSubmenus(classQuerySubmenuPanel){
 }
 
 
-// APRI/CHIUDI MENU
+//CHIUDI TUTTI SOTTOMENU
 
 closeAll();
 
 function closeAll(){
 
   let menu = document.getElementById('menu-orizzontale');
-  let ham = document.getElementById('hamburger');
   var container = document.querySelector(".container");
   var documento = document.documentElement;
 
@@ -868,7 +867,6 @@ function closeAll(){
       documento.addEventListener('click', function(event) {
 
         var esDentroDelDiv = container.contains(event.target);
-        var esDentroHam = ham.contains(event.target);
 
         if (!esDentroDelDiv) {
           
@@ -961,7 +959,7 @@ function vinculateArrowsTableCentered(panelTable, elementWithHas){
   }
 }
 
-//ESCLUDERE ROTATE E TRANSLATE SU SAFARI (MAC) VERSIONE < 16
+//ESCLUDERE ROTATE E TRANSLATE SU SAFARI (MAC) VERSIONE < 16  (work in progress)
 
 function BrowserAdaptation() {
 
@@ -1025,6 +1023,8 @@ function modifyKeyframes() {
     }
   }
 }
+
+//RESIZE = REFRESH
 
 function resizeRefresh(){
   if (window.innerWidth < screanWidthBreakpoint){
